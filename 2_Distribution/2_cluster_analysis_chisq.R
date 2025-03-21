@@ -2,7 +2,8 @@
 # The goal is to produce groups based on similar species composition.
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/2_Distribution/")
+directory <- here::here("2_Distribution")
+setwd(directory)
 
 # Import packages :
 library(dplyr)
@@ -21,7 +22,7 @@ library(fpc)
 #### Import data ####
 # Import abundance/rarity data :
 # and keep only data for wild harvested plants :
-list_harvested <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/WHP_correpondence_table_v17.csv") %>%
+list_harvested <- read.csv("Harvesting_syndrome/WHP_correpondence_table_v17.csv") %>%
   subset(REGNE=="Plantae", select=CD_REF)
 
 

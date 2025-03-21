@@ -2,7 +2,8 @@
 
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/4_Plant-life_history/")
+directory <- here::here("4_Plant-life_history")
+setwd(directory)
 
 # Import packages
 library(dplyr)
@@ -11,7 +12,7 @@ library(here)
 
 #### Import data ####
 # Import species list and associated codes
-list_species <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/all_sp_corresp_codes.csv")
+list_species <- read.csv("Harvesting_syndrome/all_sp_corresp_codes.csv")
 
 # Import Baseflor
 baseflor <- read.csv("raw_data/BaseFlor/baseflor.csv") %>%

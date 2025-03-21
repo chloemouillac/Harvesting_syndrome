@@ -3,7 +3,8 @@
 
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/3_Ethnobotany/")
+directory <- here::here("3_Ethnobotany")
+setwd(directory)
 
 # Import packages :
 library(reshape2)
@@ -18,7 +19,7 @@ KEW_db <- KEW_db[,-(13:22)]
 
 
 # Import species list :
-list_species <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/WHP_correpondence_table_v17.csv") %>%
+list_species <- read.csv("Harvesting_syndrome/WHP_correpondence_table_v17.csv") %>%
   subset(Regroupement %in% c("Angiospermes", "Fougères", "Gymnospermes") &
            KEW_binomial_acc_name != "not_found" & #remove species that don't have a correspondence in the Kew database
            !is.na(KEW_binomial_acc_name), 

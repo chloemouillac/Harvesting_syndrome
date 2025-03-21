@@ -3,7 +3,8 @@
 
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/1_Phylogeny/")
+directory <- here::here("1_Phylogeny")
+setwd(directory)
 
 # Import packages :
 library(V.PhyloMaker2)

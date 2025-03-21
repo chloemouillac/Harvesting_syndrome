@@ -1,585 +1,585 @@
 "FAMILLE","USE","weight","nb_species","percentage"
-"Acanthaceae","No recorded use",NA,2,1
-"Acoraceae","Crafts",1,1,0.25
-"Acoraceae","Food and Beverages",2,1,0.25
-"Acoraceae","Medical Therapeutic",2,1,0.25
-"Acoraceae","Other",1,1,0.25
-"Aizoaceae","No recorded use",NA,11,1
-"Alismataceae","Food and Beverages",1,1,0.333333333333333
-"Alismataceae","Medical Therapeutic",3,1,0.333333333333333
-"Alismataceae","Other",2,1,0.333333333333333
-"Alismataceae","No recorded use",NA,11,0.785714285714286
-"Altingiaceae","No recorded use",NA,1,1
-"Amaranthaceae","Crafts",4,4,0.137931034482759
-"Amaranthaceae","Food and Beverages",12,8,0.275862068965517
-"Amaranthaceae","Medical Therapeutic",17,9,0.310344827586207
-"Amaranthaceae","Other",10,8,0.275862068965517
-"Amaranthaceae","No recorded use",NA,64,0.688172043010753
-"Amaryllidaceae","Cosmetics",3,2,0.0833333333333333
-"Amaryllidaceae","Crafts",1,1,0.0416666666666667
-"Amaryllidaceae","Food and Beverages",9,6,0.25
-"Amaryllidaceae","Medical Therapeutic",22,7,0.291666666666667
-"Amaryllidaceae","Ornamental Plants",2,2,0.0833333333333333
-"Amaryllidaceae","Other",8,6,0.25
-"Amaryllidaceae","No recorded use",NA,69,0.741935483870968
-"Anacardiaceae","Crafts",4,3,0.25
-"Anacardiaceae","Food and Beverages",5,3,0.25
-"Anacardiaceae","Medical Therapeutic",9,3,0.25
-"Anacardiaceae","Other",5,3,0.25
-"Anacardiaceae","No recorded use",NA,5,0.294117647058824
-"Apiaceae","Crafts",13,13,0.158536585365854
-"Apiaceae","Food and Beverages",35,18,0.219512195121951
-"Apiaceae","Medical Therapeutic",73,28,0.341463414634146
-"Apiaceae","Other",40,23,0.280487804878049
-"Apiaceae","No recorded use",NA,191,0.6996336996337
-"Apocynaceae","Crafts",1,1,0.1
-"Apocynaceae","Food and Beverages",2,1,0.1
-"Apocynaceae","Medical Therapeutic",12,4,0.4
-"Apocynaceae","Other",5,4,0.4
-"Apocynaceae","No recorded use",NA,8,0.444444444444444
-"Aponogetonaceae","No recorded use",NA,1,1
-"Aquifoliaceae","Crafts",2,1,0.25
-"Aquifoliaceae","Food and Beverages",1,1,0.25
-"Aquifoliaceae","Medical Therapeutic",3,1,0.25
-"Aquifoliaceae","Other",2,1,0.25
-"Araceae","Crafts",2,2,0.166666666666667
-"Araceae","Food and Beverages",1,1,0.0833333333333333
-"Araceae","Medical Therapeutic",8,4,0.333333333333333
-"Araceae","Other",7,5,0.416666666666667
-"Araceae","No recorded use",NA,15,0.555555555555556
-"Araliaceae","Crafts",2,1,0.333333333333333
-"Araliaceae","Medical Therapeutic",2,1,0.333333333333333
-"Araliaceae","Other",2,1,0.333333333333333
-"Araliaceae","No recorded use",NA,5,0.625
-"Araucariaceae","No recorded use",NA,1,1
-"Arecaceae","No recorded use",NA,6,1
-"Aristolochiaceae","Medical Therapeutic",6,2,1
-"Aristolochiaceae","No recorded use",NA,5,0.714285714285714
-"Asaraceae","Crafts",1,1,0.5
-"Asaraceae","Medical Therapeutic",3,1,0.5
-"Asparagaceae","Cosmetics",1,1,0.03125
-"Asparagaceae","Crafts",5,5,0.15625
-"Asparagaceae","Food and Beverages",8,4,0.125
-"Asparagaceae","Medical Therapeutic",23,10,0.3125
-"Asparagaceae","Ornamental Plants",2,2,0.0625
-"Asparagaceae","Other",10,10,0.3125
-"Asparagaceae","No recorded use",NA,56,0.636363636363636
-"Asphodelaceae","Medical Therapeutic",2,1,0.5
-"Asphodelaceae","Other",1,1,0.5
-"Asphodelaceae","No recorded use",NA,10,0.833333333333333
-"Aspleniaceae","Medical Therapeutic",8,3,0.75
-"Aspleniaceae","Other",2,1,0.25
-"Aspleniaceae","No recorded use",NA,17,0.80952380952381
-"Asteraceae","Cosmetics",2,2,0.00904977375565611
-"Asteraceae","Crafts",26,26,0.117647058823529
-"Asteraceae","Food and Beverages",80,46,0.208144796380091
-"Asteraceae","Medical Therapeutic",199,87,0.393665158371041
-"Asteraceae","Ornamental Plants",1,1,0.00452488687782805
-"Asteraceae","Other",75,59,0.266968325791855
-"Asteraceae","No recorded use",NA,969,0.814285714285714
-"Athyriaceae","No recorded use",NA,2,1
-"Balsaminaceae","Crafts",1,1,0.2
-"Balsaminaceae","Food and Beverages",2,1,0.2
-"Balsaminaceae","Medical Therapeutic",5,2,0.4
-"Balsaminaceae","Other",1,1,0.2
-"Balsaminaceae","No recorded use",NA,4,0.444444444444444
-"Basellaceae","No recorded use",NA,1,1
-"Berberidaceae","Crafts",3,1,0.25
-"Berberidaceae","Food and Beverages",3,1,0.25
-"Berberidaceae","Medical Therapeutic",3,1,0.25
-"Berberidaceae","Other",2,1,0.25
-"Berberidaceae","No recorded use",NA,5,0.555555555555556
-"Betulaceae","Crafts",15,7,0.259259259259259
-"Betulaceae","Food and Beverages",6,4,0.148148148148148
-"Betulaceae","Medical Therapeutic",17,7,0.259259259259259
-"Betulaceae","Ornamental Plants",3,3,0.111111111111111
-"Betulaceae","Other",10,6,0.222222222222222
-"Betulaceae","No recorded use",NA,4,0.129032258064516
-"Bignoniaceae","No recorded use",NA,3,1
-"Blechnaceae","No recorded use",NA,2,1
-"Boraginaceae","Crafts",5,5,0.142857142857143
-"Boraginaceae","Food and Beverages",9,5,0.142857142857143
-"Boraginaceae","Medical Therapeutic",34,15,0.428571428571429
-"Boraginaceae","Other",11,10,0.285714285714286
-"Boraginaceae","No recorded use",NA,83,0.703389830508475
-"Brassicaceae","Crafts",3,3,0.0652173913043478
-"Brassicaceae","Food and Beverages",26,12,0.260869565217391
-"Brassicaceae","Medical Therapeutic",43,17,0.369565217391304
-"Brassicaceae","Ornamental Plants",2,2,0.0434782608695652
-"Brassicaceae","Other",14,12,0.260869565217391
-"Brassicaceae","No recorded use",NA,248,0.843537414965986
-"Bromeliaceae","No recorded use",NA,1,1
-"Butomaceae","No recorded use",NA,1,1
-"Buxaceae","Crafts",3,1,0.25
-"Buxaceae","Food and Beverages",1,1,0.25
-"Buxaceae","Medical Therapeutic",3,1,0.25
-"Buxaceae","Other",2,1,0.25
-"Cabombaceae","No recorded use",NA,1,1
-"Cactaceae","No recorded use",NA,12,1
-"Campanulaceae","Food and Beverages",5,4,0.4
-"Campanulaceae","Medical Therapeutic",7,4,0.4
-"Campanulaceae","Other",2,2,0.2
-"Campanulaceae","No recorded use",NA,57,0.850746268656716
-"Cannabaceae","Crafts",3,2,0.25
-"Cannabaceae","Food and Beverages",4,2,0.25
-"Cannabaceae","Medical Therapeutic",5,2,0.25
-"Cannabaceae","Other",3,2,0.25
-"Cannabaceae","No recorded use",NA,3,0.272727272727273
-"Cannaceae","No recorded use",NA,1,1
-"Capparaceae","No recorded use",NA,1,1
-"Caprifoliaceae","Crafts",5,5,0.15625
-"Caprifoliaceae","Food and Beverages",6,4,0.125
-"Caprifoliaceae","Medical Therapeutic",31,14,0.4375
-"Caprifoliaceae","Other",11,9,0.28125
-"Caprifoliaceae","No recorded use",NA,55,0.632183908045977
-"Caryophyllaceae","Crafts",2,2,0.0714285714285714
-"Caryophyllaceae","Food and Beverages",5,4,0.142857142857143
-"Caryophyllaceae","Medical Therapeutic",33,14,0.5
-"Caryophyllaceae","Other",10,8,0.285714285714286
-"Caryophyllaceae","No recorded use",NA,215,0.88477366255144
-"Casuarinaceae","No recorded use",NA,1,1
-"Celastraceae","Crafts",2,1,0.2
-"Celastraceae","Food and Beverages",1,1,0.2
-"Celastraceae","Medical Therapeutic",6,2,0.4
-"Celastraceae","Other",1,1,0.2
-"Celastraceae","No recorded use",NA,2,0.285714285714286
-"Ceratophyllaceae","No recorded use",NA,2,1
-"Cistaceae","Crafts",1,1,0.166666666666667
-"Cistaceae","Food and Beverages",2,1,0.166666666666667
-"Cistaceae","Medical Therapeutic",6,2,0.333333333333333
-"Cistaceae","Other",3,2,0.333333333333333
-"Cistaceae","No recorded use",NA,32,0.842105263157895
-"Colchicaceae","Crafts",1,1,0.25
-"Colchicaceae","Medical Therapeutic",3,1,0.25
-"Colchicaceae","Ornamental Plants",1,1,0.25
-"Colchicaceae","Other",1,1,0.25
-"Colchicaceae","No recorded use",NA,9,0.692307692307692
-"Commelinaceae","No recorded use",NA,2,1
-"Convolvulaceae","Food and Beverages",1,1,0.142857142857143
-"Convolvulaceae","Medical Therapeutic",8,4,0.571428571428571
-"Convolvulaceae","Other",3,2,0.285714285714286
-"Convolvulaceae","No recorded use",NA,25,0.78125
-"Coriariaceae","Crafts",1,1,0.333333333333333
-"Coriariaceae","Medical Therapeutic",2,1,0.333333333333333
-"Coriariaceae","Other",1,1,0.333333333333333
-"Cornaceae","Crafts",6,2,0.25
-"Cornaceae","Food and Beverages",4,2,0.25
-"Cornaceae","Medical Therapeutic",6,2,0.25
-"Cornaceae","Other",4,2,0.25
-"Cornaceae","No recorded use",NA,1,0.111111111111111
-"Crassulaceae","Food and Beverages",4,4,0.181818181818182
-"Crassulaceae","Medical Therapeutic",19,9,0.409090909090909
-"Crassulaceae","Other",9,9,0.409090909090909
-"Crassulaceae","No recorded use",NA,46,0.676470588235294
-"Cucurbitaceae","Medical Therapeutic",5,2,0.666666666666667
-"Cucurbitaceae","Other",1,1,0.333333333333333
-"Cucurbitaceae","No recorded use",NA,4,0.571428571428571
-"Cupressaceae","Crafts",7,5,0.3125
-"Cupressaceae","Food and Beverages",4,2,0.125
-"Cupressaceae","Medical Therapeutic",13,5,0.3125
-"Cupressaceae","Other",6,4,0.25
-"Cupressaceae","No recorded use",NA,10,0.384615384615385
-"Cymodoceaceae","No recorded use",NA,1,1
-"Cynomoriaceae","No recorded use",NA,1,1
-"Cyperaceae","Crafts",2,2,0.25
-"Cyperaceae","Food and Beverages",5,2,0.25
-"Cyperaceae","Medical Therapeutic",5,2,0.25
-"Cyperaceae","Other",4,2,0.25
-"Cyperaceae","No recorded use",NA,186,0.958762886597938
-"Cystopteridaceae","No recorded use",NA,4,1
-"Cytinaceae","No recorded use",NA,1,1
-"Dennstaedtiaceae","Cosmetics",1,1,0.2
-"Dennstaedtiaceae","Crafts",1,1,0.2
-"Dennstaedtiaceae","Food and Beverages",3,1,0.2
-"Dennstaedtiaceae","Medical Therapeutic",3,1,0.2
-"Dennstaedtiaceae","Other",2,1,0.2
-"Dioscoreaceae","Food and Beverages",2,1,0.333333333333333
-"Dioscoreaceae","Medical Therapeutic",2,1,0.333333333333333
-"Dioscoreaceae","Other",2,1,0.333333333333333
-"Dioscoreaceae","No recorded use",NA,1,0.25
-"Droseraceae","Medical Therapeutic",4,3,0.6
-"Droseraceae","Other",2,2,0.4
-"Dryopteridaceae","Medical Therapeutic",3,1,0.5
-"Dryopteridaceae","Other",2,1,0.5
-"Dryopteridaceae","No recorded use",NA,20,0.909090909090909
-"Ebenaceae","No recorded use",NA,3,1
-"Elaeagnaceae","Crafts",2,1,0.2
-"Elaeagnaceae","Food and Beverages",3,1,0.2
-"Elaeagnaceae","Medical Therapeutic",3,1,0.2
-"Elaeagnaceae","Ornamental Plants",1,1,0.2
-"Elaeagnaceae","Other",2,1,0.2
-"Elaeagnaceae","No recorded use",NA,3,0.375
-"Elatinaceae","No recorded use",NA,6,1
-"Ephedraceae","Crafts",1,1,0.5
-"Ephedraceae","Medical Therapeutic",2,1,0.5
-"Ephedraceae","No recorded use",NA,2,0.5
-"Equisetaceae","Crafts",3,3,0.214285714285714
-"Equisetaceae","Food and Beverages",2,1,0.0714285714285714
-"Equisetaceae","Medical Therapeutic",13,6,0.428571428571429
-"Equisetaceae","Other",7,4,0.285714285714286
-"Equisetaceae","No recorded use",NA,2,0.125
-"Ericaceae","Cosmetics",2,2,0.0571428571428571
-"Ericaceae","Crafts",7,5,0.142857142857143
-"Ericaceae","Food and Beverages",14,6,0.171428571428571
-"Ericaceae","Medical Therapeutic",30,11,0.314285714285714
-"Ericaceae","Ornamental Plants",2,2,0.0571428571428571
-"Ericaceae","Other",11,9,0.257142857142857
-"Ericaceae","No recorded use",NA,26,0.426229508196721
-"Escalloniaceae","No recorded use",NA,1,1
-"Euphorbiaceae","Crafts",3,3,0.130434782608696
-"Euphorbiaceae","Food and Beverages",7,5,0.217391304347826
-"Euphorbiaceae","Medical Therapeutic",20,8,0.347826086956522
-"Euphorbiaceae","Other",8,7,0.304347826086957
-"Euphorbiaceae","No recorded use",NA,53,0.697368421052632
-"Fabaceae","Crafts",12,8,0.114285714285714
-"Fabaceae","Food and Beverages",20,13,0.185714285714286
-"Fabaceae","Medical Therapeutic",49,22,0.314285714285714
-"Fabaceae","Ornamental Plants",4,4,0.0571428571428571
-"Fabaceae","Other",40,23,0.328571428571429
-"Fabaceae","No recorded use",NA,401,0.851380042462845
-"Fagaceae","Crafts",14,7,0.28
-"Fagaceae","Food and Beverages",12,6,0.24
-"Fagaceae","Medical Therapeutic",17,6,0.24
-"Fagaceae","Other",6,6,0.24
-"Fagaceae","No recorded use",NA,7,0.21875
-"Frankeniaceae","No recorded use",NA,4,1
-"Garryaceae","No recorded use",NA,1,1
-"Gentianaceae","Cosmetics",1,1,0.0625
-"Gentianaceae","Crafts",1,1,0.0625
-"Gentianaceae","Food and Beverages",6,2,0.125
-"Gentianaceae","Medical Therapeutic",19,8,0.5
-"Gentianaceae","Ornamental Plants",1,1,0.0625
-"Gentianaceae","Other",5,3,0.1875
-"Gentianaceae","No recorded use",NA,35,0.686274509803922
-"Geraniaceae","Crafts",1,1,0.111111111111111
-"Geraniaceae","Food and Beverages",1,1,0.111111111111111
-"Geraniaceae","Medical Therapeutic",11,4,0.444444444444444
-"Geraniaceae","Other",4,3,0.333333333333333
-"Geraniaceae","No recorded use",NA,41,0.82
-"Gesneriaceae","Medical Therapeutic",1,1,0.5
-"Gesneriaceae","Other",1,1,0.5
-"Ginkgoaceae","No recorded use",NA,1,1
-"Grossulariaceae","Crafts",2,2,0.25
-"Grossulariaceae","Food and Beverages",4,2,0.25
-"Grossulariaceae","Medical Therapeutic",6,2,0.25
-"Grossulariaceae","Other",3,2,0.25
-"Grossulariaceae","No recorded use",NA,4,0.333333333333333
-"Haloragaceae","No recorded use",NA,5,1
-"Heliotropiaceae","Medical Therapeutic",2,1,0.5
-"Heliotropiaceae","Other",1,1,0.5
-"Heliotropiaceae","No recorded use",NA,4,0.666666666666667
-"Hydrangeaceae","No recorded use",NA,3,1
-"Hydrocharitaceae","No recorded use",NA,13,1
-"Hydrophyllaceae","No recorded use",NA,1,1
-"Hymenophyllaceae","No recorded use",NA,3,1
-"Hypericaceae","Crafts",1,1,0.111111111111111
-"Hypericaceae","Food and Beverages",3,2,0.222222222222222
-"Hypericaceae","Medical Therapeutic",9,4,0.444444444444444
-"Hypericaceae","Other",3,2,0.222222222222222
-"Hypericaceae","No recorded use",NA,19,0.678571428571429
-"Iridaceae","Crafts",2,2,0.285714285714286
-"Iridaceae","Food and Beverages",3,2,0.285714285714286
-"Iridaceae","Medical Therapeutic",5,2,0.285714285714286
-"Iridaceae","Other",2,1,0.142857142857143
-"Iridaceae","No recorded use",NA,48,0.872727272727273
-"Isoetaceae","No recorded use",NA,9,1
-"Juglandaceae","No recorded use",NA,3,1
-"Juncaceae","Crafts",1,1,0.25
-"Juncaceae","Food and Beverages",1,1,0.25
-"Juncaceae","Medical Therapeutic",2,1,0.25
-"Juncaceae","Other",1,1,0.25
-"Juncaceae","No recorded use",NA,51,0.927272727272727
-"Juncaginaceae","No recorded use",NA,4,1
-"Lamiaceae","Cosmetics",1,1,0.0072992700729927
-"Lamiaceae","Crafts",15,15,0.109489051094891
-"Lamiaceae","Food and Beverages",60,34,0.248175182481752
-"Lamiaceae","Medical Therapeutic",129,52,0.37956204379562
-"Lamiaceae","Other",49,35,0.255474452554745
-"Lamiaceae","No recorded use",NA,118,0.462745098039216
-"Lardizabalaceae","No recorded use",NA,1,1
-"Lauraceae","Crafts",2,1,0.25
-"Lauraceae","Food and Beverages",3,1,0.25
-"Lauraceae","Medical Therapeutic",3,1,0.25
-"Lauraceae","Other",2,1,0.25
-"Lentibulariaceae","No recorded use",NA,17,1
-"Liliaceae","Medical Therapeutic",2,1,0.25
-"Liliaceae","Other",3,3,0.75
-"Liliaceae","No recorded use",NA,35,0.897435897435897
-"Linaceae","Medical Therapeutic",3,1,0.5
-"Linaceae","Other",1,1,0.5
-"Linaceae","No recorded use",NA,15,0.882352941176471
-"Linderniaceae","No recorded use",NA,2,1
-"Lycopodiaceae","No recorded use",NA,10,1
-"Lythraceae","Food and Beverages",1,1,0.333333333333333
-"Lythraceae","Medical Therapeutic",3,1,0.333333333333333
-"Lythraceae","Other",1,1,0.333333333333333
-"Lythraceae","No recorded use",NA,13,0.8125
-"Magnoliaceae","No recorded use",NA,2,1
-"Malvaceae","Crafts",7,4,0.181818181818182
-"Malvaceae","Food and Beverages",13,6,0.272727272727273
-"Malvaceae","Medical Therapeutic",18,6,0.272727272727273
-"Malvaceae","Other",11,6,0.272727272727273
-"Malvaceae","No recorded use",NA,28,0.56
-"Marsileaceae","No recorded use",NA,5,1
-"Martyniaceae","No recorded use",NA,1,1
-"Melanthiaceae","Medical Therapeutic",6,2,0.5
-"Melanthiaceae","Other",2,2,0.5
-"Melanthiaceae","No recorded use",NA,1,0.2
-"Meliaceae","No recorded use",NA,1,1
-"Menyanthaceae","Cosmetics",1,1,0.25
-"Menyanthaceae","Food and Beverages",2,1,0.25
-"Menyanthaceae","Medical Therapeutic",4,1,0.25
-"Menyanthaceae","Other",1,1,0.25
-"Menyanthaceae","No recorded use",NA,1,0.2
-"Molluginaceae","No recorded use",NA,2,1
-"Montiaceae","No recorded use",NA,2,1
-"Moraceae","Crafts",1,1,0.25
-"Moraceae","Food and Beverages",2,1,0.25
-"Moraceae","Medical Therapeutic",3,1,0.25
-"Moraceae","Other",1,1,0.25
-"Moraceae","No recorded use",NA,5,0.555555555555556
-"Myricaceae","Crafts",1,1,0.25
-"Myricaceae","Food and Beverages",2,1,0.25
-"Myricaceae","Medical Therapeutic",2,1,0.25
-"Myricaceae","Other",1,1,0.25
-"Myrtaceae","Crafts",1,1,0.25
-"Myrtaceae","Food and Beverages",3,1,0.25
-"Myrtaceae","Medical Therapeutic",3,1,0.25
-"Myrtaceae","Other",1,1,0.25
-"Myrtaceae","No recorded use",NA,6,0.6
-"Namaceae","No recorded use",NA,1,1
-"Nartheciaceae","No recorded use",NA,2,1
-"Nitrariaceae","No recorded use",NA,1,1
-"Nyctaginaceae","No recorded use",NA,3,1
-"Nymphaeaceae","Crafts",1,1,0.125
-"Nymphaeaceae","Food and Beverages",4,3,0.375
-"Nymphaeaceae","Medical Therapeutic",6,3,0.375
-"Nymphaeaceae","Other",1,1,0.125
-"Oleaceae","Crafts",7,4,0.285714285714286
-"Oleaceae","Food and Beverages",3,2,0.142857142857143
-"Oleaceae","Medical Therapeutic",11,4,0.285714285714286
-"Oleaceae","Other",5,4,0.285714285714286
-"Oleaceae","No recorded use",NA,12,0.461538461538462
-"Onagraceae","Crafts",1,1,0.0526315789473684
-"Onagraceae","Food and Beverages",9,6,0.315789473684211
-"Onagraceae","Medical Therapeutic",18,9,0.473684210526316
-"Onagraceae","Other",4,3,0.157894736842105
-"Onagraceae","No recorded use",NA,34,0.641509433962264
-"Onocleaceae","No recorded use",NA,1,1
-"Ophioglossaceae","No recorded use",NA,8,1
-"Orchidaceae","Food and Beverages",1,1,0.25
-"Orchidaceae","Medical Therapeutic",5,3,0.75
-"Orchidaceae","No recorded use",NA,122,0.968253968253968
-"Orobanchaceae","Medical Therapeutic",6,4,1
-"Orobanchaceae","No recorded use",NA,94,0.959183673469388
-"Osmundaceae","Crafts",1,1,0.25
-"Osmundaceae","Food and Beverages",1,1,0.25
-"Osmundaceae","Medical Therapeutic",2,1,0.25
-"Osmundaceae","Other",1,1,0.25
-"Oxalidaceae","Food and Beverages",2,1,0.333333333333333
-"Oxalidaceae","Medical Therapeutic",3,1,0.333333333333333
-"Oxalidaceae","Other",1,1,0.333333333333333
-"Oxalidaceae","No recorded use",NA,8,0.727272727272727
-"Paeoniaceae","Food and Beverages",1,1,0.333333333333333
-"Paeoniaceae","Medical Therapeutic",2,1,0.333333333333333
-"Paeoniaceae","Other",1,1,0.333333333333333
-"Paeoniaceae","No recorded use",NA,3,0.5
-"Papaveraceae","Crafts",2,2,0.153846153846154
-"Papaveraceae","Food and Beverages",4,3,0.230769230769231
-"Papaveraceae","Medical Therapeutic",13,5,0.384615384615385
-"Papaveraceae","Other",4,3,0.230769230769231
-"Papaveraceae","No recorded use",NA,35,0.729166666666667
-"Passifloraceae","No recorded use",NA,1,1
-"Paulowniaceae","No recorded use",NA,1,1
-"Phrymaceae","No recorded use",NA,2,1
-"Phyllanthaceae","No recorded use",NA,1,1
-"Phytolaccaceae","Crafts",1,1,0.25
-"Phytolaccaceae","Food and Beverages",2,1,0.25
-"Phytolaccaceae","Medical Therapeutic",2,1,0.25
-"Phytolaccaceae","Other",1,1,0.25
-"Phytolaccaceae","No recorded use",NA,1,0.2
-"Pinaceae","Crafts",25,11,0.25
-"Pinaceae","Food and Beverages",16,9,0.204545454545455
-"Pinaceae","Medical Therapeutic",26,11,0.25
-"Pinaceae","Ornamental Plants",3,3,0.0681818181818182
-"Pinaceae","Other",16,10,0.227272727272727
-"Pinaceae","No recorded use",NA,13,0.228070175438596
-"Pittosporaceae","No recorded use",NA,2,1
-"Plantaginaceae","Crafts",7,7,0.166666666666667
-"Plantaginaceae","Food and Beverages",15,10,0.238095238095238
-"Plantaginaceae","Medical Therapeutic",44,17,0.404761904761905
-"Plantaginaceae","Other",9,8,0.19047619047619
-"Plantaginaceae","No recorded use",NA,108,0.72
-"Platanaceae","No recorded use",NA,1,1
-"Plumbaginaceae","Crafts",1,1,0.2
-"Plumbaginaceae","Medical Therapeutic",5,2,0.4
-"Plumbaginaceae","Other",2,2,0.4
-"Plumbaginaceae","No recorded use",NA,49,0.907407407407407
-"Poaceae","Crafts",6,6,0.166666666666667
-"Poaceae","Food and Beverages",8,5,0.138888888888889
-"Poaceae","Medical Therapeutic",26,10,0.277777777777778
-"Poaceae","Ornamental Plants",5,5,0.138888888888889
-"Poaceae","Other",14,10,0.277777777777778
-"Poaceae","No recorded use",NA,495,0.932203389830508
-"Polemoniaceae","No recorded use",NA,2,1
-"Polygalaceae","Food and Beverages",1,1,0.5
-"Polygalaceae","Medical Therapeutic",3,1,0.5
-"Polygalaceae","No recorded use",NA,14,0.875
-"Polygonaceae","Crafts",5,5,0.138888888888889
-"Polygonaceae","Food and Beverages",16,10,0.277777777777778
-"Polygonaceae","Medical Therapeutic",26,11,0.305555555555556
-"Polygonaceae","Other",10,10,0.277777777777778
-"Polygonaceae","No recorded use",NA,46,0.560975609756098
-"Polypodiaceae","Food and Beverages",2,1,0.333333333333333
-"Polypodiaceae","Medical Therapeutic",3,1,0.333333333333333
-"Polypodiaceae","Other",1,1,0.333333333333333
-"Polypodiaceae","No recorded use",NA,2,0.4
-"Pontederiaceae","No recorded use",NA,4,1
-"Portulacaceae","Crafts",1,1,0.25
-"Portulacaceae","Food and Beverages",2,1,0.25
-"Portulacaceae","Medical Therapeutic",3,1,0.25
-"Portulacaceae","Other",1,1,0.25
-"Posidoniaceae","No recorded use",NA,1,1
-"Potamogetonaceae","Medical Therapeutic",3,1,0.5
-"Potamogetonaceae","Other",1,1,0.5
-"Potamogetonaceae","No recorded use",NA,26,0.928571428571429
-"Primulaceae","Crafts",3,3,0.157894736842105
-"Primulaceae","Food and Beverages",4,3,0.157894736842105
-"Primulaceae","Medical Therapeutic",18,8,0.421052631578947
-"Primulaceae","Other",6,5,0.263157894736842
-"Primulaceae","No recorded use",NA,47,0.712121212121212
-"Proteaceae","No recorded use",NA,2,1
-"Pteridaceae","Food and Beverages",2,1,0.333333333333333
-"Pteridaceae","Medical Therapeutic",2,1,0.333333333333333
-"Pteridaceae","Other",2,1,0.333333333333333
-"Pteridaceae","No recorded use",NA,12,0.8
-"Ranunculaceae","Crafts",3,3,0.0517241379310345
-"Ranunculaceae","Food and Beverages",8,6,0.103448275862069
-"Ranunculaceae","Medical Therapeutic",66,27,0.46551724137931
-"Ranunculaceae","Other",25,22,0.379310344827586
-"Ranunculaceae","No recorded use",NA,117,0.668571428571429
-"Resedaceae","Crafts",1,1,0.333333333333333
-"Resedaceae","Food and Beverages",1,1,0.333333333333333
-"Resedaceae","Medical Therapeutic",3,1,0.333333333333333
-"Resedaceae","No recorded use",NA,8,0.727272727272727
-"Rhamnaceae","Crafts",6,4,0.285714285714286
-"Rhamnaceae","Food and Beverages",4,2,0.142857142857143
-"Rhamnaceae","Medical Therapeutic",11,4,0.285714285714286
-"Rhamnaceae","Other",5,4,0.285714285714286
-"Rhamnaceae","No recorded use",NA,4,0.222222222222222
-"Rosaceae","Crafts",30,18,0.166666666666667
-"Rosaceae","Food and Beverages",55,28,0.259259259259259
-"Rosaceae","Medical Therapeutic",88,36,0.333333333333333
-"Rosaceae","Other",33,26,0.240740740740741
-"Rosaceae","No recorded use",NA,200,0.649350649350649
-"Rubiaceae","Crafts",3,3,0.130434782608696
-"Rubiaceae","Food and Beverages",8,5,0.217391304347826
-"Rubiaceae","Medical Therapeutic",25,11,0.478260869565217
-"Rubiaceae","Other",4,4,0.173913043478261
-"Rubiaceae","No recorded use",NA,66,0.741573033707865
-"Ruppiaceae","No recorded use",NA,2,1
-"Rutaceae","Food and Beverages",1,1,0.333333333333333
-"Rutaceae","Medical Therapeutic",2,1,0.333333333333333
-"Rutaceae","Other",1,1,0.333333333333333
-"Rutaceae","No recorded use",NA,8,0.727272727272727
-"Salicaceae","Crafts",15,6,0.230769230769231
-"Salicaceae","Food and Beverages",2,2,0.0769230769230769
-"Salicaceae","Medical Therapeutic",18,7,0.269230769230769
-"Salicaceae","Ornamental Plants",4,4,0.153846153846154
-"Salicaceae","Other",8,7,0.269230769230769
-"Salicaceae","No recorded use",NA,30,0.535714285714286
-"Salviniaceae","No recorded use",NA,3,1
-"Santalaceae","No recorded use",NA,1,1
-"Sapindaceae","Crafts",4,2,0.25
-"Sapindaceae","Food and Beverages",2,2,0.25
-"Sapindaceae","Medical Therapeutic",6,2,0.25
-"Sapindaceae","Other",4,2,0.25
-"Sapindaceae","No recorded use",NA,14,0.636363636363636
-"Sarraceniaceae","No recorded use",NA,1,1
-"Saxifragaceae","Medical Therapeutic",2,1,1
-"Saxifragaceae","No recorded use",NA,57,0.982758620689655
-"Scheuchzeriaceae","No recorded use",NA,1,1
-"Scrophulariaceae","Crafts",1,1,0.0909090909090909
-"Scrophulariaceae","Food and Beverages",1,1,0.0909090909090909
-"Scrophulariaceae","Medical Therapeutic",14,5,0.454545454545455
-"Scrophulariaceae","Other",4,4,0.363636363636364
-"Scrophulariaceae","No recorded use",NA,25,0.694444444444444
-"Selaginellaceae","No recorded use",NA,4,1
-"Simaroubaceae","Crafts",2,1,0.25
-"Simaroubaceae","Medical Therapeutic",3,1,0.25
-"Simaroubaceae","Ornamental Plants",1,1,0.25
-"Simaroubaceae","Other",2,1,0.25
-"Smilacaceae","No recorded use",NA,1,1
-"Solanaceae","Crafts",3,3,0.12
-"Solanaceae","Food and Beverages",6,4,0.16
-"Solanaceae","Medical Therapeutic",22,8,0.32
-"Solanaceae","Ornamental Plants",3,3,0.12
-"Solanaceae","Other",7,7,0.28
-"Solanaceae","No recorded use",NA,25,0.5
-"Staphyleaceae","No recorded use",NA,1,1
-"Styracaceae","No recorded use",NA,1,1
-"Tamaricaceae","Crafts",2,1,0.2
-"Tamaricaceae","Food and Beverages",1,1,0.2
-"Tamaricaceae","Medical Therapeutic",3,1,0.2
-"Tamaricaceae","Ornamental Plants",1,1,0.2
-"Tamaricaceae","Other",1,1,0.2
-"Tamaricaceae","No recorded use",NA,4,0.444444444444444
-"Taxaceae","Crafts",3,1,0.25
-"Taxaceae","Food and Beverages",3,1,0.25
-"Taxaceae","Medical Therapeutic",3,1,0.25
-"Taxaceae","Other",1,1,0.25
-"Thelypteridaceae","No recorded use",NA,4,1
-"Thesiaceae","No recorded use",NA,7,1
-"Thymelaeaceae","Crafts",2,2,0.222222222222222
-"Thymelaeaceae","Food and Beverages",1,1,0.111111111111111
-"Thymelaeaceae","Medical Therapeutic",8,3,0.333333333333333
-"Thymelaeaceae","Other",3,3,0.333333333333333
-"Thymelaeaceae","No recorded use",NA,12,0.571428571428571
-"Tofieldiaceae","No recorded use",NA,2,1
-"Tropaeolaceae","No recorded use",NA,2,1
-"Typhaceae","Crafts",2,1,0.2
-"Typhaceae","Food and Beverages",2,1,0.2
-"Typhaceae","Medical Therapeutic",3,1,0.2
-"Typhaceae","Ornamental Plants",1,1,0.2
-"Typhaceae","Other",1,1,0.2
-"Typhaceae","No recorded use",NA,11,0.6875
-"Ulmaceae","Crafts",1,1,0.333333333333333
-"Ulmaceae","Medical Therapeutic",2,1,0.333333333333333
-"Ulmaceae","Other",1,1,0.333333333333333
-"Ulmaceae","No recorded use",NA,2,0.4
-"Urticaceae","Crafts",2,1,0.0909090909090909
-"Urticaceae","Food and Beverages",5,3,0.272727272727273
-"Urticaceae","Medical Therapeutic",12,4,0.363636363636364
-"Urticaceae","Other",5,3,0.272727272727273
-"Urticaceae","No recorded use",NA,6,0.352941176470588
-"Verbenaceae","Crafts",1,1,0.25
-"Verbenaceae","Food and Beverages",3,1,0.25
-"Verbenaceae","Medical Therapeutic",3,1,0.25
-"Verbenaceae","Other",2,1,0.25
-"Verbenaceae","No recorded use",NA,7,0.636363636363636
-"Viburnaceae","Crafts",9,5,0.263157894736842
-"Viburnaceae","Food and Beverages",8,4,0.210526315789474
-"Viburnaceae","Medical Therapeutic",14,5,0.263157894736842
-"Viburnaceae","Other",7,5,0.263157894736842
-"Viburnaceae","No recorded use",NA,3,0.136363636363636
-"Violaceae","Crafts",1,1,0.0555555555555556
-"Violaceae","Food and Beverages",8,5,0.277777777777778
-"Violaceae","Medical Therapeutic",19,10,0.555555555555556
-"Violaceae","Other",2,2,0.111111111111111
-"Violaceae","No recorded use",NA,28,0.608695652173913
-"Viscaceae","Crafts",1,1,0.25
-"Viscaceae","Medical Therapeutic",4,1,0.25
-"Viscaceae","Ornamental Plants",1,1,0.25
-"Viscaceae","Other",2,1,0.25
-"Viscaceae","No recorded use",NA,2,0.333333333333333
-"Vitaceae","Crafts",1,1,0.25
-"Vitaceae","Food and Beverages",1,1,0.25
-"Vitaceae","Medical Therapeutic",1,1,0.25
-"Vitaceae","Other",1,1,0.25
-"Vitaceae","No recorded use",NA,8,0.666666666666667
-"Woodsiaceae","No recorded use",NA,2,1
-"Zosteraceae","No recorded use",NA,2,1
-"Zygophyllaceae","Food and Beverages",1,1,0.333333333333333
-"Zygophyllaceae","Medical Therapeutic",3,1,0.333333333333333
-"Zygophyllaceae","Other",1,1,0.333333333333333
-"Zygophyllaceae","No recorded use",NA,1,0.25
+"Acanthaceae","No recorded use",NA,2,100
+"Acoraceae","Crafts",1,1,25
+"Acoraceae","Food and Beverages",2,1,25
+"Acoraceae","Medical Therapeutic",2,1,25
+"Acoraceae","Other",1,1,25
+"Aizoaceae","No recorded use",NA,11,100
+"Alismataceae","Food and Beverages",1,1,33
+"Alismataceae","Medical Therapeutic",3,1,33
+"Alismataceae","Other",2,1,33
+"Alismataceae","No recorded use",NA,11,79
+"Altingiaceae","No recorded use",NA,1,100
+"Amaranthaceae","Crafts",4,4,14
+"Amaranthaceae","Food and Beverages",12,8,28
+"Amaranthaceae","Medical Therapeutic",17,9,31
+"Amaranthaceae","Other",10,8,28
+"Amaranthaceae","No recorded use",NA,64,69
+"Amaryllidaceae","Cosmetics",3,2,8
+"Amaryllidaceae","Crafts",1,1,4
+"Amaryllidaceae","Food and Beverages",9,6,25
+"Amaryllidaceae","Medical Therapeutic",22,7,29
+"Amaryllidaceae","Ornamental Plants",2,2,8
+"Amaryllidaceae","Other",8,6,25
+"Amaryllidaceae","No recorded use",NA,69,74
+"Anacardiaceae","Crafts",4,3,25
+"Anacardiaceae","Food and Beverages",5,3,25
+"Anacardiaceae","Medical Therapeutic",9,3,25
+"Anacardiaceae","Other",5,3,25
+"Anacardiaceae","No recorded use",NA,5,29
+"Apiaceae","Crafts",13,13,16
+"Apiaceae","Food and Beverages",35,18,22
+"Apiaceae","Medical Therapeutic",73,28,34
+"Apiaceae","Other",40,23,28
+"Apiaceae","No recorded use",NA,191,70
+"Apocynaceae","Crafts",1,1,10
+"Apocynaceae","Food and Beverages",2,1,10
+"Apocynaceae","Medical Therapeutic",12,4,40
+"Apocynaceae","Other",5,4,40
+"Apocynaceae","No recorded use",NA,8,44
+"Aponogetonaceae","No recorded use",NA,1,100
+"Aquifoliaceae","Crafts",2,1,25
+"Aquifoliaceae","Food and Beverages",1,1,25
+"Aquifoliaceae","Medical Therapeutic",3,1,25
+"Aquifoliaceae","Other",2,1,25
+"Araceae","Crafts",2,2,17
+"Araceae","Food and Beverages",1,1,8
+"Araceae","Medical Therapeutic",8,4,33
+"Araceae","Other",7,5,42
+"Araceae","No recorded use",NA,15,56
+"Araliaceae","Crafts",2,1,33
+"Araliaceae","Medical Therapeutic",2,1,33
+"Araliaceae","Other",2,1,33
+"Araliaceae","No recorded use",NA,5,62
+"Araucariaceae","No recorded use",NA,1,100
+"Arecaceae","No recorded use",NA,6,100
+"Aristolochiaceae","Medical Therapeutic",6,2,100
+"Aristolochiaceae","No recorded use",NA,5,71
+"Asaraceae","Crafts",1,1,50
+"Asaraceae","Medical Therapeutic",3,1,50
+"Asparagaceae","Cosmetics",1,1,3
+"Asparagaceae","Crafts",5,5,16
+"Asparagaceae","Food and Beverages",8,4,12
+"Asparagaceae","Medical Therapeutic",23,10,31
+"Asparagaceae","Ornamental Plants",2,2,6
+"Asparagaceae","Other",10,10,31
+"Asparagaceae","No recorded use",NA,56,64
+"Asphodelaceae","Medical Therapeutic",2,1,50
+"Asphodelaceae","Other",1,1,50
+"Asphodelaceae","No recorded use",NA,10,83
+"Aspleniaceae","Medical Therapeutic",8,3,75
+"Aspleniaceae","Other",2,1,25
+"Aspleniaceae","No recorded use",NA,17,81
+"Asteraceae","Cosmetics",2,2,1
+"Asteraceae","Crafts",26,26,12
+"Asteraceae","Food and Beverages",80,46,21
+"Asteraceae","Medical Therapeutic",199,87,39
+"Asteraceae","Ornamental Plants",1,1,0
+"Asteraceae","Other",75,59,27
+"Asteraceae","No recorded use",NA,969,81
+"Athyriaceae","No recorded use",NA,2,100
+"Balsaminaceae","Crafts",1,1,20
+"Balsaminaceae","Food and Beverages",2,1,20
+"Balsaminaceae","Medical Therapeutic",5,2,40
+"Balsaminaceae","Other",1,1,20
+"Balsaminaceae","No recorded use",NA,4,44
+"Basellaceae","No recorded use",NA,1,100
+"Berberidaceae","Crafts",3,1,25
+"Berberidaceae","Food and Beverages",3,1,25
+"Berberidaceae","Medical Therapeutic",3,1,25
+"Berberidaceae","Other",2,1,25
+"Berberidaceae","No recorded use",NA,5,56
+"Betulaceae","Crafts",15,7,26
+"Betulaceae","Food and Beverages",6,4,15
+"Betulaceae","Medical Therapeutic",17,7,26
+"Betulaceae","Ornamental Plants",3,3,11
+"Betulaceae","Other",10,6,22
+"Betulaceae","No recorded use",NA,4,13
+"Bignoniaceae","No recorded use",NA,3,100
+"Blechnaceae","No recorded use",NA,2,100
+"Boraginaceae","Crafts",5,5,14
+"Boraginaceae","Food and Beverages",9,5,14
+"Boraginaceae","Medical Therapeutic",34,15,43
+"Boraginaceae","Other",11,10,29
+"Boraginaceae","No recorded use",NA,83,70
+"Brassicaceae","Crafts",3,3,7
+"Brassicaceae","Food and Beverages",26,12,26
+"Brassicaceae","Medical Therapeutic",43,17,37
+"Brassicaceae","Ornamental Plants",2,2,4
+"Brassicaceae","Other",14,12,26
+"Brassicaceae","No recorded use",NA,248,84
+"Bromeliaceae","No recorded use",NA,1,100
+"Butomaceae","No recorded use",NA,1,100
+"Buxaceae","Crafts",3,1,25
+"Buxaceae","Food and Beverages",1,1,25
+"Buxaceae","Medical Therapeutic",3,1,25
+"Buxaceae","Other",2,1,25
+"Cabombaceae","No recorded use",NA,1,100
+"Cactaceae","No recorded use",NA,12,100
+"Campanulaceae","Food and Beverages",5,4,40
+"Campanulaceae","Medical Therapeutic",7,4,40
+"Campanulaceae","Other",2,2,20
+"Campanulaceae","No recorded use",NA,57,85
+"Cannabaceae","Crafts",3,2,25
+"Cannabaceae","Food and Beverages",4,2,25
+"Cannabaceae","Medical Therapeutic",5,2,25
+"Cannabaceae","Other",3,2,25
+"Cannabaceae","No recorded use",NA,3,27
+"Cannaceae","No recorded use",NA,1,100
+"Capparaceae","No recorded use",NA,1,100
+"Caprifoliaceae","Crafts",5,5,16
+"Caprifoliaceae","Food and Beverages",6,4,12
+"Caprifoliaceae","Medical Therapeutic",31,14,44
+"Caprifoliaceae","Other",11,9,28
+"Caprifoliaceae","No recorded use",NA,55,63
+"Caryophyllaceae","Crafts",2,2,7
+"Caryophyllaceae","Food and Beverages",5,4,14
+"Caryophyllaceae","Medical Therapeutic",33,14,50
+"Caryophyllaceae","Other",10,8,29
+"Caryophyllaceae","No recorded use",NA,215,88
+"Casuarinaceae","No recorded use",NA,1,100
+"Celastraceae","Crafts",2,1,20
+"Celastraceae","Food and Beverages",1,1,20
+"Celastraceae","Medical Therapeutic",6,2,40
+"Celastraceae","Other",1,1,20
+"Celastraceae","No recorded use",NA,2,29
+"Ceratophyllaceae","No recorded use",NA,2,100
+"Cistaceae","Crafts",1,1,17
+"Cistaceae","Food and Beverages",2,1,17
+"Cistaceae","Medical Therapeutic",6,2,33
+"Cistaceae","Other",3,2,33
+"Cistaceae","No recorded use",NA,32,84
+"Colchicaceae","Crafts",1,1,25
+"Colchicaceae","Medical Therapeutic",3,1,25
+"Colchicaceae","Ornamental Plants",1,1,25
+"Colchicaceae","Other",1,1,25
+"Colchicaceae","No recorded use",NA,9,69
+"Commelinaceae","No recorded use",NA,2,100
+"Convolvulaceae","Food and Beverages",1,1,14
+"Convolvulaceae","Medical Therapeutic",8,4,57
+"Convolvulaceae","Other",3,2,29
+"Convolvulaceae","No recorded use",NA,25,78
+"Coriariaceae","Crafts",1,1,33
+"Coriariaceae","Medical Therapeutic",2,1,33
+"Coriariaceae","Other",1,1,33
+"Cornaceae","Crafts",6,2,25
+"Cornaceae","Food and Beverages",4,2,25
+"Cornaceae","Medical Therapeutic",6,2,25
+"Cornaceae","Other",4,2,25
+"Cornaceae","No recorded use",NA,1,11
+"Crassulaceae","Food and Beverages",4,4,18
+"Crassulaceae","Medical Therapeutic",19,9,41
+"Crassulaceae","Other",9,9,41
+"Crassulaceae","No recorded use",NA,46,68
+"Cucurbitaceae","Medical Therapeutic",5,2,67
+"Cucurbitaceae","Other",1,1,33
+"Cucurbitaceae","No recorded use",NA,4,57
+"Cupressaceae","Crafts",7,5,31
+"Cupressaceae","Food and Beverages",4,2,12
+"Cupressaceae","Medical Therapeutic",13,5,31
+"Cupressaceae","Other",6,4,25
+"Cupressaceae","No recorded use",NA,10,38
+"Cymodoceaceae","No recorded use",NA,1,100
+"Cynomoriaceae","No recorded use",NA,1,100
+"Cyperaceae","Crafts",2,2,25
+"Cyperaceae","Food and Beverages",5,2,25
+"Cyperaceae","Medical Therapeutic",5,2,25
+"Cyperaceae","Other",4,2,25
+"Cyperaceae","No recorded use",NA,186,96
+"Cystopteridaceae","No recorded use",NA,4,100
+"Cytinaceae","No recorded use",NA,1,100
+"Dennstaedtiaceae","Cosmetics",1,1,20
+"Dennstaedtiaceae","Crafts",1,1,20
+"Dennstaedtiaceae","Food and Beverages",3,1,20
+"Dennstaedtiaceae","Medical Therapeutic",3,1,20
+"Dennstaedtiaceae","Other",2,1,20
+"Dioscoreaceae","Food and Beverages",2,1,33
+"Dioscoreaceae","Medical Therapeutic",2,1,33
+"Dioscoreaceae","Other",2,1,33
+"Dioscoreaceae","No recorded use",NA,1,25
+"Droseraceae","Medical Therapeutic",4,3,60
+"Droseraceae","Other",2,2,40
+"Dryopteridaceae","Medical Therapeutic",3,1,50
+"Dryopteridaceae","Other",2,1,50
+"Dryopteridaceae","No recorded use",NA,20,91
+"Ebenaceae","No recorded use",NA,3,100
+"Elaeagnaceae","Crafts",2,1,20
+"Elaeagnaceae","Food and Beverages",3,1,20
+"Elaeagnaceae","Medical Therapeutic",3,1,20
+"Elaeagnaceae","Ornamental Plants",1,1,20
+"Elaeagnaceae","Other",2,1,20
+"Elaeagnaceae","No recorded use",NA,3,38
+"Elatinaceae","No recorded use",NA,6,100
+"Ephedraceae","Crafts",1,1,50
+"Ephedraceae","Medical Therapeutic",2,1,50
+"Ephedraceae","No recorded use",NA,2,50
+"Equisetaceae","Crafts",3,3,21
+"Equisetaceae","Food and Beverages",2,1,7
+"Equisetaceae","Medical Therapeutic",13,6,43
+"Equisetaceae","Other",7,4,29
+"Equisetaceae","No recorded use",NA,2,12
+"Ericaceae","Cosmetics",2,2,6
+"Ericaceae","Crafts",7,5,14
+"Ericaceae","Food and Beverages",14,6,17
+"Ericaceae","Medical Therapeutic",30,11,31
+"Ericaceae","Ornamental Plants",2,2,6
+"Ericaceae","Other",11,9,26
+"Ericaceae","No recorded use",NA,26,43
+"Escalloniaceae","No recorded use",NA,1,100
+"Euphorbiaceae","Crafts",3,3,13
+"Euphorbiaceae","Food and Beverages",7,5,22
+"Euphorbiaceae","Medical Therapeutic",20,8,35
+"Euphorbiaceae","Other",8,7,30
+"Euphorbiaceae","No recorded use",NA,53,70
+"Fabaceae","Crafts",12,8,11
+"Fabaceae","Food and Beverages",20,13,19
+"Fabaceae","Medical Therapeutic",49,22,31
+"Fabaceae","Ornamental Plants",4,4,6
+"Fabaceae","Other",40,23,33
+"Fabaceae","No recorded use",NA,401,85
+"Fagaceae","Crafts",14,7,28
+"Fagaceae","Food and Beverages",12,6,24
+"Fagaceae","Medical Therapeutic",17,6,24
+"Fagaceae","Other",6,6,24
+"Fagaceae","No recorded use",NA,7,22
+"Frankeniaceae","No recorded use",NA,4,100
+"Garryaceae","No recorded use",NA,1,100
+"Gentianaceae","Cosmetics",1,1,6
+"Gentianaceae","Crafts",1,1,6
+"Gentianaceae","Food and Beverages",6,2,12
+"Gentianaceae","Medical Therapeutic",19,8,50
+"Gentianaceae","Ornamental Plants",1,1,6
+"Gentianaceae","Other",5,3,19
+"Gentianaceae","No recorded use",NA,35,69
+"Geraniaceae","Crafts",1,1,11
+"Geraniaceae","Food and Beverages",1,1,11
+"Geraniaceae","Medical Therapeutic",11,4,44
+"Geraniaceae","Other",4,3,33
+"Geraniaceae","No recorded use",NA,41,82
+"Gesneriaceae","Medical Therapeutic",1,1,50
+"Gesneriaceae","Other",1,1,50
+"Ginkgoaceae","No recorded use",NA,1,100
+"Grossulariaceae","Crafts",2,2,25
+"Grossulariaceae","Food and Beverages",4,2,25
+"Grossulariaceae","Medical Therapeutic",6,2,25
+"Grossulariaceae","Other",3,2,25
+"Grossulariaceae","No recorded use",NA,4,33
+"Haloragaceae","No recorded use",NA,5,100
+"Heliotropiaceae","Medical Therapeutic",2,1,50
+"Heliotropiaceae","Other",1,1,50
+"Heliotropiaceae","No recorded use",NA,4,67
+"Hydrangeaceae","No recorded use",NA,3,100
+"Hydrocharitaceae","No recorded use",NA,13,100
+"Hydrophyllaceae","No recorded use",NA,1,100
+"Hymenophyllaceae","No recorded use",NA,3,100
+"Hypericaceae","Crafts",1,1,11
+"Hypericaceae","Food and Beverages",3,2,22
+"Hypericaceae","Medical Therapeutic",9,4,44
+"Hypericaceae","Other",3,2,22
+"Hypericaceae","No recorded use",NA,19,68
+"Iridaceae","Crafts",2,2,29
+"Iridaceae","Food and Beverages",3,2,29
+"Iridaceae","Medical Therapeutic",5,2,29
+"Iridaceae","Other",2,1,14
+"Iridaceae","No recorded use",NA,48,87
+"Isoetaceae","No recorded use",NA,9,100
+"Juglandaceae","No recorded use",NA,3,100
+"Juncaceae","Crafts",1,1,25
+"Juncaceae","Food and Beverages",1,1,25
+"Juncaceae","Medical Therapeutic",2,1,25
+"Juncaceae","Other",1,1,25
+"Juncaceae","No recorded use",NA,51,93
+"Juncaginaceae","No recorded use",NA,4,100
+"Lamiaceae","Cosmetics",1,1,1
+"Lamiaceae","Crafts",15,15,11
+"Lamiaceae","Food and Beverages",60,34,25
+"Lamiaceae","Medical Therapeutic",129,52,38
+"Lamiaceae","Other",49,35,26
+"Lamiaceae","No recorded use",NA,118,46
+"Lardizabalaceae","No recorded use",NA,1,100
+"Lauraceae","Crafts",2,1,25
+"Lauraceae","Food and Beverages",3,1,25
+"Lauraceae","Medical Therapeutic",3,1,25
+"Lauraceae","Other",2,1,25
+"Lentibulariaceae","No recorded use",NA,17,100
+"Liliaceae","Medical Therapeutic",2,1,25
+"Liliaceae","Other",3,3,75
+"Liliaceae","No recorded use",NA,35,90
+"Linaceae","Medical Therapeutic",3,1,50
+"Linaceae","Other",1,1,50
+"Linaceae","No recorded use",NA,15,88
+"Linderniaceae","No recorded use",NA,2,100
+"Lycopodiaceae","No recorded use",NA,10,100
+"Lythraceae","Food and Beverages",1,1,33
+"Lythraceae","Medical Therapeutic",3,1,33
+"Lythraceae","Other",1,1,33
+"Lythraceae","No recorded use",NA,13,81
+"Magnoliaceae","No recorded use",NA,2,100
+"Malvaceae","Crafts",7,4,18
+"Malvaceae","Food and Beverages",13,6,27
+"Malvaceae","Medical Therapeutic",18,6,27
+"Malvaceae","Other",11,6,27
+"Malvaceae","No recorded use",NA,28,56
+"Marsileaceae","No recorded use",NA,5,100
+"Martyniaceae","No recorded use",NA,1,100
+"Melanthiaceae","Medical Therapeutic",6,2,50
+"Melanthiaceae","Other",2,2,50
+"Melanthiaceae","No recorded use",NA,1,20
+"Meliaceae","No recorded use",NA,1,100
+"Menyanthaceae","Cosmetics",1,1,25
+"Menyanthaceae","Food and Beverages",2,1,25
+"Menyanthaceae","Medical Therapeutic",4,1,25
+"Menyanthaceae","Other",1,1,25
+"Menyanthaceae","No recorded use",NA,1,20
+"Molluginaceae","No recorded use",NA,2,100
+"Montiaceae","No recorded use",NA,2,100
+"Moraceae","Crafts",1,1,25
+"Moraceae","Food and Beverages",2,1,25
+"Moraceae","Medical Therapeutic",3,1,25
+"Moraceae","Other",1,1,25
+"Moraceae","No recorded use",NA,5,56
+"Myricaceae","Crafts",1,1,25
+"Myricaceae","Food and Beverages",2,1,25
+"Myricaceae","Medical Therapeutic",2,1,25
+"Myricaceae","Other",1,1,25
+"Myrtaceae","Crafts",1,1,25
+"Myrtaceae","Food and Beverages",3,1,25
+"Myrtaceae","Medical Therapeutic",3,1,25
+"Myrtaceae","Other",1,1,25
+"Myrtaceae","No recorded use",NA,6,60
+"Namaceae","No recorded use",NA,1,100
+"Nartheciaceae","No recorded use",NA,2,100
+"Nitrariaceae","No recorded use",NA,1,100
+"Nyctaginaceae","No recorded use",NA,3,100
+"Nymphaeaceae","Crafts",1,1,12
+"Nymphaeaceae","Food and Beverages",4,3,38
+"Nymphaeaceae","Medical Therapeutic",6,3,38
+"Nymphaeaceae","Other",1,1,12
+"Oleaceae","Crafts",7,4,29
+"Oleaceae","Food and Beverages",3,2,14
+"Oleaceae","Medical Therapeutic",11,4,29
+"Oleaceae","Other",5,4,29
+"Oleaceae","No recorded use",NA,12,46
+"Onagraceae","Crafts",1,1,5
+"Onagraceae","Food and Beverages",9,6,32
+"Onagraceae","Medical Therapeutic",18,9,47
+"Onagraceae","Other",4,3,16
+"Onagraceae","No recorded use",NA,34,64
+"Onocleaceae","No recorded use",NA,1,100
+"Ophioglossaceae","No recorded use",NA,8,100
+"Orchidaceae","Food and Beverages",1,1,25
+"Orchidaceae","Medical Therapeutic",5,3,75
+"Orchidaceae","No recorded use",NA,122,97
+"Orobanchaceae","Medical Therapeutic",6,4,100
+"Orobanchaceae","No recorded use",NA,94,96
+"Osmundaceae","Crafts",1,1,25
+"Osmundaceae","Food and Beverages",1,1,25
+"Osmundaceae","Medical Therapeutic",2,1,25
+"Osmundaceae","Other",1,1,25
+"Oxalidaceae","Food and Beverages",2,1,33
+"Oxalidaceae","Medical Therapeutic",3,1,33
+"Oxalidaceae","Other",1,1,33
+"Oxalidaceae","No recorded use",NA,8,73
+"Paeoniaceae","Food and Beverages",1,1,33
+"Paeoniaceae","Medical Therapeutic",2,1,33
+"Paeoniaceae","Other",1,1,33
+"Paeoniaceae","No recorded use",NA,3,50
+"Papaveraceae","Crafts",2,2,15
+"Papaveraceae","Food and Beverages",4,3,23
+"Papaveraceae","Medical Therapeutic",13,5,38
+"Papaveraceae","Other",4,3,23
+"Papaveraceae","No recorded use",NA,35,73
+"Passifloraceae","No recorded use",NA,1,100
+"Paulowniaceae","No recorded use",NA,1,100
+"Phrymaceae","No recorded use",NA,2,100
+"Phyllanthaceae","No recorded use",NA,1,100
+"Phytolaccaceae","Crafts",1,1,25
+"Phytolaccaceae","Food and Beverages",2,1,25
+"Phytolaccaceae","Medical Therapeutic",2,1,25
+"Phytolaccaceae","Other",1,1,25
+"Phytolaccaceae","No recorded use",NA,1,20
+"Pinaceae","Crafts",25,11,25
+"Pinaceae","Food and Beverages",16,9,20
+"Pinaceae","Medical Therapeutic",26,11,25
+"Pinaceae","Ornamental Plants",3,3,7
+"Pinaceae","Other",16,10,23
+"Pinaceae","No recorded use",NA,13,23
+"Pittosporaceae","No recorded use",NA,2,100
+"Plantaginaceae","Crafts",7,7,17
+"Plantaginaceae","Food and Beverages",15,10,24
+"Plantaginaceae","Medical Therapeutic",44,17,40
+"Plantaginaceae","Other",9,8,19
+"Plantaginaceae","No recorded use",NA,108,72
+"Platanaceae","No recorded use",NA,1,100
+"Plumbaginaceae","Crafts",1,1,20
+"Plumbaginaceae","Medical Therapeutic",5,2,40
+"Plumbaginaceae","Other",2,2,40
+"Plumbaginaceae","No recorded use",NA,49,91
+"Poaceae","Crafts",6,6,17
+"Poaceae","Food and Beverages",8,5,14
+"Poaceae","Medical Therapeutic",26,10,28
+"Poaceae","Ornamental Plants",5,5,14
+"Poaceae","Other",14,10,28
+"Poaceae","No recorded use",NA,495,93
+"Polemoniaceae","No recorded use",NA,2,100
+"Polygalaceae","Food and Beverages",1,1,50
+"Polygalaceae","Medical Therapeutic",3,1,50
+"Polygalaceae","No recorded use",NA,14,88
+"Polygonaceae","Crafts",5,5,14
+"Polygonaceae","Food and Beverages",16,10,28
+"Polygonaceae","Medical Therapeutic",26,11,31
+"Polygonaceae","Other",10,10,28
+"Polygonaceae","No recorded use",NA,46,56
+"Polypodiaceae","Food and Beverages",2,1,33
+"Polypodiaceae","Medical Therapeutic",3,1,33
+"Polypodiaceae","Other",1,1,33
+"Polypodiaceae","No recorded use",NA,2,40
+"Pontederiaceae","No recorded use",NA,4,100
+"Portulacaceae","Crafts",1,1,25
+"Portulacaceae","Food and Beverages",2,1,25
+"Portulacaceae","Medical Therapeutic",3,1,25
+"Portulacaceae","Other",1,1,25
+"Posidoniaceae","No recorded use",NA,1,100
+"Potamogetonaceae","Medical Therapeutic",3,1,50
+"Potamogetonaceae","Other",1,1,50
+"Potamogetonaceae","No recorded use",NA,26,93
+"Primulaceae","Crafts",3,3,16
+"Primulaceae","Food and Beverages",4,3,16
+"Primulaceae","Medical Therapeutic",18,8,42
+"Primulaceae","Other",6,5,26
+"Primulaceae","No recorded use",NA,47,71
+"Proteaceae","No recorded use",NA,2,100
+"Pteridaceae","Food and Beverages",2,1,33
+"Pteridaceae","Medical Therapeutic",2,1,33
+"Pteridaceae","Other",2,1,33
+"Pteridaceae","No recorded use",NA,12,80
+"Ranunculaceae","Crafts",3,3,5
+"Ranunculaceae","Food and Beverages",8,6,10
+"Ranunculaceae","Medical Therapeutic",66,27,47
+"Ranunculaceae","Other",25,22,38
+"Ranunculaceae","No recorded use",NA,117,67
+"Resedaceae","Crafts",1,1,33
+"Resedaceae","Food and Beverages",1,1,33
+"Resedaceae","Medical Therapeutic",3,1,33
+"Resedaceae","No recorded use",NA,8,73
+"Rhamnaceae","Crafts",6,4,29
+"Rhamnaceae","Food and Beverages",4,2,14
+"Rhamnaceae","Medical Therapeutic",11,4,29
+"Rhamnaceae","Other",5,4,29
+"Rhamnaceae","No recorded use",NA,4,22
+"Rosaceae","Crafts",30,18,17
+"Rosaceae","Food and Beverages",55,28,26
+"Rosaceae","Medical Therapeutic",88,36,33
+"Rosaceae","Other",33,26,24
+"Rosaceae","No recorded use",NA,200,65
+"Rubiaceae","Crafts",3,3,13
+"Rubiaceae","Food and Beverages",8,5,22
+"Rubiaceae","Medical Therapeutic",25,11,48
+"Rubiaceae","Other",4,4,17
+"Rubiaceae","No recorded use",NA,66,74
+"Ruppiaceae","No recorded use",NA,2,100
+"Rutaceae","Food and Beverages",1,1,33
+"Rutaceae","Medical Therapeutic",2,1,33
+"Rutaceae","Other",1,1,33
+"Rutaceae","No recorded use",NA,8,73
+"Salicaceae","Crafts",15,6,23
+"Salicaceae","Food and Beverages",2,2,8
+"Salicaceae","Medical Therapeutic",18,7,27
+"Salicaceae","Ornamental Plants",4,4,15
+"Salicaceae","Other",8,7,27
+"Salicaceae","No recorded use",NA,30,54
+"Salviniaceae","No recorded use",NA,3,100
+"Santalaceae","No recorded use",NA,1,100
+"Sapindaceae","Crafts",4,2,25
+"Sapindaceae","Food and Beverages",2,2,25
+"Sapindaceae","Medical Therapeutic",6,2,25
+"Sapindaceae","Other",4,2,25
+"Sapindaceae","No recorded use",NA,14,64
+"Sarraceniaceae","No recorded use",NA,1,100
+"Saxifragaceae","Medical Therapeutic",2,1,100
+"Saxifragaceae","No recorded use",NA,57,98
+"Scheuchzeriaceae","No recorded use",NA,1,100
+"Scrophulariaceae","Crafts",1,1,9
+"Scrophulariaceae","Food and Beverages",1,1,9
+"Scrophulariaceae","Medical Therapeutic",14,5,45
+"Scrophulariaceae","Other",4,4,36
+"Scrophulariaceae","No recorded use",NA,25,69
+"Selaginellaceae","No recorded use",NA,4,100
+"Simaroubaceae","Crafts",2,1,25
+"Simaroubaceae","Medical Therapeutic",3,1,25
+"Simaroubaceae","Ornamental Plants",1,1,25
+"Simaroubaceae","Other",2,1,25
+"Smilacaceae","No recorded use",NA,1,100
+"Solanaceae","Crafts",3,3,12
+"Solanaceae","Food and Beverages",6,4,16
+"Solanaceae","Medical Therapeutic",22,8,32
+"Solanaceae","Ornamental Plants",3,3,12
+"Solanaceae","Other",7,7,28
+"Solanaceae","No recorded use",NA,25,50
+"Staphyleaceae","No recorded use",NA,1,100
+"Styracaceae","No recorded use",NA,1,100
+"Tamaricaceae","Crafts",2,1,20
+"Tamaricaceae","Food and Beverages",1,1,20
+"Tamaricaceae","Medical Therapeutic",3,1,20
+"Tamaricaceae","Ornamental Plants",1,1,20
+"Tamaricaceae","Other",1,1,20
+"Tamaricaceae","No recorded use",NA,4,44
+"Taxaceae","Crafts",3,1,25
+"Taxaceae","Food and Beverages",3,1,25
+"Taxaceae","Medical Therapeutic",3,1,25
+"Taxaceae","Other",1,1,25
+"Thelypteridaceae","No recorded use",NA,4,100
+"Thesiaceae","No recorded use",NA,7,100
+"Thymelaeaceae","Crafts",2,2,22
+"Thymelaeaceae","Food and Beverages",1,1,11
+"Thymelaeaceae","Medical Therapeutic",8,3,33
+"Thymelaeaceae","Other",3,3,33
+"Thymelaeaceae","No recorded use",NA,12,57
+"Tofieldiaceae","No recorded use",NA,2,100
+"Tropaeolaceae","No recorded use",NA,2,100
+"Typhaceae","Crafts",2,1,20
+"Typhaceae","Food and Beverages",2,1,20
+"Typhaceae","Medical Therapeutic",3,1,20
+"Typhaceae","Ornamental Plants",1,1,20
+"Typhaceae","Other",1,1,20
+"Typhaceae","No recorded use",NA,11,69
+"Ulmaceae","Crafts",1,1,33
+"Ulmaceae","Medical Therapeutic",2,1,33
+"Ulmaceae","Other",1,1,33
+"Ulmaceae","No recorded use",NA,2,40
+"Urticaceae","Crafts",2,1,9
+"Urticaceae","Food and Beverages",5,3,27
+"Urticaceae","Medical Therapeutic",12,4,36
+"Urticaceae","Other",5,3,27
+"Urticaceae","No recorded use",NA,6,35
+"Verbenaceae","Crafts",1,1,25
+"Verbenaceae","Food and Beverages",3,1,25
+"Verbenaceae","Medical Therapeutic",3,1,25
+"Verbenaceae","Other",2,1,25
+"Verbenaceae","No recorded use",NA,7,64
+"Viburnaceae","Crafts",9,5,26
+"Viburnaceae","Food and Beverages",8,4,21
+"Viburnaceae","Medical Therapeutic",14,5,26
+"Viburnaceae","Other",7,5,26
+"Viburnaceae","No recorded use",NA,3,14
+"Violaceae","Crafts",1,1,6
+"Violaceae","Food and Beverages",8,5,28
+"Violaceae","Medical Therapeutic",19,10,56
+"Violaceae","Other",2,2,11
+"Violaceae","No recorded use",NA,28,61
+"Viscaceae","Crafts",1,1,25
+"Viscaceae","Medical Therapeutic",4,1,25
+"Viscaceae","Ornamental Plants",1,1,25
+"Viscaceae","Other",2,1,25
+"Viscaceae","No recorded use",NA,2,33
+"Vitaceae","Crafts",1,1,25
+"Vitaceae","Food and Beverages",1,1,25
+"Vitaceae","Medical Therapeutic",1,1,25
+"Vitaceae","Other",1,1,25
+"Vitaceae","No recorded use",NA,8,67
+"Woodsiaceae","No recorded use",NA,2,100
+"Zosteraceae","No recorded use",NA,2,100
+"Zygophyllaceae","Food and Beverages",1,1,33
+"Zygophyllaceae","Medical Therapeutic",3,1,33
+"Zygophyllaceae","Other",1,1,33
+"Zygophyllaceae","No recorded use",NA,1,25

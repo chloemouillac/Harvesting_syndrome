@@ -1,7 +1,8 @@
 # This script is to calculate the coverage (in %) of each species within each French département.
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/2_Distribution/")
+directory <- here::here("2_Distribution")
+setwd(directory)
 
 # Load packages :
 library(data.table)

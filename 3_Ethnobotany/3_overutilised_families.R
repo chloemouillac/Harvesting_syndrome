@@ -3,7 +3,8 @@
 # using Chi-squared analysis and focusing on families with more than 10 harvested species
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/3_Ethnobotany/")
+directory <- here::here("3_Ethnobotany")
+setwd(directory)
 
 
 # Import packages :
@@ -14,7 +15,8 @@ library(here)
 #### Import data ####
 data <- read.csv("Harvesting_syndrome/1_Phylogeny/processed_data/tip_data_for_tree.csv") %>%
   select(FAMILLE,number_harvested,total_sp)
-
+data <- read.csv("/home/mouillac/Documents/submission/Code/Harvesting_syndrome/1_Phylogeny/processed_data/tip_data_for_tree.csv") %>%
+  select(FAMILLE,number_harvested,total_sp)
 
 ####  Filter families with more than 10 harvested species #### 
 filtered_data <- data %>%
@@ -53,4 +55,4 @@ print(over_harvested)
 
 
 ### Export data ###
-write.csv(filtered_data, "processed_data/overutilised_families.csv")
+write.csv(filtered_data, "processed_data/overutilised_families.csv",row.names=F)

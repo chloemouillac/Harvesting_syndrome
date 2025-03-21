@@ -1,7 +1,8 @@
 # This script is to produce graphs illustrating the conservation status of wild-harvested plants.
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/5_Conservation_status/")
+directory <- here::here("5_Conservation_status")
+setwd(directory)
 
 # Import packages :
 library(ggplot2)

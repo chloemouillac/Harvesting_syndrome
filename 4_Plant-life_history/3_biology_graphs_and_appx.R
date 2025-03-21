@@ -2,7 +2,8 @@
 
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/4_Plant-life_history/")
+directory <- here::here("4_Plant-life_history")
+setwd(directory)
 
 # Import packages :
 library(dplyr)
@@ -14,7 +15,7 @@ library(ggpubr)
 
 
 #### Import data ####
-list_species_WHP <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/0_List_vascular_flora/processed_data/corresp_vascular_2018_&_taxrefv17.csv")
+list_species_WHP <- read.csv("Harvesting_syndrome/0_List_vascular_flora/processed_data/corresp_vascular_2018_&_taxrefv17.csv")
 
 CSR_data_WHP <- read.csv("processed_data/StrateFy_CSR_clean_output_WHP.csv") 
   

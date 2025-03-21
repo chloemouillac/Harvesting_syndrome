@@ -1,7 +1,8 @@
 # This script is to establish the list of species needed to build the phylogenetic tree.
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/1_Phylogeny/")
+directory <- here::here("1_Phylogeny")
+setwd(directory)
 
 # Import packages :
 library(dplyr)
@@ -14,7 +15,7 @@ library(V.PhyloMaker2)
 
 #### Import data ####
 # Import list of french vascular flora :
-vascular_list <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/list_vascular_v17.csv")
+vascular_list <- read.csv("Harvesting_syndrome/list_vascular_v17.csv")
 
 
 #### Create list of species to submit to Phylomaker ####

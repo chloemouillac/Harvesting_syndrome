@@ -1,7 +1,8 @@
 # This script is to produce graphs illustrating the uses and harvested parts of wild-harvested plants.
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/3_Ethnobotany/")
+directory <- here::here("3_Ethnobotany")
+setwd(directory)
 
 # Import packages :
 library(ggplot2)
@@ -38,7 +39,9 @@ names(parts) <- c("CD_REF","NOM_VALIDE", "PART")
 
 
 # Import list of french vascular flora :
-vascular_list <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/list_vascular_v17.csv" )%>%
+vascular_list <- read.csv("Harvesting_syndrome/list_vascular_v17.csv" )%>%
+  subset(select=c("CD_REF", "FAMILLE", "LB_NOM"))
+vascular_list <- read.csv("/home/mouillac/Documents/submission/Code/Harvesting_syndrome/list_vascular_v17.csv" )%>%
   subset(select=c("CD_REF", "FAMILLE", "LB_NOM"))
 
 
@@ -74,6 +77,7 @@ for (fam in unique(join_uses_vascular_summar$FAMILLE)) {
     }
   }
 }
+join_uses_vascular_summar$percentage <- 100*round(join_uses_vascular_summar$percentage, 2)
 
 # Export :
 write.csv(join_uses_vascular_summar, "processed_data/uses_percentages.csv", row.names=F)
@@ -82,71 +86,47 @@ write.csv(join_uses_vascular_summar, "processed_data/uses_percentages.csv", row.
 
 #### 10 families - End-uses of the most harvested plant families plot #####
 # 10 most harvested plant families :
-most_harv <-  c("Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Boraginaceae", "Ericaceae", "Pinaceae", "Violaceae", "Polygonaceae", "Asparagaceae", "Crassulaceae")
-most_harv <- factor(most_harv, levels= c("Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Boraginaceae", "Ericaceae", "Pinaceae", "Violaceae", "Polygonaceae", "Asparagaceae", "Crassulaceae"))
+most_harv <-  c("Lamiaceae", "Rosaceae", "Ranunculaceae", "Boraginaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Crassulaceae","Pinaceae", "Polygonaceae")
+most_harv <- factor(most_harv, levels= c("Lamiaceae", "Rosaceae", "Ranunculaceae", "Boraginaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Crassulaceae","Pinaceae", "Polygonaceae"))
 # Ordered by highest number of WHP species to lowest, and when equal number, the highest percentage of WHP goes first
 
 
-
 #### First plot : nb of sp on VS not on list ####
-# Calculate percentage of species on and not on list : 
-pct_on_harv_list <- join_uses_vascular
-pct_on_harv_list$list[pct_on_harv_list$USE=="No recorded use"] <- "No"
-pct_on_harv_list$list[pct_on_harv_list$USE!="No recorded use"] <- "Yes" #On commercial harvesting lists
-pct_on_harv_list <- pct_on_harv_list %>%
-  select(LB_NOM, list, FAMILLE) %>%
-  unique() %>%
-  group_by(FAMILLE, list) %>%
-  summarise(n=n()) %>%
-  na.omit()
+# Get the percentage of harvested species : 
+pct_on_harv_list <- read.csv("Harvesting_syndrome/1_Phylogeny/processed_data/tip_data_for_tree.csv")
+pct_on_harv_list <- read.csv("/home/mouillac/Documents/submission/Code/Harvesting_syndrome/1_Phylogeny/processed_data/tip_data_for_tree.csv")
+pct_on_harv_list_10fam <- pct_on_harv_list %>%
+  subset(FAMILLE %in% most_harv)
 
+# Get the total percentage of harvested species
+ALL_list <- data.frame(FAMILLE="ALL",
+                         number_harvested=sum(pct_on_harv_list$number_harvested),
+                         total_sp= sum(pct_on_harv_list$total_sp),
+                         percentage_harvested= round(100*
+                           sum(pct_on_harv_list$number_harvested)/
+                           sum(pct_on_harv_list$total_sp),1))
 
-for (i in unique(pct_on_harv_list$FAMILLE)) {
-  pct_on_harv_list$percentage[pct_on_harv_list$FAMILLE==i & 
-                                pct_on_harv_list$list=="Yes"] <- 100*
-    pct_on_harv_list$n[pct_on_harv_list$FAMILLE==i & pct_on_harv_list$list=="Yes"]/
-    sum(pct_on_harv_list$n[pct_on_harv_list$FAMILLE==i])
-  
-  pct_on_harv_list$percentage[pct_on_harv_list$FAMILLE==i & 
-                                pct_on_harv_list$list=="No"] <- 100*
-    pct_on_harv_list$n[pct_on_harv_list$FAMILLE==i & pct_on_harv_list$list=="No"]/
-    sum(pct_on_harv_list$n[pct_on_harv_list$FAMILLE==i])
-}
-
-
-pct_on_harv_list_10fam <- pct_on_harv_list[pct_on_harv_list$FAMILLE %in% most_harv,]
-
-# Calculate the mean % of each family which is on the commercial list
-ALL_list <- pct_on_harv_list %>%
-  group_by(list) %>%
-  summarise(n=sum(n))
-
-ALL_list$percentage <- 100*ALL_list$n/sum(ALL_list$n)
-
-ALL_list$FAMILLE <- "ALL"
 
 pct_on_harv_list_10fam <- rbind(pct_on_harv_list_10fam, ALL_list)
-pct_on_harv_list_10fam$percentage <- round(pct_on_harv_list_10fam$percentage, 1)
+pct_on_harv_list_10fam$percentage_harvested <- round(pct_on_harv_list_10fam$percentage_harvested, 1)
 
-pct_on_harv_list_10fam$FAMILLE <- factor(pct_on_harv_list_10fam$FAMILLE, c("ALL", "Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Boraginaceae", "Ericaceae", "Pinaceae", "Violaceae", "Polygonaceae", "Asparagaceae", "Crassulaceae"))
+pct_on_harv_list_10fam$FAMILLE <- factor(pct_on_harv_list_10fam$FAMILLE, c("ALL", "Lamiaceae", "Rosaceae", "Ranunculaceae", "Boraginaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Crassulaceae","Pinaceae", "Polygonaceae"))
 
 
 
 # Plot :
-plot1 <- ggplot(pct_on_harv_list_10fam[pct_on_harv_list_10fam$list=="Yes"&
-                                         pct_on_harv_list_10fam$FAMILLE!="ALL",], aes(x=FAMILLE,
-                                                                                      y=percentage, width=0.7)) +
+plot1 <- ggplot(pct_on_harv_list_10fam[pct_on_harv_list_10fam$FAMILLE!="ALL",], aes(x=FAMILLE,
+                                                                                      y=percentage_harvested, width=0.7)) +
   geom_col(fill="grey60") +
   
   scale_y_continuous(breaks = seq(0,40,10), limits = c(0, 48),
                      labels= seq(0,40,10)) +
   
-  geom_hline(yintercept=pct_on_harv_list_10fam$percentage[pct_on_harv_list_10fam$list=="Yes" &
-                                                            pct_on_harv_list_10fam$FAMILLE=="ALL"],
+  geom_hline(yintercept=pct_on_harv_list_10fam$percentage_harvested[pct_on_harv_list_10fam$FAMILLE=="ALL"],
              colour="black") +
   
   annotate("text", x = 0.5,
-                y = 2 + pct_on_harv_list_10fam$percentage[pct_on_harv_list_10fam$list=="Yes" &
+                y = 2 + pct_on_harv_list_10fam$percentage_harvested[pct_on_harv_list_10fam$list=="Yes" &
                                                             pct_on_harv_list_10fam$FAMILLE=="ALL"],
             label =  "Average %",  size = 6, hjust=0) +
   
@@ -178,7 +158,7 @@ uses_per_fam <- rbind(uses_per_fam, ALL)
 #
 
 uses_per_fam$percentage <- round(uses_per_fam$percentage,3)*100
-uses_per_fam$FAMILLE <- factor(uses_per_fam$FAMILLE, levels= c("ALL", "Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Boraginaceae", "Ericaceae", "Pinaceae", "Violaceae", "Polygonaceae", "Asparagaceae", "Crassulaceae"))
+uses_per_fam$FAMILLE <- factor(uses_per_fam$FAMILLE, levels= c("ALL", "Lamiaceae", "Rosaceae", "Ranunculaceae", "Boraginaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Crassulaceae","Pinaceae", "Polygonaceae"))
 
 uses_per_fam$USE <- as.character(uses_per_fam$USE)
 uses_per_fam$USE <- gsub("\\.", " ", uses_per_fam$USE)
@@ -221,8 +201,7 @@ uses_per_fam_simpl$jitter[uses_per_fam_simpl$USE=="Crafts"] <- -0.12
 # Add a column with total number of harvested species / family
 for (fam in levels(uses_per_fam_simpl$FAMILLE)) {
   uses_per_fam_simpl$total_sp[uses_per_fam_simpl$FAMILLE==fam] <- 
-    pct_on_harv_list_10fam$n[pct_on_harv_list_10fam$FAMILLE==fam &
-                                   pct_on_harv_list_10fam$list=="Yes"]
+    pct_on_harv_list_10fam$number_harvested[pct_on_harv_list_10fam$FAMILLE==fam]
 }
 
 # Reorder for plotting :
@@ -336,7 +315,7 @@ summar_parts <- parts %>%
 
 #### Create a tripartite network ####
 # Import Raunkiaer data :
-raunkiear <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/4_Plant-life_history/processed_data/Raunkieaer_data_REVIEWED_WHP.csv") %>%
+raunkiear <- read.csv("Harvesting_syndrome/4_Plant-life_history/processed_data/Raunkieaer_data_REVIEWED_WHP.csv") %>%
   subset(select=c(CD_REF, NOM_VALIDE, choix_type_bio))%>%
   unique()
 

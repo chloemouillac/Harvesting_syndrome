@@ -5,7 +5,8 @@
 
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/3_Ethnobotany/")
+directory <- here::here("3_Ethnobotany")
+setwd(directory)
 
 # Import packages :
 library(reshape2)

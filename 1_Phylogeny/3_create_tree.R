@@ -1,7 +1,8 @@
 # This script is to plot the phylogenetic tree using ggtree.
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/1_Phylogeny/")
+directory <- here::here("1_Phylogeny")
+setwd(directory)
 
 # Import packages :
 # If ggtree and ggtreeExtra aren't yet installed, run :

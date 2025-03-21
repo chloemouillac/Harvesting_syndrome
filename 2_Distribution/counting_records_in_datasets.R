@@ -1,4 +1,5 @@
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/2_Distribution/")
+directory <- here::here("2_Distribution")
+setwd(directory)
 
 d1 <- read.csv("processed_data/OpenObs_10km.csv")
 library(dplyr)

@@ -3,7 +3,8 @@
 
 
 # Set working directory :
-setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/5_Conservation_status/")
+directory <- here::here("5_Conservation_status")
+setwd(directory)
 
 # Import packages :
 library(dplyr)
@@ -14,10 +15,10 @@ library(reshape2)
 
 #### Import data ####
 # Import the status database :
-BDC_STATUTS_17 <- read_csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/BDC-Statuts-v17/BDC_STATUTS_17.csv")
+BDC_STATUTS_17 <- read_csv("Harvesting_syndrome/BDC-Statuts-v17/BDC_STATUTS_17.csv")
 
 # Import the list of species for which the data needs to be extracted :
-list_species <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/list_vascular_v17.csv")
+list_species <- read.csv("Harvesting_syndrome/list_vascular_v17.csv")
 
 
 
