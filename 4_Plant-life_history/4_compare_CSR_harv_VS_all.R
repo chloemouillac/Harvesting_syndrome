@@ -2,15 +2,16 @@
 
 
 # Set working directory :
-setwd("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/4_Plant-life_history/")
+setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/4_Plant-life_history/")
 
 # Import packages :
 library(dplyr)
+library(here)
 library(ggplot2)
 
 
 # Import data :
-list_species <- read.csv("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/WHP_correpondence_table_v17.csv")
+list_species <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/WHP_correpondence_table_v17.csv")
 
 CSR_data_WHP <- read.csv("processed_data/StrateFy_CSR_clean_output_WHP.csv") %>%
   na.omit() %>%

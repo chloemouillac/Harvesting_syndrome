@@ -2,17 +2,18 @@
 # to then extract the associated trait data from TRY
 
 # Set working directory :
-setwd("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/4_Plant-life_history/")
+setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/4_Plant-life_history/")
 
 # Import packages :
 library(dplyr)
+library(here)
 library(reshape2)
 library(stringr)
 
 
 #### Import data ####
 # List of french species from vascular flora :
-vascular_list <- read.csv("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/list_vascular_v17.csv" )
+vascular_list <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/list_vascular_v17.csv" )
 
 # TRY species and IDs :
 list_TRY_ID <- read.delim("raw_data/TRY/TryAccSpecies.txt") %>%
@@ -23,7 +24,7 @@ list_TRY_ID <- read.delim("raw_data/TRY/TryAccSpecies.txt") %>%
 join <- inner_join(list_TRY_ID, vascular_list, by=join_by("AccSpeciesName"=="LB_NOM")) #about 1100 species missing
 
 # Specifically add the Acc_Species_IDs for harvested plants :
-WHP <- read.csv("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/WHP_correpondence_table_v17.csv") %>%
+WHP <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/WHP_correpondence_table_v17.csv") %>%
   subset(!is.na(AccSpeciesID), select=c(CD_REF, AccSpeciesID)) %>%
   unique() %>%
   left_join(list_TRY_ID) %>% # to add AccSpeciesName

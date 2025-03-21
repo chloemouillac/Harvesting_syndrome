@@ -4,10 +4,11 @@
 
 
 # Set working directory :
-setwd("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/2_Distribution/")
+setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/2_Distribution/")
 
 # Import packages :
 library(dplyr)
+library(here)
 library(reshape2)
 library(stringr)
 library(readr)

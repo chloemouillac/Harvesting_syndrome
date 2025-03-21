@@ -1,11 +1,12 @@
 # This script is to marge GBIF and OpenObs data into one database.
 
 # Set working directory :
-setwd("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/2_Distribution/")
+setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/2_Distribution/")
 
 # Load packages :
 library(data.table)
 library(dplyr)
+library(here)
 library(terra)
 
 

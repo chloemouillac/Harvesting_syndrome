@@ -3,11 +3,12 @@
 
 
 # Set working directory :
-setwd("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/2_Distribution/")
+setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/2_Distribution/")
 
 # Import packages :
 library(terra)
 library(dplyr)
+library(here)
 library(stringr)
 library(sf)
 
@@ -29,7 +30,7 @@ departements <- read_sf("raw_data/departements_FR.shp") %>%
   st_sf() #convert to sf object
 
 # List of harvested species :
-list_species <- read.csv("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/WHP_correpondence_table_v17.csv") %>%
+list_species <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/WHP_correpondence_table_v17.csv") %>%
   subset(select=CD_REF)
 
 list_species$harvested <- "harvested"

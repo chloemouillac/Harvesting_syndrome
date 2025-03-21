@@ -1,12 +1,13 @@
 # This script is to download data from GBIF and clean it.
 
 # Set working directory :
-setwd("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/2_Distribution/")
+setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/2_Distribution/")
 
 # Load packages :
 library(rgbif)
 library(data.table)
 library(dplyr)
+library(here)
 library(CoordinateCleaner)
 library(countrycode)
 library(rnaturalearthdata)
@@ -16,7 +17,7 @@ library(terra)
 
 #### Import data ####
 # Import species list :
-list_species <- read.csv("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/all_sp_corresp_codes.csv") %>%
+list_species <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/all_sp_corresp_codes.csv") %>%
   subset(Regroupement!="Algue rouge" & 
            Regroupement!="Algue brune" & 
            Regroupement!="Lichens" &

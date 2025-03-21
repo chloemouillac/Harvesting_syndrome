@@ -1,7 +1,7 @@
 # This script is to plot the phylogenetic tree using ggtree.
 
 # Set working directory :
-setwd("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/1_Phylogeny/")
+setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/1_Phylogeny/")
 
 # Import packages :
 # If ggtree and ggtreeExtra aren't yet installed, run :
@@ -14,6 +14,7 @@ library(ggtreeExtra)
 library(ggplot2)
 library(V.PhyloMaker2)
 library(dplyr)
+library(here)
 library(reshape2)
 library(ggstar)
 library(ggnewscale)

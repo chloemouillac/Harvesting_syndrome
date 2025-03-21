@@ -5,11 +5,12 @@
 
 
 # Set working directory :
-setwd("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/3_Ethnobotany/")
+setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/3_Ethnobotany/")
 
 # Import packages :
 library(reshape2)
 library(dplyr)
+library(here)
 library(tidyr)
 
 

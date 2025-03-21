@@ -1,7 +1,7 @@
 # This script is to produce graphs illustrating the uses and harvested parts of wild-harvested plants.
 
 # Set working directory :
-setwd("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/3_Ethnobotany/")
+setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/3_Ethnobotany/")
 
 # Import packages :
 library(ggplot2)
@@ -10,6 +10,7 @@ library(ggnewscale)
 library(ggsankey)
 library(reshape2)
 library(dplyr)
+library(here)
 library(ggrepel)
 library(stringr)
 
@@ -37,7 +38,7 @@ names(parts) <- c("CD_REF","NOM_VALIDE", "PART")
 
 
 # Import list of french vascular flora :
-vascular_list <- read.csv("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/list_vascular_v17.csv" )%>%
+vascular_list <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/list_vascular_v17.csv" )%>%
   subset(select=c("CD_REF", "FAMILLE", "LB_NOM"))
 
 
@@ -335,7 +336,7 @@ summar_parts <- parts %>%
 
 #### Create a tripartite network ####
 # Import Raunkiaer data :
-raunkiear <- read.csv("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/4_Plant-life_history/processed_data/Raunkieaer_data_REVIEWED_WHP.csv") %>%
+raunkiear <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/4_Plant-life_history/processed_data/Raunkieaer_data_REVIEWED_WHP.csv") %>%
   subset(select=c(CD_REF, NOM_VALIDE, choix_type_bio))%>%
   unique()
 

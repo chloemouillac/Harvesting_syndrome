@@ -3,11 +3,12 @@
 
 
 # Set working directory :
-setwd("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/1_Phylogeny/")
+setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/1_Phylogeny/")
 
 # Import packages :
 library(V.PhyloMaker2)
 library(dplyr)
+library(here)
 
 #### Import data ####
 # List with ALL of the species in the vascular flora, formated for phylomaker

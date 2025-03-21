@@ -2,17 +2,18 @@
 
 
 # Set working directory :
-setwd("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/4_Plant-life_history/")
+setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/4_Plant-life_history/")
 
 # Import packages
 library(dplyr)
+library(here)
 library(stringr)
 
 
 #### Import data ####
 # Import species list and associated codes :
 list_species <- read.csv("raw_data/selected_species.csv") #list of selected species only
-# list_species <- read.csv("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/list_vascular_v17.csv") #all vascular flora
+# list_species <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/list_vascular_v17.csv") #all vascular flora
 
 # Import Baseflor :
 baseflor <- read.csv("raw_data/BaseFlor/baseflor.csv") %>%

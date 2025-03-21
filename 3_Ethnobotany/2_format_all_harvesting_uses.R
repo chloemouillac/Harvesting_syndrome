@@ -1,11 +1,12 @@
 # This script is to format and group all of the uses collected from different databases into 1 typology.
 
 # Set working directory :
-setwd("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/3_Ethnobotany/")
+setwd("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/3_Ethnobotany/")
 
 # Import packages :
 library(reshape2)
 library(dplyr)
+library(here)
 library(tidyr)
 
 
@@ -27,7 +28,7 @@ corresp <- read.csv("raw_data/uses_correspondences.csv") %>%
   select(c(USE, SELECTED_TYPOLOGY_ENG))
 
 # Import species list :
-list_species <- read.csv("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/WHP_correpondence_table_v17.csv") %>%
+list_species <- read.csv("Harvesting_syndrome/1-Bilan_cueillette/R/Paper_WHP/WHP_correpondence_table_v17.csv") %>%
   subset(Regroupement %in% c("Angiospermes", "Fougères", "Gymnospermes"), 
          select=c(CD_REF, NOM_VALIDE)) %>%
   unique()
