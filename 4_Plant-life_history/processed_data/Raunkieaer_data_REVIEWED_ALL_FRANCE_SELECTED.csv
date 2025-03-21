@@ -1,0 +1,722 @@
+CD_REF,species_unique,LB_NOM,TYPE_BIO_baseflor,FORMATION_baseflor,TYPE_BIO_cbnmed,choix_type_bio,comm_type_bio
+79684,1,Abutilon theophrasti,test,thérophytaie,Thérophyte,thérophyte,OK
+79734,1,Acer campestre,a-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+79783,1,Acer pseudoplatanus,A-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+80007,1,Aconitum anthora,Heri,hémicryptophytaie,Géophyte à tubercule,géophyte,cohérence FG FM
+80322,1,Aegopodium podagraria,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+80350,1,Aethionema saxatile,hros,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+80410,1,Agrimonia eupatoria,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+80546,1,Agrostemma githago,Test,thérophytaie,Thérophyte,thérophyte,OK
+80564,1,Agrostis alpina,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+80759,1,Agrostis stolonifera,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+80759,0,Agrostis stolonifera,hsto-aqua,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+80978,1,Ajuga chamaepitys,test,thérophytaie,Thérophyte,thérophyte,OK
+447347,1,Albizia julibrissin,NA,NA,Phanérophyte,phanérophyte,OK
+81091,1,Alchemilla glaucescens,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+717722,1,Alchemilla subglobosa,NA,NA,NA,NA,OK
+81260,1,Alisma gramineum,hces-aqua,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+81260,0,Alisma gramineum,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+81287,1,Alkanna matthioli,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+81316,1,Allium angulosum,gbul,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+81336,1,Allium carinatum,gbul,hémicryptophytaie,Géophyte à bulbe,géophyte,OK
+81376,1,Allium flavum,gbul,hémicryptophytaie,Géophyte à bulbe,géophyte,OK
+81510,1,Allium scorodoprasum,gbul,géophytaie,Géophyte,géophyte,OK
+81510,0,Allium scorodoprasum,gbul,géophytaie,Géophyte à bulbe,géophyte,OK
+81541,1,Allium ursinum,gbul,hémicryptophytaie,Géophyte,géophyte,OK
+81541,0,Allium ursinum,gbul,hémicryptophytaie,Géophyte à bulbe,géophyte,OK
+81570,1,Alnus incana,a-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+81637,1,Alopecurus geniculatus,hsto(test),hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+81648,1,Alopecurus myosuroides,test,thérophytaie,Thérophyte,thérophyte,OK
+81656,1,Alopecurus pratensis,Hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+81831,1,Alternanthera philoxeroides,Grhi-aqua,hémicryptophytaie,Hydrophyte enraciné,hydrophyte,
+81966,1,Amaranthus blitum,test,thérophytaie,Thérophyte,thérophyte,OK
+81976,1,Amaranthus cruentus,NA,NA,Thérophyte,thérophyte,OK
+81992,1,Amaranthus hybridus,Test,thérophytaie,Thérophyte,thérophyte,OK
+610847,1,Ambrosia psilostachya,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+82120,1,Ammannia coccinea,test,thérophytaie,Thérophyte,thérophyte,OK
+82282,1,Anacamptis coriophora,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+82288,1,Anacamptis pyramidalis,gtub,hémicryptophytaie,Géophyte,géophyte,OK
+82288,0,Anacamptis pyramidalis,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+82356,1,Anarrhinum bellidifolium,hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+82420,1,Andromeda polifolia,cfru-semp,parvochaméphytaie,Chaméphyte,chaméphyte,OK
+82478,1,Androsace alpina,ccou,hémicryptophytaie,Chaméphyte,chaméphyte,
+82509,1,Androsace lactea,hces,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+82519,1,Androsace obtusifolia,hces,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+82545,1,Androsace vitaliana,ccou,hémicryptophytaie,Chaméphyte,chaméphyte,
+82571,1,Andryala ragusina,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+82794,1,Antennaria carpatica,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+82903,0,Anthericum liliago,hces,hémicryptophytaie,Géophyte,géophyte,
+82903,1,Anthericum liliago,hces,hémicryptophytaie,Géophyte à rhizome,géophyte,
+82909,1,Anthericum ramosum,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+82916,1,Anthoxanthum aristatum,test,thérophytaie,Thérophyte,thérophyte,OK
+82922,1,Anthoxanthum odoratum,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+82931,1,Anthriscus caucalis,tver,thérophytaie,Thérophyte,thérophyte,OK
+82965,1,Anthyllis barba-jovis,Cfru,magnochaméphytaie,Nanophanérophyte,chaméphyte,
+82965,0,Anthyllis barba-jovis,Cfru,magnochaméphytaie,Phanérophyte,chaméphyte,
+83159,1,Aphanes arvensis,test,thérophytaie,Thérophyte,thérophyte,OK
+83234,1,Aposeris foetida,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+610746,1,Arabidopsis arenosa,hbis(hros),hémicryptophytaie,NA,hémicryptophyte,OK
+83279,0,Arabis alpina,hces,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+83279,1,Arabis alpina,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+83502,1,Arctium minus,Hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+83503,1,Arctium nemorosum,Hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+83507,1,Arctium tomentosum,Hbis,hémicryptophytaie,NA,hémicryptophyte,OK
+83722,1,Argyrolobium zanonii,csuf,hémicryptophytaie,Chaméphyte,chaméphyte,
+83789,1,Aristolochia pallida,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+83808,1,Armeria alpina,hces,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+83832,1,Armeria maritima,hces,hémicryptophytaie,NA,hémicryptophyte,OK
+83874,1,Arnica montana,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+83890,1,Arnoseris minima,test,thérophytaie,Thérophyte,thérophyte,OK
+83953,1,Artemisia campestris,grhi,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+84021,1,Artemisia pontica,NA,NA,Chaméphyte,chaméphyte,OK
+84057,1,Artemisia verlotiorum,Hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+84061,1,Artemisia vulgaris,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+84251,1,Asclepias syriaca,Heri,hémicryptophytaie,Géophyte,hémicryptophyte,FG nph
+84251,0,Asclepias syriaca,Heri,hémicryptophytaie,Géophyte,hémicryptophyte,OK
+84251,0,Asclepias syriaca,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+84264,0,Asparagus acutifolius,b-lia,nanophanérophytaie,Géophyte à rhizome,phanérophyte,OK
+84264,1,Asparagus acutifolius,b-lia,nanophanérophytaie,Phanérophyte,phanérophyte,OK
+84296,1,Asperula aristata,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+84297,1,Asperula arvensis,tver,thérophytaie,Thérophyte,thérophyte,OK
+84319,1,Asperula purpurea,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+84338,1,Asphodelus albus,Gtub,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+84355,1,Asphodelus fistulosus,tver(hces),thérophytaie,Thérophyte,thérophyte,OK
+84472,1,Asplenium ceterach,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+84540,1,Asplenium viride,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+84846,1,Astragalus hamosus,tver,thérophytaie,Thérophyte,thérophyte,OK
+84904,1,Astragalus stella,tver,thérophytaie,Thérophyte,thérophyte,OK
+84999,1,Athyrium filix-femina,Hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+85023,1,Atractylis humilis,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+85079,1,Atriplex laciniata,test,thérophytaie,Thérophyte,thérophyte,OK
+85102,1,Atriplex patula,test,thérophytaie,Thérophyte,thérophyte,OK
+85374,1,Avena sterilis,test,thérophytaie,Thérophyte,thérophyte,OK
+85378,1,Avena strigosa,test,thérophytaie,Thérophyte,thérophyte,OK
+85536,1,Barbarea intermedia,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+85602,1,Bartsia alpina,hsto-hpar,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+85728,1,Bellis annua,tver,thérophytaie,Thérophyte,thérophyte,OK
+85740,1,Bellis perennis,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+85774,1,Berberis vulgaris,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+85949,1,Bidens connata,test,thérophytaie,Thérophyte,thérophyte,OK
+85957,1,Bidens frondosa,Test,thérophytaie,Thérophyte,thérophyte,OK
+85972,1,Bidens pilosa,test,thérophytaie,Thérophyte,thérophyte,OK
+85978,1,Bidens radiata,test,thérophytaie,Thérophyte,thérophyte,OK
+85997,1,Bifora radians,test,thérophytaie,Thérophyte,thérophyte,OK
+86081,1,Bistorta officinalis,Heri(Grhi),hémicryptophytaie,Géophyte à rhizome,géophyte,cohérence FG FM
+86082,1,Bistorta vivipara,gtub,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+86083,1,Bituminaria bituminosa,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+86084,1,Blackstonia acuminata,test,thérophytaie,Thérophyte,thérophyte,OK
+86087,1,Blackstonia perfoliata,test,thérophytaie,Thérophyte,thérophyte,OK
+86124,1,Blysmus compressus,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+86156,1,Borago officinalis,test,thérophytaie,Thérophyte,thérophyte,OK
+86262,1,Brachypodium distachyon,test,thérophytaie,Thérophyte,thérophyte,OK
+86289,1,Brachypodium pinnatum,hsto,hémicryptophytaie,NA,hémicryptophyte,OK
+86297,1,Brachypodium retusum,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+86406,1,Brassica oleracea,Hbis(Heri),hémicryptophytaie,Chaméphyte,hémicryptophyte,
+86490,1,Briza media,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+86537,1,Bromus arvensis,Test,thérophytaie,Thérophyte,thérophyte,OK
+86571,1,Bromus commutatus,Test,thérophytaie,Thérophyte,thérophyte,OK
+86634,1,Bromus hordeaceus,tver,thérophytaie,Thérophyte,thérophyte,OK
+610662,1,Buglossoides incrassata,test,thérophytaie,NA,thérophyte,OK
+86983,1,Bunium bulbocastanum,gtub,géophytaie,Géophyte à tubercule,géophyte,OK
+87009,1,Buphthalmum salicifolium,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+87093,1,Bupleurum rigidum,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+87212,1,Calamagrostis arundinacea,Hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+87607,1,Campanula barbata,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+87613,1,Campanula bononiensis,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+87636,1,Campanula erinus,test,thérophytaie,Thérophyte,thérophyte,OK
+87690,1,Campanula patula,hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+87720,1,Campanula rotundifolia,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+87742,1,Campanula trachelium,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+87925,1,Cardamine heptaphylla,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+87930,1,Cardamine hirsuta,tver,thérophytaie,Thérophyte,thérophyte,OK
+87933,0,Cardamine impatiens,test,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+87933,1,Cardamine impatiens,test,hémicryptophytaie,Thérophyte,thérophyte,
+87964,1,Cardamine pratensis,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+88059,1,Carduus acanthoides,Hbis,hémicryptophytaie,NA,hémicryptophyte,OK
+88349,1,Carex arenaria,grhi,hémicryptophytaie,NA,hémicryptophyte,OK
+88400,1,Carex brunnescens,hces,hémicryptophytaie,NA,hémicryptophyte,OK
+88453,1,Carex curvula,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+771637,1,Carex demissa,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+88502,1,Carex extensa,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+88560,1,Carex halleriana,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+88582,1,Carex humilis,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+88637,1,Carex liparocarpos,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+88693,1,Carex mucronata,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+88741,1,Carex otrubae,Hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+88775,1,Carex pilulifera,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+88819,1,Carex remota,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+88833,1,Carex riparia,Grhi,hémicryptophytaie,Hélophyte,hélophyte,
+88833,0,Carex riparia,Grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+88916,1,Carex tomentosa,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+88932,1,Carex vaginata,grhi,hémicryptophytaie,NA,hémicryptophyte,OK
+88949,1,Carex viridula,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+89330,1,Catananche caerulea,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+89468,1,Celtis australis,A-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+89619,1,Centaurea jacea,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+89716,1,Centaurea stoebe,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+89845,1,Centaurium littorale,test(hbis),thérophytaie,NA,thérophyte,OK
+89888,1,Centranthus ruber,heri,hémicryptophytaie,Chaméphyte,hémicryptophyte,?
+89940,1,Cephalaria leucantha,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+89979,1,Cerastium brachypetalum,tver,thérophytaie,Thérophyte,thérophyte,OK
+90076,1,Cerastium pumilum,tver,thérophytaie,Thérophyte,thérophyte,OK
+90180,1,Ceratocephala falcata,tver,thérophytaie,Thérophyte,thérophyte,OK
+90483,1,Chamaenerion angustifolium,Heri,hémicryptophytaie,Géophyte à rhizome,hémicryptophyte,suit FG 
+90724,1,Chenopodium ficifolium,test,thérophytaie,Thérophyte,thérophyte,OK
+91118,1,Chrysosplenium alternifolium,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+91120,1,Chrysosplenium oppositifolium,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+91169,0,Cichorium intybus,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+91169,1,Cichorium intybus,Heri,hémicryptophytaie,Thérophyte,hémicryptophyte,?
+91169,0,Cichorium intybus,Heri,hémicryptophytaie,Thérophyte,hémicryptophyte,OK
+91256,1,Circaea alpina,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+91289,1,Cirsium arvense,Grhi,hémicryptophytaie,Géophyte,géophyte,OK
+91289,0,Cirsium arvense,Grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+91322,1,Cirsium dissectum,heri,hémicryptophytaie,NA,hémicryptophyte,OK
+91378,1,Cirsium oleraceum,Hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+91422,1,Cirsium tuberosum,gtub,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+91430,1,Cirsium vulgare,Hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+91630,1,Cistus albidus,Cfru,magnochaméphytaie,Nanophanérophyte,chaméphyte,
+91630,0,Cistus albidus,Cfru,magnochaméphytaie,Phanérophyte,chaméphyte,
+91680,1,Cistus ladanifer,Cfru,magnochaméphytaie,Nanophanérophyte,phanérophyte,?
+91715,0,Cistus salviifolius,Cfru,chaméphytaie,Chaméphyte,chaméphyte,OK
+91715,1,Cistus salviifolius,Cfru,chaméphytaie,Phanérophyte,chaméphyte,
+91886,1,Clematis vitalba,A-lia-cad,magnophanérophytaie,Phanérophyte lianescente,phanérophyte,OK
+91910,1,Clinopodium nepeta,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+92029,1,Cochlearia anglica,heri,hémicryptophytaie,NA,hémicryptophyte,OK
+92132,1,Colchicum bulbocodium,gbul,hémicryptophytaie,Géophyte à corme,géophyte,OK
+447722,1,Colocasia esculenta,NA,NA,Géophyte à tubercule,géophyte,OK
+92196,0,Colutea arborescens,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+92196,1,Colutea arborescens,b-cad,nanophanérophytaie,Phanérophyte,phanérophyte,OK
+92254,1,Conringia orientalis,test,thérophytaie,Thérophyte,thérophyte,OK
+92282,0,Convallaria majalis,grhi,hémicryptophytaie,Géophyte,géophyte,OK
+92282,1,Convallaria majalis,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+92302,1,Convolvulus arvensis,hsto-lia(Grhi-lia),hémicryptophytaie,Géophyte,géophyte,cohérence FG FM
+92329,1,Convolvulus lanuginosus,csuf,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+92331,0,Convolvulus lineatus,csuf,hémicryptophytaie,Chaméphyte,chaméphyte,
+92331,1,Convolvulus lineatus,csuf,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+92501,1,Cornus sanguinea,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+92515,1,Coronilla coronata,hsto,hémicryptophytaie,NA,hémicryptophyte,
+92594,1,Corydalis solida,gbul,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+92606,0,Corylus avellana,a-cad,magnophanérophytaie,Nanophanérophyte,phanérophyte,OK
+92606,1,Corylus avellana,a-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+92629,1,Cota tinctoria,heri,hémicryptophytaie,Thérophyte,thérophyte,
+92667,1,Cotoneaster integerrimus,b-cad,nanophanérophytaie,Chaméphyte,phanérophyte,OK
+92667,0,Cotoneaster integerrimus,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+92782,1,Crambe maritima,hros,hémicryptophytaie,NA,hémicryptophyte,
+92793,1,Crassula helmsii,hsto,hémicryptophytaie,Hélophyte,hélophyte,
+93004,1,Crepis aurea,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+93023,1,Crepis capillaris,test,thérophytaie,Thérophyte,thérophyte,
+93027,1,Crepis conyzifolia,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+93190,1,Crithmum maritimum,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+93282,1,Crocus vernus,gbul,hémicryptophytaie,Géophyte à corme,géophyte,OK
+93307,1,Cruciata glabra,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+94123,1,Cytisus hirsutus,Cfru,chaméphytaie,NA,chaméphyte,
+94266,1,Dactylorhiza maculata,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+94287,1,Dactylorhiza traunsteineri,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+94402,1,Danthonia decumbens,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+94423,1,Daphne cneorum,Cfru-semp,parvochaméphytaie,Chaméphyte,chaméphyte,OK
+94435,1,Daphne mezereum,Cfru-semp,hémicryptophytaie,Chaméphyte,chaméphyte,?
+94489,1,Datura stramonium,Test,thérophytaie,Thérophyte,thérophyte,OK
+94503,1,Daucus carota,hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+94698,1,Dianthus barbatus,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+94728,1,Dianthus deltoides,heri,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+94985,1,Digitaria ischaemum,test,thérophytaie,Thérophyte,thérophyte,
+611108,1,Diospyros virginiana,a-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+95056,1,Diphasiastrum alpinum,NA,NA,Chaméphyte,chaméphyte,
+95154,1,Dipsacus pilosus,Hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+95187,1,Dittrichia viscosa,csuf,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+95209,1,Doronicum austriacum,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+95239,1,Doronicum pardalianches,heri,hémicryptophytaie,Géophyte à rhizome,géophyte,cohérence FG FM
+95372,1,Draba verna,tver,thérophytaie,Thérophyte,thérophyte,
+95438,1,Drosera intermedia,hros-car,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+95547,1,Dryopteris affinis,Hces,hémicryptophytaie,Géophyte,géophyte,
+95547,0,Dryopteris affinis,NA,hémicryptophytaie,Géophyte,géophyte,
+95547,0,Dryopteris affinis,Hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+95547,0,Dryopteris affinis,,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+95566,1,Dryopteris expansa,Hces,hémicryptophytaie,Géophyte,géophyte,
+95566,0,Dryopteris expansa,Hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+611753,1,Dysphania ambrosioides,test,thérophytaie,Thérophyte,thérophyte,OK
+95700,1,Echinops exaltatus,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+95709,1,Echinops ritro,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+95841,1,Elaeagnus umbellata,b-semp,nanophanérophytaie,NA,phanérophyte,OK
+95860,1,Elatine hydropiper,test,thérophytaie,Hydrophyte enraciné,hydrophyte,
+95919,1,Eleocharis ovata,test,thérophytaie,NA,thérophyte,
+95965,1,Eleusine indica,test,thérophytaie,Thérophyte,thérophyte,
+95992,1,Elymus caninus,Hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+96069,1,Empetrum nigrum,cfru-semp,parvochaméphytaie,Chaméphyte,chaméphyte,OK
+96106,1,Ephedra major,Cfru,parvochaméphytaie,Chaméphyte,chaméphyte,OK
+96127,1,Epilobium alpestre,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+96149,1,Epilobium ciliatum,Heri(test),hémicryptophytaie,Thérophyte,thérophyte,
+96251,1,Epilobium roseum,heri,hémicryptophytaie,Thérophyte,Thérophyte,?
+96465,1,Epipactis palustris,grhi,hémicryptophytaie,Géophyte,géophyte,OK
+96465,0,Epipactis palustris,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+96545,1,Equisetum sylvaticum,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+96613,1,Eragrostis minor,test,thérophytaie,Thérophyte,thérophyte,
+96683,0,Erica multiflora,Cfru-semp,magnochaméphytaie,Nanophanérophyte,chaméphyte,
+96683,1,Erica multiflora,Cfru-semp,magnochaméphytaie,Phanérophyte,chaméphyte,
+611688,1,Erigeron acris,hbis,hémicryptophytaie,Thérophyte,Thérophyte,"débat sur la durée de vie, on garde annuel"
+96736,1,Erigeron alpinus,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+96739,1,Erigeron annuus,hbis,hémicryptophytaie,Thérophyte,thérophyte,
+96749,1,Erigeron canadensis,test,thérophytaie,Thérophyte,thérophyte,OK
+96775,0,Erigeron karvinskianus,hsto,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+96775,1,Erigeron karvinskianus,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+96872,1,Eritrichium nanum,ccou,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+96894,1,Erodium ciconium,test,thérophytaie,Thérophyte,thérophyte,
+96895,1,Erodium cicutarium,test,thérophytaie,Thérophyte,thérophyte,OK
+96919,1,Erodium malacoides,test,thérophytaie,Thérophyte,thérophyte,
+97141,1,Eryngium campestre,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+97145,1,Eryngium maritimum,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+97183,1,Erysimum cheiranthoides,test,thérophytaie,Thérophyte,thérophyte,
+97325,1,Erythronium dens-canis,gbul,hémicryptophytaie,Géophyte à bulbe,géophyte,OK
+611735,1,Eucalyptus delegatensis,NA,NA,Phanérophyte,phanérophyte,
+609982,1,Euonymus europaeus,B-cad,microphanérophytaie,Nanophanérophyte,phanérophyte,OK
+609982,0,Euonymus europaeus,B-cad,microphanérophytaie,Phanérophyte,phanérophyte,OK
+97452,1,Euphorbia amygdaloides,heri,hémicryptophytaie,NA,hémicryptophyte,OK
+97478,1,Euphorbia characias,Csuf,magnochaméphytaie,Chaméphyte,chaméphyte,OK
+97492,0,Euphorbia dendroides,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+97492,1,Euphorbia dendroides,b-cad,nanophanérophytaie,Phanérophyte,phanérophyte,OK
+97511,1,Euphorbia exigua,test,thérophytaie,Thérophyte,thérophyte,
+97543,1,Euphorbia humifusa,tver,thérophytaie,Thérophyte,thérophyte,
+97601,1,Euphorbia palustris,Heri,hémicryptophytaie,Géophyte à rhizome,géophyte,cohérence FG FM
+97601,0,Euphorbia palustris,Heri,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+97601,0,Euphorbia palustris,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+97772,1,Euphrasia minima,test-hpar,hémicryptophytaie,Thérophyte,thérophyte,
+97776,1,Euphrasia nemorosa,test-hpar,hémicryptophytaie,Thérophyte,thérophyte,?
+97781,1,Euphrasia officinalis,test-hpar,hémicryptophytaie,Thérophyte,thérophyte,?
+97862,1,Euthamia graminifolia,Heri(Grhi),hémicryptophytaie,NA,hémicryptophyte,
+97956,1,Falcaria vulgaris,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+97962,1,Fallopia convolvulus,Test,thérophytaie,Thérophyte,thérophyte,
+98272,1,Festuca halleri,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+98280,1,Festuca heterophylla,Hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+98404,1,Festuca nigrescens,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+98426,1,Festuca pallens,hces,hémicryptophytaie,NA,hémicryptophyte,
+98651,0,Ficaria verna,gbul,hémicryptophytaie,Géophyte,géophyte,OK
+98651,1,Ficaria verna,gbul,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,?
+98651,0,Ficaria verna,gbul,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+98653,1,Ficus carica,B-semp,microphanérophytaie,Nanophanérophyte,phanérophyte,OK
+98653,0,Ficus carica,B-semp,microphanérophytaie,Phanérophyte,phanérophyte,OK
+98699,1,Filago pyramidata,test,thérophytaie,Thérophyte,thérophyte,
+98868,1,Fragaria viridis,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+98939,1,Fraxinus pennsylvanica,A-cad,magnophanérophytaie,NA,phanérophyte,OK
+99111,1,Fumaria parviflora,test,thérophytaie,Thérophyte,thérophyte,
+99139,1,Fumaria vaillantii,test,thérophytaie,Thérophyte,thérophyte,
+99185,1,Gagea lutea,gbul,hémicryptophytaie,Géophyte,géophyte,OK
+99185,0,Gagea lutea,gbul,hémicryptophytaie,Géophyte à bulbe,géophyte,OK
+99206,1,Gagea spathacea,gbul,hémicryptophytaie,NA,hémicryptophyte,
+99244,1,Galatella linosyris,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+99260,1,Galega officinalis,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+99331,1,Galeopsis speciosa,test,thérophytaie,Thérophyte,thérophyte,
+99334,1,Galeopsis tetrahit,test,thérophytaie,Thérophyte,thérophyte,OK
+99359,1,Galinsoga quadriradiata,test,thérophytaie,Thérophyte,thérophyte,
+99373,1,Galium aparine,Test-lia,thérophytaie,Thérophyte,thérophyte,OK
+99429,1,Galium glaucum,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+99529,1,Galium saxatile,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+99581,1,Galium verticillatum,tver,thérophytaie,Thérophyte,thérophyte,
+99828,1,Genista tinctoria,Cfru,chaméphytaie,Chaméphyte,chaméphyte,OK
+99862,1,Gentiana asclepiadea,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+99922,1,Gentiana pneumonanthe,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+100052,1,Geranium dissectum,test,thérophytaie,Thérophyte,thérophyte,
+100133,1,Geranium pusillum,test,thérophytaie,Thérophyte,thérophyte,
+100208,1,Geum montanum,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+100214,1,Geum reptans,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+100225,1,Geum urbanum,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+100273,1,Gladiolus imbricatus,gbul,hémicryptophytaie,NA,hémicryptophyte,
+100278,1,Gladiolus palustris,gbul,hémicryptophytaie,NA,hémicryptophyte,
+100304,1,Glebionis segetum,test,thérophytaie,Thérophyte,thérophyte,
+100330,1,Gleditsia triacanthos,A-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+100338,1,Globularia bisnagarica,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+100356,1,Globularia vulgaris,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+100613,1,Gymnadenia nigra,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+100614,1,Gymnadenia odoratissima,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+100636,1,Gymnocarpium dryopteris,grhi,hémicryptophytaie,Géophyte,géophyte,OK
+100636,0,Gymnocarpium dryopteris,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+100839,1,Hedysarum hedysaroides,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+100946,1,Helianthemum marifolium,csuf,hémicryptophytaie,Chaméphyte,chaméphyte,
+101055,0,Helianthus tuberosus,Grhi,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+101055,1,Helianthus tuberosus,Grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+101101,1,Helichrysum stoechas,csuf,hémicryptophytaie,Chaméphyte,chaméphyte,?
+101196,1,Helleborus niger,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+101210,1,Helminthotheca echioides,hbis,hémicryptophytaie,Thérophyte,thérophyte,
+101221,1,Helosciadium nodiflorum,hsto,hémicryptophytaie,Hélophyte,hélophyte,
+101221,0,Helosciadium nodiflorum,hsto,hémicryptophytaie,Hydrophyte enraciné,hydrophyte,
+101300,1,Heracleum sphondylium,Hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+101315,1,Herminium monorchis,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+102055,1,Hieracium humile,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+102189,1,Hieracium maculatum,hros,hémicryptophytaie,NA,hémicryptophyte,
+102392,1,Hieracium prenanthoides,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+102842,1,Hippocrepis comosa,csuf,hémicryptophytaie,Chaméphyte,chaméphyte,
+102845,1,Hippocrepis emerus,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+102845,0,Hippocrepis emerus,b-cad,nanophanérophytaie,Phanérophyte,phanérophyte,OK
+102876,1,Hirschfeldia incana,NA,NA,Thérophyte,thérophyte,
+102925,1,Homogyne alpina,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+102964,1,Hordeum jubatum,hces(test),hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+102968,1,Hordeum marinum,test,thérophytaie,Thérophyte,thérophyte,
+103120,1,Hydrocharis morsus-ranae,test-aqua,thérophytaie,Hydrophyte nageant,hydrophyte,
+103142,0,Hydrocotyle vulgaris,hsto,hémicryptophytaie,Hélophyte,hélophyte,
+103142,1,Hydrocotyle vulgaris,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+103162,1,Hylotelephium telephium,heri-suc,hémicryptophytaie,Géophyte à tubercule,géophyte,cohérence FG FM
+103216,1,Hyparrhenia hirta,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+103288,1,Hypericum humifusum,test(hsto),thérophytaie,Thérophyte,thérophyte,
+103301,1,Hypericum montanum,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+103320,1,Hypericum pulchrum,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+103364,1,Hypochaeris glabra,test,thérophytaie,Thérophyte,thérophyte,
+103369,1,Hypochaeris maculata,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+103383,1,Hypochaeris uniflora,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+103543,1,Impatiens balfourii,test,thérophytaie,Thérophyte,thérophyte,
+103598,1,Inula britannica,NA,NA,Hémicryptophyte,hémicryptophyte,
+103627,1,Inula helenium,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+103648,1,Inula salicina,NA,NA,Hémicryptophyte,hémicryptophyte,
+103738,1,Iris graminea,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+103777,1,Iris sibirica,grhi,hémicryptophytaie,NA,hémicryptophyte,
+103898,1,Isolepis setacea,test,thérophytaie,Thérophyte,thérophyte,
+610648,1,Jacobaea alpina,Heri,hémicryptophytaie,NA,hémicryptophyte,OK
+610642,1,Jacobaea incana,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+610643,1,Jacobaea maritima,Csuf,hémicryptophytaie,Chaméphyte,chaméphyte,?
+103995,1,Jacobaea paludosa,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+104101,1,Juncus acutiflorus,Grhi,hémicryptophytaie,Géophyte,géophyte,OK
+104101,0,Juncus acutiflorus,Grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+104111,1,Juncus alpinoarticulatus,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+104126,1,Juncus articulatus,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+104155,1,Juncus compressus,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+104246,1,Juncus maritimus,Grhi,hémicryptophytaie,Hélophyte,hélophyte,
+104246,0,Juncus maritimus,Grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+104397,1,Juniperus communis,B-semp,microphanérophytaie,Nanophanérophyte,phanérophyte,OK
+104502,1,Kickxia elatine,test,thérophytaie,Thérophyte,thérophyte,OK
+104644,1,Koeleria macrantha,hces,hémicryptophytaie,NA,hémicryptophyte,
+104715,1,Laburnum alpinum,B-cad,microphanérophytaie,Nanophanérophyte,phanérophyte,OK
+104716,0,Laburnum anagyroides,B-cad,microphanérophytaie,Nanophanérophyte,phanérophyte,OK
+104716,1,Laburnum anagyroides,B-cad,microphanérophytaie,Phanérophyte,phanérophyte,OK
+104766,1,Lactuca quercina,hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+104787,1,Lactuca virosa,Hbis,hémicryptophytaie,Thérophyte,Thérophyte,?
+104876,1,Lamium galeobdolon,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+610681,1,Laphangium luteoalbum,test,thérophytaie,Thérophyte,thérophyte,
+105042,1,Larix decidua,A-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+105092,1,Laserpitium siler,NA,NA,Hémicryptophyte,hémicryptophyte,
+105201,1,Lathyrus hirsutus,test,thérophytaie,Thérophyte,thérophyte,
+105206,1,Lathyrus japonicus,hsto,hémicryptophytaie,NA,hémicryptophyte,
+105241,1,Lathyrus pannonicus,heri,hémicryptophytaie,Géophyte à rhizome,hélophyte,
+105400,0,Leersia oryzoides,Hsto,hémicryptophytaie,Géophyte à rhizome,géophyte,
+105400,1,Leersia oryzoides,Hsto,hémicryptophytaie,Hélophyte,hélophyte,
+105431,1,Lemna minor,test-aqua,thérophytaie,Hydrophyte nageant,hydrophyte,?
+105490,1,Leontodon crispus,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+105502,1,Leontodon hispidus,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+105521,1,Leontodon saxatilis,hros,hémicryptophytaie,Thérophyte,thérophyte,
+984396,1,Lepidium coronopus,NA,NA,Thérophyte,thérophyte,
+105615,1,Lepidium didymum,test,thérophytaie,Thérophyte,thérophyte,
+105641,1,Lepidium latifolium,Hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+105673,1,Lepidium sativum,test,thérophytaie,Thérophyte,thérophyte,
+105689,1,Lepidium virginicum,test(hbis),thérophytaie,Thérophyte,thérophyte,
+105795,1,Leucanthemum ircutianum,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+105841,1,Leucojum vernum,gbul,hémicryptophytaie,Géophyte à bulbe,géophyte,OK
+610580,1,Libanotis pyrenaica,Hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+105908,1,Ligularia sibirica,Hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+105989,0,Lilium martagon,Gbul,hémicryptophytaie,Géophyte,géophyte,OK
+105989,1,Lilium martagon,Gbul,hémicryptophytaie,Géophyte à bulbe,géophyte,OK
+106047,1,Limonium binervosum,hros,hémicryptophytaie,NA,hémicryptophyte,
+106070,1,Limonium echioides,test,thérophytaie,Thérophyte,thérophyte,
+106112,1,Limonium vulgare,hros,hémicryptophytaie,NA,hémicryptophyte,
+106260,1,Linnaea borealis,hsto,parvochaméphytaie,NA,chaméphyte,OK
+106280,1,Linum austriacum,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+106349,1,Linum usitatissimum,test,thérophytaie,Thérophyte,thérophyte,
+106396,1,Lithospermum officinale,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+106504,1,Lolium remotum,test,thérophytaie,NA,thérophyte,
+106517,1,Lolium temulentum,Test,thérophytaie,Thérophyte,thérophyte,
+106571,1,Lonicera japonica,B-semp,microphanérophytaie,Phanérophyte lianescente,phanérophyte,OK
+106664,1,Lotus dorycnium,Cfru,chaméphytaie,Chaméphyte,chaméphyte,OK
+106842,1,Luzula multiflora,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+106910,1,Lychnis coronaria,csuf,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+610909,1,Lysimachia arvensis,test,thérophytaie,Thérophyte,thérophyte,OK
+107085,1,Lysimachia tenella,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+107126,1,Lythrum virgatum,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+107217,1,Malus sylvestris,a-cad,magnophanérophytaie,Nanophanérophyte,phanérophyte,OK
+107217,0,Malus sylvestris,a-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+107224,1,Malva alcea,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+107318,1,Malva sylvestris,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+107446,1,Matricaria discoidea,test,thérophytaie,Thérophyte,thérophyte,OK
+107647,1,Medicago littoralis,test(hbis),thérophytaie,Thérophyte,thérophyte,
+107654,0,Medicago marina,hsto,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+107654,1,Medicago marina,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+107677,1,Medicago orbicularis,test,thérophytaie,Thérophyte,thérophyte,
+107688,1,Medicago polyceratia,test,thérophytaie,Thérophyte,thérophyte,
+107689,1,Medicago polymorpha,tver,thérophytaie,Thérophyte,thérophyte,
+107786,1,Melampyrum arvense,test-hpar,thérophytaie,Thérophyte,thérophyte,OK
+107851,1,Melica ciliata,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+107887,1,Melilotus altissimus,NA,NA,Hémicryptophyte,hémicryptophyte,OK
+108103,1,Mentha longifolia,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+108168,1,Mentha suaveolens,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+108367,1,Mercurialis tomentosa,csuf,hémicryptophytaie,Chaméphyte,chaméphyte,
+108537,1,Milium effusum,Hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+108612,1,Minuartia recurva,csuf,hémicryptophytaie,Chaméphyte,chaméphyte,
+108686,1,Moehringia muscosa,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+108785,1,Montia fontana,hsto-aqua,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+108785,0,Montia fontana,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+610917,1,Mutellina adonidifolia,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+108948,1,Myagrum perfoliatum,tver,thérophytaie,Thérophyte,thérophyte,
+109019,1,Myosotis discolor,test,thérophytaie,Thérophyte,thérophyte,
+109042,1,Myosotis laxa,hbis(test),hémicryptophytaie,Thérophyte,thérophyte,
+109104,1,Myosotis sylvatica,hsto,hémicryptophytaie,NA,hémicryptophyte,OK
+109141,1,Myriophyllum aquaticum,Grhi-aqua,hémicryptophytaie,Hydrophyte,hydrophyte,
+109141,0,Myriophyllum aquaticum,Grhi-aqua,hémicryptophytaie,Hydrophyte enraciné,hydrophyte,
+162206,1,Neotinea tridentata,gtub,hémicryptophytaie,Géophyte,géophyte,OK
+162206,0,Neotinea tridentata,gtub,hémicryptophytaie,Géophyte à bulbe,géophyte,OK
+109534,1,Nepeta nuda,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+109600,1,Nicandra physalodes,test,thérophytaie,Thérophyte,thérophyte,
+109665,1,Noccaea alpestris,hros,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+109735,1,Nuphar pumila,Grhi-aqua,hémicryptophytaie,Hydrophyte,hydrophyte,?
+109769,1,Nymphoides peltata,Grhi-aqua,hémicryptophytaie,Hydrophyte enraciné,hydrophyte,
+109838,1,Odontites luteus,test-hpar,hémicryptophytaie,Thérophyte,thérophyte,
+109864,1,Oenanthe crocata,Heri(Grhi),hémicryptophytaie,Géophyte,géophyte,
+110002,1,Olea europaea,a-semp,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+110205,1,Ononis minutissima,heri,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+110221,0,Ononis pusilla,csuf,hémicryptophytaie,Chaméphyte,chaméphyte,
+110221,1,Ononis pusilla,csuf,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+110237,1,Ononis striata,hsto,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+110239,1,Ononis variegata,NA,NA,Thérophyte,thérophyte,
+110290,1,Onosma arenaria,hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+110313,0,Ophioglossum vulgatum,grhi,hémicryptophytaie,Géophyte,géophyte,OK
+110313,1,Ophioglossum vulgatum,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+110914,1,Orchis mascula,gtub,hémicryptophytaie,Géophyte,géophyte,OK
+110914,0,Orchis mascula,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+110920,1,Orchis militaris,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+111233,1,Oreochloa disticha,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+111301,1,Orlaya platycarpos,test,thérophytaie,Thérophyte,thérophyte,
+111391,1,Ornithogalum umbellatum,gbul,géophytaie,Géophyte à bulbe,géophyte,OK
+111419,1,Ornithopus perpusillus,test,thérophytaie,Thérophyte,thérophyte,
+111793,1,Oryza sativa,Test,thérophytaie,Thérophyte,thérophyte,
+111876,0,Oxalis corniculata,test(hros),thérophytaie,Hémicryptophyte,thérophyte,
+111876,1,Oxalis corniculata,test(hros),thérophytaie,Thérophyte,thérophyte,
+112070,1,Pancratium maritimum,gbul,hémicryptophytaie,Géophyte,géophyte,OK
+112070,0,Pancratium maritimum,gbul,hémicryptophytaie,Géophyte à bulbe,géophyte,OK
+112259,1,Panicum virgatum,NA,NA,Hémicryptophyte,hémicryptophyte,
+112355,1,Papaver rhoeas,test,thérophytaie,Thérophyte,thérophyte,OK
+112410,1,Parietaria judaica,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+112428,1,Paronychia arabica,NA,NA,Hémicryptophyte,hémicryptophyte,
+112429,1,Paronychia argentea,heri,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+112429,0,Paronychia argentea,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+112431,1,Paronychia capitata,hsto,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+997256,1,Pedicularis gyroflexa,heri-hpar,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+112584,1,Pedicularis kerneri,hros-hpar,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+112591,1,Pedicularis pyrenaica,hros-hpar,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+112602,1,Pedicularis tuberosa,heri-hpar,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+112727,1,Persicaria amphibia,Grhi-aqua,hémicryptophytaie,Hélophyte,hélophyte,
+112727,0,Persicaria amphibia,grhi,hémicryptophytaie,Hélophyte,hélophyte,
+112727,0,Persicaria amphibia,Grhi-aqua,hémicryptophytaie,Hydrophyte,hydrophyte,
+112727,0,Persicaria amphibia,grhi,hémicryptophytaie,Hydrophyte,hydrophyte,
+112778,1,Petasites albus,grhi,hémicryptophytaie,Géophyte,géophyte,OK
+112778,0,Petasites albus,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+112783,0,Petasites hybridus,Grhi,hémicryptophytaie,Géophyte,géophyte,OK
+112783,1,Petasites hybridus,Grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+112803,1,Petrocallis pyrenaica,hsto,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+112935,1,Phagnalon saxatile,csuf,hémicryptophytaie,Chaméphyte,chaméphyte,
+113079,1,Phegopteris connectilis,grhi,hémicryptophytaie,Géophyte,hémicryptophyte,OK
+113079,0,Phegopteris connectilis,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+113134,1,Philadelphus coronarius,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+113219,1,Phleum phleoides,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+113243,1,Phlomis lychnitis,cfru,hémicryptophytaie,Chaméphyte,chaméphyte,
+113294,1,Phyla nodiflora,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+1032086,1,Physostegia virginiana,Heri,hémicryptophytaie,NA,hémicryptophytaie,
+113407,1,Phyteuma spicatum,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+113474,1,Picris hieracioides,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+113525,1,Pilosella officinarum,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+113547,1,Pilularia globulifera,grhi,hémicryptophytaie,NA,hémicryptophyte,
+113609,1,Pinguicula alpina,hros-car,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+113639,1,Pinguicula vulgaris,hros-car,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+162292,1,Pinus brutia,a-semp,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+113689,1,Pinus pinaster,A-semp,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+113786,1,Pittosporum undulatum,a-semp,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+113809,1,Plantago arenaria,test,thérophytaie,Thérophyte,thérophyte,OK
+113810,1,Plantago argentea,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+113904,1,Plantago major,hros(test),hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+114012,1,Platanthera chlorantha,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+114037,1,Platycladus orientalis,A-semp,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+114153,1,Poa chaixii,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+114416,1,Poa trivialis,Hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+114526,1,Polygala amarella,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+114589,1,Polygala serpyllifolia,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+114611,1,Polygonatum multiflorum,grhi,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+114779,1,Polygonum maritimum,hsto,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+115016,1,Polypodium vulgare,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+115061,1,Polystichum lonchitis,hces,hémicryptophytaie,Géophyte,hémicryptophyte,
+115061,0,Polystichum lonchitis,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+115096,1,Pontederia cordata,Grhi,hémicryptophytaie,Hydrophyte,hydrophyte,
+115110,1,Populus alba,A-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+115156,1,Populus tremula,A-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+115233,1,Potamogeton berchtoldii,test-aqua,thérophytaie,Hydrophyte,hydrophyte,
+115233,0,Potamogeton berchtoldii,test-aqua,thérophytaie,Hydrophyte enraciné,hydrophyte,
+115245,1,Potamogeton crispus,Grhi-aqua,hémicryptophytaie,Hydrophyte,hydrophyte,
+115245,0,Potamogeton crispus,Grhi-aqua,hémicryptophytaie,Hydrophyte enraciné,hydrophyte,
+115301,0,Potamogeton polygonifolius,grhi-aqua,hémicryptophytaie,Hydrophyte,hydrophyte,
+115301,1,Potamogeton polygonifolius,grhi-aqua,hémicryptophytaie,Hydrophyte enraciné,hydrophyte,
+115414,1,Potentilla aurea,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+115431,1,Potentilla caulescens,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+115530,1,Potentilla intermedia,hros,hémicryptophytaie,NA,hémicryptophyte,
+115575,1,Potentilla norvegica,test(hros),thérophytaie,Hémicryptophyte,hémicryptophyte,
+115789,1,Poterium sanguisorba,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+115975,0,Prospero autumnale,gbul,hémicryptophytaie,Géophyte,géophyte,OK
+115975,1,Prospero autumnale,gbul,hémicryptophytaie,Géophyte à bulbe,géophyte,OK
+1030499,1,Prunella grandiflora,heri,hémicryptophytaie,NA,hémicryptophytaie,
+115998,1,Prunella laciniata,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+116112,1,Prunus persica,B-cad,microphanérophytaie,Phanérophyte,phanérophyte,OK
+116206,1,Pseudorchis albida,gtub,hémicryptophytaie,Géophyte,géophyte,OK
+116206,0,Pseudorchis albida,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+116392,1,Pulicaria dysenterica,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+116460,1,Pulsatilla vulgaris,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+116542,1,Pyrola media,grhi,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+116610,1,Pyrus spinosa,B-cad,microphanérophytaie,Nanophanérophyte,phanérophyte,OK
+116610,0,Pyrus spinosa,B-cad,microphanérophytaie,Phanérophyte,phanérophyte,OK
+116672,1,Quercus coccifera,b-semp,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+116762,1,Quercus rubra,A-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+999933,1,Rabelera holostea,NA,NA,Chaméphyte,hémicryptophyte,suit FG 
+116902,1,Ranunculus aconitifolius,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+116948,1,Ranunculus breyninus,hros,hémicryptophytaie,NA,hémicryptophyte,
+117025,1,Ranunculus flammula,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+117027,1,Ranunculus fluitans,Hsto-aqua,hémicryptophytaie,Hydrophyte enraciné,hydrophyte,
+117090,1,Ranunculus lateriflorus,test,thérophytaie,Thérophyte,thérophyte,
+117174,1,Ranunculus platanifolius,Heri,hémicryptophytaie,Hémicryptophyte,hydrophyte,
+117174,0,Ranunculus platanifolius,Heri,hémicryptophytaie,Hydrophyte,hydrophyte,
+117224,1,Ranunculus sceleratus,test,thérophytaie,Thérophyte,thérophyte,OK
+117393,1,Rapistrum rugosum,test,thérophytaie,Thérophyte,thérophyte,
+117426,1,Reichardia picroides,hbis(tver),hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+117458,1,Reseda lutea,hros,hémicryptophytaie,Thérophyte,thérophyte,
+117526,1,Rhamnus alaternus,B-semp,microphanérophytaie,Nanophanérophyte,phanérophyte,OK
+717862,1,Rhaponticum centauroides,Heri,hémicryptophytaie,NA,hémicryptophyte,
+117668,1,Rhodiola rosea,gtub,hémicryptophytaie,Géophyte à rhizome,géophyte,OK
+117766,1,Ribes nigrum,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+117933,1,Rorippa amphibia,hsto,hémicryptophytaie,Hélophyte,hélophyte,
+117951,1,Rorippa sylvestris,hros,hémicryptophytaie,Géophyte,hélophyte,
+117951,0,Rorippa sylvestris,hros,hémicryptophytaie,Hélophyte,hélophyte,
+117986,1,Rosa agrestis,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+117986,0,Rosa agrestis,b-cad,nanophanérophytaie,Phanérophyte,phanérophyte,OK
+118353,1,Rosa multiflora,b-cad,nanophanérophytaie,NA,phanérophyte,OK
+118397,1,Rosa pendulina,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+118872,1,Rostraria cristata,tver,thérophytaie,Thérophyte,thérophyte,
+118993,1,Rubus caesius,Hrub,hémicryptophytaie,Chaméphyte,chaméphyte,
+118993,0,Rubus caesius,Hrub,hémicryptophytaie,Nanophanérophyte,chaméphyte,
+119318,1,Rubus saxatilis,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+119525,1,Rumex longifolius,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+119691,1,Ruppia maritima,grhi-aqua,hémicryptophytaie,Hydrophyte,hydrophyte,
+119691,0,Ruppia maritima,grhi-aqua,hémicryptophytaie,Hydrophyte enraciné,hydrophyte,
+119707,1,Ruta angustifolia,heri,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+119753,1,Sabulina tenuifolia,test,thérophytaie,Thérophyte,thérophyte,
+119754,1,Sabulina verna,NA,NA,Chaméphyte,chaméphyte,
+119780,1,Sagina apetala,test,thérophytaie,Thérophyte,thérophyte,
+119818,1,Sagina procumbens,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+119850,1,Sagittaria graminea,Hsto,hémicryptophytaie,NA,hémicryptophyte,
+119952,1,Salix aurita,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+120135,1,Salix myrsinifolia,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+120700,1,Salvia verbenaca,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+120709,1,Salvinia natans,test-aqua,thérophytaie,Hydrophyte nageant,hydrophyte,
+120758,1,Sanguisorba officinalis,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+120785,1,Santolina chamaecyparissus,Cfru,parvochaméphytaie,Chaméphyte,chaméphyte,OK
+120908,1,Satureja montana,cfru,parvochaméphytaie,Chaméphyte,chaméphyte,OK
+120949,1,Saussurea alpina,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+120973,1,Saxifraga androsacea,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+121024,1,Saxifraga cotyledon,heri,hémicryptophytaie,NA,hémicryptophyte,
+121065,1,Saxifraga granulata,hbis,hémicryptophytaie,Géophyte à rhizome,géophyte,cohérence FG FM
+121201,1,Saxifraga tridactylites,tver,thérophytaie,Thérophyte,thérophyte,
+121455,1,Scandix stellata,test,thérophytaie,Thérophyte,thérophyte,
+121823,1,Scleranthus annuus,test(hsto),thérophytaie,Thérophyte,thérophyte,OK
+121901,1,Scolymus hispanicus,hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+122003,1,Scrophularia canina,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+122085,1,Secale cereale,Test,thérophytaie,Thérophyte,thérophyte,
+122107,1,Sedum alpestre,csuf-suc,hémicryptophytaie,Chaméphyte,chaméphyte,
+122243,1,Sedum rubens,test-suc,thérophytaie,Thérophyte,thérophyte,OK
+122256,1,Sedum sexangulare,csuf-suc,hémicryptophytaie,Chaméphyte,chaméphyte,
+122308,1,Selaginella selaginoides,hsto,hémicryptophytaie,Chaméphyte,hémicryptophyte,
+122593,1,Senecio doronicum,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+122650,1,Senecio leucanthemifolius,tver,thérophytaie,Thérophyte,thérophyte,
+122675,1,Senecio ovatus,Heri,hémicryptophytaie,Géophyte,hémicryptophyte,suit FG 
+122726,1,Senecio sylvaticus,test,thérophytaie,Thérophyte,thérophyte,OK
+122740,1,Senecio vernalis,tver(heri),thérophytaie,NA,thérophyte,
+122971,1,Serratula tinctoria,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+123071,1,Sesleria caerulea,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+123082,1,Sesleria ovata,grhi,hémicryptophytaie,NA,hémicryptophyte,
+123111,1,Setaria faberi,test,thérophytaie,Thérophyte,thérophyte,
+123122,1,Setaria italica,test,thérophytaie,Thérophyte,thérophyte,
+123138,1,Setaria parviflora,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+123249,1,Sideritis hirsuta,csuf,hémicryptophytaie,Chaméphyte,chaméphyte,
+123367,1,Silaum silaus,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+123445,1,Silene colorata,tver,thérophytaie,Thérophyte,thérophyte,
+123512,1,Silene italica,hces,hémicryptophytaie,NA,hémicryptophyte,
+123773,1,Sison amomum,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+123863,1,Sisymbrium officinale,test(hros),thérophytaie,Thérophyte,thérophyte,OK
+124003,1,Smyrnium olusatrum,Hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+124034,1,Solanum dulcamara,Cfru-lia,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,?
+124034,0,Solanum dulcamara,Cfru-lia,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+124034,0,Solanum dulcamara,Cfru-lia,hémicryptophytaie,Phanérophyte lianescente,hémicryptophyte,?
+124034,0,Solanum dulcamara,Cfru-lia,hémicryptophytaie,Phanérophyte lianescente,hémicryptophyte,OK
+124080,1,Solanum nigrum,test,thérophytaie,Thérophyte,thérophyte,OK
+124205,1,Solidago virgaurea,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+124232,1,Sonchus arvensis,Heri,hémicryptophytaie,Géophyte à rhizome,géophyte,cohérence FG FM
+124264,1,Sonchus palustris,Heri,hémicryptophytaie,NA,hémicryptophyte,
+124405,1,Sparganium angustifolium,Grhi(Grhi-aqua),hémicryptophytaie,Hydrophyte enraciné,hydrophyte,
+124517,1,Spergula morisonii,tver,thérophytaie,Thérophyte,thérophyte,
+124578,0,Spergularia rubra,NA,NA,Chaméphyte,Thérophyte,suit FG 
+124578,0,Spergularia rubra,NA,NA,Chaméphyte,thérophyte,OK
+124578,1,Spergularia rubra,NA,NA,Thérophyte,Thérophyte,suit FG 
+124578,0,Spergularia rubra,NA,NA,Thérophyte,thérophyte,OK
+124646,1,Spiraea japonica,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+124967,1,Stellaria alsine,hsto(test),hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+124967,0,Stellaria alsine,hsto(test)-aqua,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+125024,1,Stellaria palustris,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+125295,1,Succisa pratensis,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+125331,1,Symphyotrichum novae-angliae,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+448412,1,Symphyotrichum novi-belgii,Heri,hémicryptophytaie,NA,hémicryptophyte,
+125364,1,Symphytum tuberosum,gtub,hémicryptophytaie,Géophyte à tubercule,géophyte,OK
+125460,1,Tanacetum corymbosum,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+125994,1,Teucrium flavum,csuf,hémicryptophytaie,Chaméphyte,chaméphyte,
+125994,0,Teucrium flavum,csuf,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+126078,1,Thalictrum aquilegiifolium,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+126310,1,Thesium pyrenaicum,heri-hpar,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+126582,1,Thymus vulgaris,cfru-semp,hémicryptophytaie,Chaméphyte,chaméphyte,?
+126650,1,Tilia platyphyllos,A-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+126806,1,Tofieldia pusilla,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+126821,1,Tolpis staticifolia,hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+126914,1,Toxicodendron radicans,b-lia-cad,parvophanérophytaie,NA,phanérophyte,OK
+126933,1,Trachycarpus fortunei,NA,NA,Phanérophyte,phanérophyte,
+127005,0,Tragopogon dubius,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+127005,1,Tragopogon dubius,heri,hémicryptophytaie,Thérophyte,thérophyte,
+127029,1,Tragopogon pratensis,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+127237,1,Trifolium badium,hces,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+127314,1,Trifolium fragiferum,hsto,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+127337,1,Trifolium hybridum,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+127382,1,Trifolium medium,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+127395,1,Trifolium montanum,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+127458,1,Trifolium retusum,test,thérophytaie,Thérophyte,thérophyte,
+127547,1,Triglochin palustris,hsto,hémicryptophytaie,Géophyte à rhizome,géophyte,
+127595,1,Trinia glauca,hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+127613,1,Tripleurospermum inodorum,test,thérophytaie,Thérophyte,thérophyte,
+127614,1,Tripleurospermum maritimum,hbis(heri),hémicryptophytaie,NA,hémicryptophyte,
+127692,1,Triticum aestivum,Test,thérophytaie,Thérophyte,thérophyte,
+127872,1,Trollius europaeus,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+128077,1,Typha latifolia,Grhi,hémicryptophytaie,Géophyte,hélophyte,OK
+128077,0,Typha latifolia,Grhi,hémicryptophytaie,Hélophyte,hélophyte,OK
+128127,1,Ulex parviflorus,Cfru,magnochaméphytaie,Chaméphyte,chaméphyte,OK
+128171,1,Ulmus laevis,A-cad,magnophanérophytaie,Phanérophyte,phanérophyte,OK
+128256,1,Urospermum picroides,tver,thérophytaie,Thérophyte,thérophyte,
+128445,1,Valeriana tripteris,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+128504,1,Vallisneria spiralis,hsto-aqua,hémicryptophytaie,Hydrophyte enraciné,hydrophyte,
+128520,1,Veratrum album,Heri,hémicryptophytaie,Géophyte à rhizome,géophyte,cohérence FG FM
+128602,1,Verbascum lychnitis,Hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+128660,1,Verbascum thapsus,Hbis,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+128786,1,Veronica agrestis,test,thérophytaie,Thérophyte,thérophyte,
+128829,1,Veronica catenata,hsto-aqua,hémicryptophytaie,Hydrophyte enraciné,hydrophyte,
+128829,0,Veronica catenata,hbis(hsto),hémicryptophytaie,Hydrophyte enraciné,hydrophyte,
+128954,1,Veronica peregrina,test,thérophytaie,Thérophyte,thérophyte,
+128956,1,Veronica persica,test,thérophytaie,Thérophyte,thérophyte,
+1003758,1,Veronica triloba,tver,thérophytaie,Thérophyte,thérophyte,
+129032,1,Veronica triphyllos,tver,thérophytaie,Thérophyte,thérophyte,
+129087,1,Viburnum opulus,b-cad,nanophanérophytaie,Nanophanérophyte,phanérophyte,OK
+129109,1,Vicia angustifolia,test,thérophytaie,Thérophyte,thérophyte,
+129147,1,Vicia cracca,Heri-lia,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+129252,1,Vicia narbonensis,test,thérophytaie,Thérophyte,thérophyte,
+129275,1,Vicia pisiformis,Heri-lia,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+129477,1,Vincetoxicum hirundinaria,Heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+129527,1,Viola calcarata,heri,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+129586,1,Viola hirta,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+129614,1,Viola lutea,grhi,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,OK
+129669,1,Viola riviniana,hros,hémicryptophytaie,Hémicryptophyte,hémicryptophyte,
+129969,1,Vitis vulpina,NA,NA,Phanérophyte lianescente,phanérophyte,
+129997,1,Vulpia bromoides,test,thérophytaie,Thérophyte,thérophyte,
+130515,1,Xeranthemum cylindraceum,test,thérophytaie,Thérophyte,thérophyte,
+130621,1,Zea mays,Test,thérophytaie,Thérophyte,thérophyte,
+130691,1,Zygophyllum fabago,Cfru,magnochaméphytaie,Géophyte à tubercule,géophyte,

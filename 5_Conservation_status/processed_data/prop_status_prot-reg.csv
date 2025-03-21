@@ -1,0 +1,53 @@
+"NIVEAU_ADMIN","CODE_STATUT","harvested","n","percentage"
+"Département","CR","not harvested",7,2.42
+"Département","EN","harvested",2,2.94
+"Département","EN","not harvested",9,3.11
+"Département","VU","not harvested",15,5.19
+"Département","NT","harvested",1,1.47
+"Département","NT","not harvested",21,7.27
+"Département","LC","harvested",64,94.12
+"Département","LC","not harvested",218,75.43
+"Département","DD","not harvested",10,3.46
+"Département","NE","harvested",1,1.47
+"Département","NE","not harvested",9,3.11
+"Région","RE","not harvested",3,0.25
+"Région","CR","harvested",1,0.63
+"Région","CR","not harvested",18,1.48
+"Région","EN","harvested",3,1.89
+"Région","EN","not harvested",34,2.79
+"Région","VU","harvested",3,1.89
+"Région","VU","not harvested",69,5.66
+"Région","NT","harvested",4,2.52
+"Région","NT","not harvested",115,9.43
+"Région","LC","harvested",147,92.45
+"Région","LC","not harvested",927,76.05
+"Région","DD","not harvested",20,1.64
+"Région","NE","harvested",1,0.63
+"Région","NE","not harvested",33,2.71
+"État","EX","not harvested",1,0.26
+"État","RE","not harvested",7,1.8
+"État","CR","not harvested",17,4.38
+"État","EN","not harvested",43,11.08
+"État","VU","harvested",2,18.18
+"État","VU","not harvested",68,17.53
+"État","NT","harvested",2,18.18
+"État","NT","not harvested",84,21.65
+"État","LC","harvested",6,54.55
+"État","LC","not harvested",143,36.86
+"État","DD","not harvested",6,1.55
+"État","NE","harvested",1,9.09
+"État","NE","not harvested",19,4.9
+"no protection or regulation","EX","not harvested",1,0.03
+"no protection or regulation","RE","not harvested",12,0.33
+"no protection or regulation","CR","not harvested",17,0.47
+"no protection or regulation","EN","not harvested",56,1.55
+"no protection or regulation","VU","harvested",2,0.41
+"no protection or regulation","VU","not harvested",90,2.5
+"no protection or regulation","NT","harvested",2,0.41
+"no protection or regulation","NT","not harvested",106,2.94
+"no protection or regulation","LC","harvested",441,90.55
+"no protection or regulation","LC","not harvested",2014,55.9
+"no protection or regulation","DD","harvested",5,1.03
+"no protection or regulation","DD","not harvested",309,8.58
+"no protection or regulation","NE","harvested",37,7.6
+"no protection or regulation","NE","not harvested",998,27.7
