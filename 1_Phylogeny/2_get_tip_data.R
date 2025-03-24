@@ -6,16 +6,15 @@ setwd(directory)
 
 # Load packages :
 library(dplyr)
-library(here)
 library(reshape2)
 
 
 #### Import data ####
 # Import list of french vascular flora:
-vascular_list <- read.csv("Harvesting_syndrome/list_vascular_v17.csv" )
+vascular_list <- read.csv(here::here("list_vascular_v17.csv") )
 
 # Import list of wild harvested species :
-harvested_list <- read.csv("Harvesting_syndrome/WHP_correpondence_table_v17.csv") %>%
+harvested_list <- read.csv(here::here("WHP_correpondence_table_v17.csv")) %>%
   subset(Regroupement %in% c("Angiospermes", "Fougères", "Gymnospermes"), 
          select=CD_REF) %>%
   unique()

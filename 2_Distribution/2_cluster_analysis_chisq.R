@@ -7,7 +7,6 @@ setwd(directory)
 
 # Import packages :
 library(dplyr)
-library(here)
 library(sf)
 library(tidyr)
 library(terra)
@@ -22,7 +21,7 @@ library(fpc)
 #### Import data ####
 # Import abundance/rarity data :
 # and keep only data for wild harvested plants :
-list_harvested <- read.csv("Harvesting_syndrome/WHP_correpondence_table_v17.csv") %>%
+list_harvested <- read.csv(here::here("WHP_correpondence_table_v17.csv")) %>%
   subset(REGNE=="Plantae", select=CD_REF)
 
 

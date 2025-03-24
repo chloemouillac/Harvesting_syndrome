@@ -10,7 +10,6 @@ library(ggplot2)
 library(terra)
 library(sf)
 library(dplyr)
-library(here)
 library(ggpubr)
 
 

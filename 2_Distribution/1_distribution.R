@@ -9,7 +9,6 @@ setwd(directory)
 # Import packages :
 library(terra)
 library(dplyr)
-library(here)
 library(stringr)
 library(sf)
 
@@ -31,7 +30,7 @@ departements <- read_sf("raw_data/departements_FR.shp") %>%
   st_sf() #convert to sf object
 
 # List of harvested species :
-list_species <- read.csv("Harvesting_syndrome/WHP_correpondence_table_v17.csv") %>%
+list_species <- read.csv(here::here("WHP_correpondence_table_v17.csv")) %>%
   subset(select=CD_REF)
 
 list_species$harvested <- "harvested"

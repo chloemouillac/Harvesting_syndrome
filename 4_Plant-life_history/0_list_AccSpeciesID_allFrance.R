@@ -7,14 +7,13 @@ setwd(directory)
 
 # Import packages :
 library(dplyr)
-library(here)
 library(reshape2)
 library(stringr)
 
 
 #### Import data ####
 # List of french species from vascular flora :
-vascular_list <- read.csv("Harvesting_syndrome/list_vascular_v17.csv" )
+vascular_list <- read.csv(here::here("list_vascular_v17.csv") )
 
 # TRY species and IDs :
 list_TRY_ID <- read.delim("raw_data/TRY/TryAccSpecies.txt") %>%
@@ -25,7 +24,7 @@ list_TRY_ID <- read.delim("raw_data/TRY/TryAccSpecies.txt") %>%
 join <- inner_join(list_TRY_ID, vascular_list, by=join_by("AccSpeciesName"=="LB_NOM")) #about 1100 species missing
 
 # Specifically add the Acc_Species_IDs for harvested plants :
-WHP <- read.csv("Harvesting_syndrome/WHP_correpondence_table_v17.csv") %>%
+WHP <- read.csv(here::here("WHP_correpondence_table_v17.csv")) %>%
   subset(!is.na(AccSpeciesID), select=c(CD_REF, AccSpeciesID)) %>%
   unique() %>%
   left_join(list_TRY_ID) %>% # to add AccSpeciesName

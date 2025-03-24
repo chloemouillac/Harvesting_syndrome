@@ -7,12 +7,11 @@ setwd(directory)
 
 # Import packages :
 library(dplyr)
-library(here)
 library(ggplot2)
 
 
 # Import data :
-list_species <- read.csv("Harvesting_syndrome/WHP_correpondence_table_v17.csv")
+list_species <- read.csv(here::here("WHP_correpondence_table_v17.csv"))
 
 CSR_data_WHP <- read.csv("processed_data/StrateFy_CSR_clean_output_WHP.csv") %>%
   na.omit() %>%

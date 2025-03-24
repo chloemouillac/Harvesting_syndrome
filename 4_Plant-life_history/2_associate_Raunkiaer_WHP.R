@@ -7,12 +7,11 @@ setwd(directory)
 
 # Import packages
 library(dplyr)
-library(here)
 
 
 #### Import data ####
 # Import species list and associated codes
-list_species <- read.csv("Harvesting_syndrome/all_sp_corresp_codes.csv")
+list_species <- read.csv(here::here("all_sp_corresp_codes.csv"))
 
 # Import Baseflor
 baseflor <- read.csv("raw_data/BaseFlor/baseflor.csv") %>%

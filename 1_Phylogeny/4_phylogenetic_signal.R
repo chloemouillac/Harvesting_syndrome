@@ -6,7 +6,6 @@ setwd(directory)
 
 # Import packages :
 library(dplyr)
-library(here)
 library(phytools)   # For calculating phylogenetic signal
 library(ape)        # For handling phylogenetic trees
 library(caper)      # For comparative phylogenetics
@@ -21,7 +20,7 @@ tree_data <- read.tree("processed_data/phylomaker_tree_all_species.tre") # made 
 
 
 # Import list of uses :
-uses_data <- read.csv("Harvesting_syndrome/3_Ethnobotany/processed_data/uses_detail_count.csv") 
+uses_data <- read.csv(here::here("3_Ethnobotany", "processed_data", "uses_detail_count.csv")) 
 uses_data$LB_NOM <- ifelse(grepl("x. ", uses_data$NOM_VALIDE), #extract LB_NOM from NOM_VALIDE
                            word(uses_data$NOM_VALIDE, 1,3),
                            word(uses_data$NOM_VALIDE, 1,2))
@@ -29,7 +28,7 @@ uses_data <- select(uses_data, -c(NOM_VALIDE, CD_REF))
 
 # Import species list :
 # Import list of french vascular flora :
-vascular_list <- read.csv("Harvesting_syndrome/list_vascular_v17.csv") %>%
+vascular_list <- read.csv(here::here("list_vascular_v17.csv")) %>%
   select(LB_NOM) %>%
   unique()
 

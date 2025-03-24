@@ -3,7 +3,6 @@ setwd(directory)
 
 d1 <- read.csv("processed_data/OpenObs_10km.csv")
 library(dplyr)
-library(here)
 
 toMatch <- c("CEN ", 
              "CBN",

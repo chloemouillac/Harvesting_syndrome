@@ -9,13 +9,12 @@ setwd(directory)
 
 # Import packages :
 library(dplyr)
-library(here)
 
 
 #### Import data ####
-data <- read.csv("Harvesting_syndrome/1_Phylogeny/processed_data/tip_data_for_tree.csv") %>%
+data <- read.csv(here::here("1_Phylogeny", "processed_data", "tip_data_for_tree.csv")) %>%
   select(FAMILLE,number_harvested,total_sp)
-data <- read.csv("/home/mouillac/Documents/submission/Code/Harvesting_syndrome/1_Phylogeny/processed_data/tip_data_for_tree.csv") %>%
+data <- read.csv("/home/mouillac/Documents/submission/Code/here::here("1_Phylogeny", "processed_data", "tip_data_for_tree.csv")") %>%
   select(FAMILLE,number_harvested,total_sp)
 
 ####  Filter families with more than 10 harvested species #### 

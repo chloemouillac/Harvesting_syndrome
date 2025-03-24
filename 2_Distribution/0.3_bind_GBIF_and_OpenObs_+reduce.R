@@ -7,7 +7,6 @@ setwd(directory)
 # Load packages :
 library(data.table)
 library(dplyr)
-library(here)
 library(terra)
 
 

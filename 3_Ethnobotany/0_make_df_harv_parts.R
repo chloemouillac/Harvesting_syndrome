@@ -11,7 +11,6 @@ setwd(directory)
 # Import packages :
 library(reshape2)
 library(dplyr)
-library(here)
 library(tidyr)
 
 

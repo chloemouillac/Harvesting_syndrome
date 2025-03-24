@@ -8,14 +8,13 @@ setwd(directory)
 # Import packages :
 library(reshape2)
 library(dplyr)
-library(here)
 library(tidyr)
 library(readr)
 
 
 #### Import data ####
 # Import TAXREF v17 :
-TAXREFv17 <- read.delim("/Harvesting_syndrome/TAXREF_v17_2024/TAXREFv17.txt") %>%
+TAXREFv17 <- read.delim(here::here("TAXREF_v17_2024/TAXREFv17.txt")) %>%
   subset((GROUP1_INPN=="Trachéophytes") &
            (REGNE=="Plantae"),
          select=c(CD_REF, CD_NOM, LB_NOM, FAMILLE)) %>%
@@ -56,4 +55,4 @@ write.csv(join, "processed_data/corresp_vascular_2018_&_taxrefv17.csv", row.name
 simple_join <- join %>%
   subset(taxonomy %in% c("unchanged", "name_changed", "species_to_hybrid"), select=c(CD_REF, LB_NOM, FAMILLE)) %>% # keep only species level
   unique()
-write.csv(simple_join, "/Harvesting_syndrome/list_vascular_v17.csv", row.names=F)
+write.csv(simple_join, here::here("list_vascular_v17.csv"), row.names=F)

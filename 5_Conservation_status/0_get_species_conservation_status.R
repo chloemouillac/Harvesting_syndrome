@@ -8,17 +8,16 @@ setwd(directory)
 
 # Import packages :
 library(dplyr)
-library(here)
 library(readr)
 library(reshape2)
 
 
 #### Import data ####
 # Import the status database :
-BDC_STATUTS_17 <- read_csv("Harvesting_syndrome/BDC-Statuts-v17/BDC_STATUTS_17.csv")
+BDC_STATUTS_17 <- read_csv(here::here("BDC-Statuts-v17", "BDC_STATUTS_17.csv"))
 
 # Import the list of species for which the data needs to be extracted :
-list_species <- read.csv("Harvesting_syndrome/list_vascular_v17.csv")
+list_species <- read.csv(here::here("list_vascular_v17.csv"))
 
 
 

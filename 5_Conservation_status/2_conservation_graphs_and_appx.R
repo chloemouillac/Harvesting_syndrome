@@ -7,7 +7,6 @@ setwd(directory)
 # Import packages :
 library(ggplot2)
 library(dplyr)
-library(here)
 library(ggbreak)
 library(ggrepel)
 library(gridExtra)

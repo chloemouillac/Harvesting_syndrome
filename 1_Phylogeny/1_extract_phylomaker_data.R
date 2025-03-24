@@ -9,7 +9,6 @@ setwd(directory)
 # Import packages :
 library(V.PhyloMaker2)
 library(dplyr)
-library(here)
 
 #### Import data ####
 # List with ALL of the species in the vascular flora, formated for phylomaker

@@ -9,7 +9,6 @@ setwd(directory)
 
 # Import packages :
 library(dplyr)
-library(here)
 library(reshape2)
 library(stringr)
 library(readr)

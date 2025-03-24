@@ -7,7 +7,6 @@ setwd(directory)
 # Import packages :
 library(reshape2)
 library(dplyr)
-library(here)
 library(tidyr)
 
 
@@ -29,7 +28,7 @@ corresp <- read.csv("raw_data/uses_correspondences.csv") %>%
   select(c(USE, SELECTED_TYPOLOGY_ENG))
 
 # Import species list :
-list_species <- read.csv("Harvesting_syndrome/WHP_correpondence_table_v17.csv") %>%
+list_species <- read.csv(here::here("WHP_correpondence_table_v17.csv")) %>%
   subset(Regroupement %in% c("Angiospermes", "Fougères", "Gymnospermes"), 
          select=c(CD_REF, NOM_VALIDE)) %>%
   unique()

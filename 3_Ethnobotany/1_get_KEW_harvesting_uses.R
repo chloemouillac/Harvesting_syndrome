@@ -9,7 +9,6 @@ setwd(directory)
 # Import packages :
 library(reshape2)
 library(dplyr)
-library(here)
 
 
 #### Import data ####
@@ -19,7 +18,7 @@ KEW_db <- KEW_db[,-(13:22)]
 
 
 # Import species list :
-list_species <- read.csv("Harvesting_syndrome/WHP_correpondence_table_v17.csv") %>%
+list_species <- read.csv(here::here("WHP_correpondence_table_v17.csv")) %>%
   subset(Regroupement %in% c("Angiospermes", "Fougères", "Gymnospermes") &
            KEW_binomial_acc_name != "not_found" & #remove species that don't have a correspondence in the Kew database
            !is.na(KEW_binomial_acc_name), 

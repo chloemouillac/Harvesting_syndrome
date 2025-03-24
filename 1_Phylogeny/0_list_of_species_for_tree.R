@@ -6,7 +6,6 @@ setwd(directory)
 
 # Import packages :
 library(dplyr)
-library(here)
 library(reshape2)
 library(stringr)
 # If V.PhyloMaker2 isn't installed run : devtools::install_github("jinyizju/V.PhyloMaker2")
@@ -15,7 +14,7 @@ library(V.PhyloMaker2)
 
 #### Import data ####
 # Import list of french vascular flora :
-vascular_list <- read.csv("Harvesting_syndrome/list_vascular_v17.csv")
+vascular_list <- read.csv(here::here("list_vascular_v17.csv"))
 
 
 #### Create list of species to submit to Phylomaker ####

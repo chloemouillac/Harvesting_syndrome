@@ -11,7 +11,6 @@ library(ggnewscale)
 library(ggsankey)
 library(reshape2)
 library(dplyr)
-library(here)
 library(ggrepel)
 library(stringr)
 
@@ -39,9 +38,7 @@ names(parts) <- c("CD_REF","NOM_VALIDE", "PART")
 
 
 # Import list of french vascular flora :
-vascular_list <- read.csv("Harvesting_syndrome/list_vascular_v17.csv" )%>%
-  subset(select=c("CD_REF", "FAMILLE", "LB_NOM"))
-vascular_list <- read.csv("/home/mouillac/Documents/submission/Code/Harvesting_syndrome/list_vascular_v17.csv" )%>%
+vascular_list <- read.csv(here::here("list_vascular_v17.csv") )%>%
   subset(select=c("CD_REF", "FAMILLE", "LB_NOM"))
 
 
@@ -93,8 +90,7 @@ most_harv <- factor(most_harv, levels= c("Lamiaceae", "Rosaceae", "Ranunculaceae
 
 #### First plot : nb of sp on VS not on list ####
 # Get the percentage of harvested species : 
-pct_on_harv_list <- read.csv("Harvesting_syndrome/1_Phylogeny/processed_data/tip_data_for_tree.csv")
-pct_on_harv_list <- read.csv("/home/mouillac/Documents/submission/Code/Harvesting_syndrome/1_Phylogeny/processed_data/tip_data_for_tree.csv")
+pct_on_harv_list <- read.csv(here::here("1_Phylogeny", "processed_data", "tip_data_for_tree.csv"))
 pct_on_harv_list_10fam <- pct_on_harv_list %>%
   subset(FAMILLE %in% most_harv)
 
@@ -126,9 +122,8 @@ plot1 <- ggplot(pct_on_harv_list_10fam[pct_on_harv_list_10fam$FAMILLE!="ALL",], 
              colour="black") +
   
   annotate("text", x = 0.5,
-                y = 2 + pct_on_harv_list_10fam$percentage_harvested[pct_on_harv_list_10fam$list=="Yes" &
-                                                            pct_on_harv_list_10fam$FAMILLE=="ALL"],
-            label =  "Average %",  size = 6, hjust=0) +
+                y = 2 + pct_on_harv_list_10fam$percentage_harvested[pct_on_harv_list_10fam$FAMILLE=="ALL"],
+           label =  "Average %",  size = 6, hjust=0) +
   
   theme_bw() +
   labs(y="% of commercial WHP species") +
@@ -151,13 +146,13 @@ ALL <- join_uses_vascular_summar %>%
   summarise(weight=sum(weight),
             nb_species=sum(nb_species))
 ALL$percentage[ALL$USE!="No recorded use"] <- ALL$nb_species[ALL$USE!="No recorded use"]/
-  sum(ALL$nb_species[ALL$USE!="No recorded use"])
+  sum(ALL$nb_species[ALL$USE!="No recorded use"])*100
 ALL$percentage[ALL$USE=="No recorded use"] <- ALL$nb_species[ALL$USE=="No recorded use"]/sum(ALL$nb_species)
 ALL$FAMILLE<- "ALL"
 uses_per_fam <- rbind(uses_per_fam, ALL)
 #
 
-uses_per_fam$percentage <- round(uses_per_fam$percentage,3)*100
+uses_per_fam$percentage <- round(uses_per_fam$percentage,1)
 uses_per_fam$FAMILLE <- factor(uses_per_fam$FAMILLE, levels= c("ALL", "Lamiaceae", "Rosaceae", "Ranunculaceae", "Boraginaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Crassulaceae","Pinaceae", "Polygonaceae"))
 
 uses_per_fam$USE <- as.character(uses_per_fam$USE)
@@ -315,7 +310,7 @@ summar_parts <- parts %>%
 
 #### Create a tripartite network ####
 # Import Raunkiaer data :
-raunkiear <- read.csv("Harvesting_syndrome/4_Plant-life_history/processed_data/Raunkieaer_data_REVIEWED_WHP.csv") %>%
+raunkiear <- read.csv(here::here("4_Plant-life_history", "processed_data", "Raunkieaer_data_REVIEWED_WHP.csv")) %>%
   subset(select=c(CD_REF, NOM_VALIDE, choix_type_bio))%>%
   unique()
 

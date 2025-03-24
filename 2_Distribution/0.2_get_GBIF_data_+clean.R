@@ -8,7 +8,6 @@ setwd(directory)
 library(rgbif)
 library(data.table)
 library(dplyr)
-library(here)
 library(CoordinateCleaner)
 library(countrycode)
 library(rnaturalearthdata)
@@ -18,7 +17,7 @@ library(terra)
 
 #### Import data ####
 # Import species list :
-list_species <- read.csv("Harvesting_syndrome/all_sp_corresp_codes.csv") %>%
+list_species <- read.csv(here::here("all_sp_corresp_codes.csv")) %>%
   subset(Regroupement!="Algue rouge" & 
            Regroupement!="Algue brune" & 
            Regroupement!="Lichens" &
