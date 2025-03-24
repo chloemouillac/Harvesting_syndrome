@@ -14,12 +14,10 @@ library(dplyr)
 #### Import data ####
 data <- read.csv(here::here("1_Phylogeny", "processed_data", "tip_data_for_tree.csv")) %>%
   select(FAMILLE,number_harvested,total_sp)
-data <- read.csv("/home/mouillac/Documents/submission/Code/here::here("1_Phylogeny", "processed_data", "tip_data_for_tree.csv")") %>%
-  select(FAMILLE,number_harvested,total_sp)
 
 ####  Filter families with more than 10 harvested species #### 
 filtered_data <- data %>%
-  filter(number_harvested > 10)
+  filter(total_sp > 10)
 
 ####  Create a contingency table #### 
 contingency_table <- data.frame(
@@ -44,6 +42,7 @@ filtered_data <- filtered_data %>%
 # Identify the 10 most overutlised families
 over_harvested <- filtered_data %>%
   arrange(desc(std_residuals)) %>%  # Sort by highest residuals
+  filter(number_harvested>10) %>%
   slice_head(n = 10)  # Select top 10 families
 
 
