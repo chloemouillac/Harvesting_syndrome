@@ -261,6 +261,33 @@ plot2 <- ggplot(uses_per_fam_simpl[uses_per_fam_simpl$FAMILLE != "ALL",], aes(x=
 plot2
 
 
+#### Third plot : instead of %of WHP, plot the std residuals from the chi2 analysis : ####
+# Get the percentage of harvested species : 
+chi2 <- read.csv("processed_data/overutilised_families.csv") %>%
+  subset(select=c(FAMILLE, std_residuals),
+         FAMILLE %in% c("Lamiaceae", "Rosaceae", "Ranunculaceae", "Boraginaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Crassulaceae","Pinaceae", "Polygonaceae"))
+
+
+chi2$FAMILLE <- factor(chi2$FAMILLE, c("Lamiaceae", "Rosaceae", "Ranunculaceae", "Boraginaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Crassulaceae","Pinaceae", "Polygonaceae"))
+
+
+# Plot :
+plot3 <- ggplot(chi2, aes(x=FAMILLE, y=std_residuals, width=0.7)) +
+  geom_col(fill="grey60") +
+  
+  theme_bw() +
+  labs(y="% of commercial WHP species") +
+  theme(legend.title=element_blank(),
+        axis.text.x = element_blank(), axis.title.x = element_blank(),
+        axis.text.y = element_text(size=20), axis.title.y = element_text(size=18),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        plot.margin = margin(1,1,0,2, "cm")) #top, right, bottom, left)
+plot3
+
+
+
+
 
 # Export :  
 # png(file = "plots/uses_10fam.png", 
@@ -372,6 +399,65 @@ print(p)
 dev.off()
 
 
+#### Contribution of each dataset for each use ####
+library(ggplot2)
+library(dplyr)
+library(gridExtra)
+library(scales)  # For percent formatting
+library(patchwork)  # For combining plots with a shared legend
+
+# Read the data
+uses_refs <- read.csv("processed_data/uses_detail_with_sources.csv")
+
+# Define the order of categories (x-axis)
+uses_refs$SELECTED_TYPOLOGY_ENG <- factor(uses_refs$SELECTED_TYPOLOGY_ENG, 
+                                          levels = c("Medical/Therapeutic", "Food and Beverages", 
+                                                     "Crafts", "Ornamental Plants", 
+                                                     "Cosmetics", "Other"))
+
+# Define the order of databases (legend & stack order)
+uses_refs$SOURCE <- factor(uses_refs$SOURCE, 
+                           levels = c("CBNPMP", "Chabert", "PFAF", "KEW"))
+
+# Custom color palette
+custom_colors <- c(
+  "CBNPMP" = "#D82632", 
+  "Chabert" = "#85B22C", 
+  "PFAF" = "#51A3CC", 
+  "KEW" = "#6551CC"
+)
+
+# Base plot (to ensure consistent themes)
+base_plot <- ggplot(uses_refs, aes(x = SELECTED_TYPOLOGY_ENG, fill = SOURCE)) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.title.x = element_blank(),  # Remove x-axis title
+        legend.position = "right",  # Places legend on the side
+        legend.direction = "vertical") +  # Make legend vertical
+  scale_fill_manual(values = custom_colors)  # Apply custom colors
+
+# Create the first plot (species count)
+p1 <- base_plot +
+  geom_bar(position = "stack") +
+  labs(y = "Count of species")
+
+# Create the second plot (percentage)
+p2 <- base_plot +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = percent_format()) +  # Convert y-axis to percentages
+  labs(y = "Proportion")
+
+# Combine plots with shared legend and title
+combined_plot <- (p1 + p2) +
+  plot_layout(guides = "collect") +  # Collects the legend into one
+  plot_annotation(title = "Contribution of each dataset for each use")  # Center main title
+
+# Display the final combined plot
+print(combined_plot)
 
 
-
+pdf(file = "plots/data_contribution.pdf", 
+    width = 10, 
+    height = 5)
+print(combined_plot)
+dev.off()

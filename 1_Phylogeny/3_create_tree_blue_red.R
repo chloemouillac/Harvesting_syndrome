@@ -236,10 +236,10 @@ plot_tree <- ggtree(tree_data, layout="fan",
   scale_fill_manual(
     name="Comparison to expected WHP", 
     values=c(
-      "#529985",  # Blue for low values
-      "#9EB258",  # Transition color
-      "#E5A94E",  # Lighter blue for medium values
-      "#A90C38"   # Very light blue for high values
+      "#529985",  
+      "#9EB258", 
+      "#E5A94E",  
+      "#A90C38"
     ),
     labels=c("Significantly less", "Less", "More", "Significantly more"), 
     na.value ="grey") + 
@@ -291,7 +291,7 @@ plot_tree <- ggtree(tree_data, layout="fan",
     "Monilophytes"='#0F71AF'
   ))+
   
-  guides(fill = guide_legend(override.aes = list(size = 20))) +
+  guides(fill = guide_legend(override.aes = list(size = 18))) +
   
   theme(legend.text = element_text(size=45), legend.title = element_text(size=50, face="bold"),
         legend.position = c(0.88, 0.44)) +
@@ -314,3 +314,4 @@ plot_tree
 pdf(file = "plots/phylo_std_res.pdf", width = 50, height = 48)
 plot_tree
 dev.off()
+

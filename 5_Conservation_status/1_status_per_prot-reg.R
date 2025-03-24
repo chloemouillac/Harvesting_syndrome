@@ -23,7 +23,7 @@ list_species <- read.csv(here::here("list_vascular_v17.csv"))
 
 
 # Import the list of harvested species for which the data needs to be extracted :
-list_harv_species <- read.csv(here::here("WHP_correpondence_table_v17.csv")) %>%
+list_harv_species <- read.csv(here::here("WHP_correspondence_table_v17.csv")) %>%
   subset(select=CD_REF) %>%
   unique()
 

@@ -17,7 +17,7 @@ data <- read.csv(here::here("1_Phylogeny", "processed_data", "tip_data_for_tree.
 
 ####  Filter families with more than 10 harvested species #### 
 filtered_data <- data %>%
-  filter(total_sp > 10)
+  filter(total_sp > 5)
 
 ####  Create a contingency table #### 
 contingency_table <- data.frame(
