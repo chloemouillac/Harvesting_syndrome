@@ -1,0 +1,12 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Description>wc2.1_30s_bio_1</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">499</MDI>
+      <MDI key="STATISTICS_MEAN">198.09602478059</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_STDDEV">173.51656853367</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">66.12</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>
