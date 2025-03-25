@@ -30,13 +30,7 @@ BDC_filtered <- left_join(list_species, BDC_STATUTS_17, by=c("CD_REF", "LB_NOM",
 
 #### Extract data from the red lists ####
 # Extract from the database the lines concerning the red lists :
-BDC_LR <- as.data.frame(BDC_filtered[BDC_filtered$REGROUPEMENT_TYPE=="Liste rouge",]) %>%
-  filter(LB_ADM_TR %in% c("Alsace", "Limousin", "Rhône-Alpes", "Centre", "Auvergne", "Picardie", "Poitou-Charentes", 
-         "Champagne-Ardenne", "Bourgogne", "Aquitaine", "Hauts-de-France", "Midi-Pyrénées", "Nord-Pas-de-Calais", 
-         "Corse", "Franche-Comté", "Haute-Normandie", "Lorraine", "France métropolitaine", 
-         "Bretagne", "Pays-de-la-Loire", "Basse-Normandie", "Ile-de-France", "Provence-Alpes-Côte-d'Azur")) # remove domtom
-         
-
+BDC_LR <- as.data.frame(BDC_filtered[BDC_filtered$REGROUPEMENT_TYPE=="Liste rouge",])
 
 # Clean the data : choose one status when there are more than one for a same region :
 BDC_LR$CODE_STATUT <- as.factor(BDC_LR$CODE_STATUT) %>%
@@ -94,13 +88,8 @@ reglementation$nombre_reglementations[is.na(reglementation$nombre_reglementation
 
 
 #### Export the data ####
-list_harv_species <- read.csv(here::here("WHP_correspondence_table_v17.csv")) %>%
-  subset(select=CD_REF) %>%
-  unique()
-
 synthese_statuts <- full_join(protection, reglementation, relationship = "many-to-many") %>%
-  full_join(BDC_LR_monde_et_FR, relationship = "many-to-many") %>%
-  full_join(list_harv_species)
+  full_join(BDC_LR_monde_et_FR, relationship = "many-to-many")
 
 
 write.csv(synthese_statuts,"processed_data/species_conservation_status.csv", row.names=F)
