@@ -89,17 +89,17 @@ write.csv(join_uses_vascular_summar, "processed_data/uses_percentages.csv", row.
 
 
 
-#### 10 families - End-uses of the most harvested plant families plot #####
-# 10 most harvested plant families :
-most_harv <-  c("Lamiaceae", "Rosaceae", "Ranunculaceae", "Boraginaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Crassulaceae","Pinaceae", "Polygonaceae")
-most_harv <- factor(most_harv, levels= c("Lamiaceae", "Rosaceae", "Ranunculaceae", "Boraginaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Crassulaceae","Pinaceae", "Polygonaceae"))
+#### 6 families - End-uses of the most harvested plant families plot #####
+# 6 most harvested plant families :
+most_harv <-  c("Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Ericaceae", "Violaceae","Pinaceae")
+most_harv <- factor(most_harv, levels= c("Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Ericaceae", "Violaceae","Pinaceae"))
 # Ordered by highest number of WHP species to lowest, and when equal number, the highest percentage of WHP goes first
 
 
 #### Figure 2a : % of harvesetd species in the 10 selected families ####
 # Get the percentage of harvested species : 
 pct_on_harv_list <- read.csv(here::here("1_Phylogeny", "processed_data", "tip_data_for_tree.csv"))
-pct_on_harv_list_10fam <- pct_on_harv_list %>%
+pct_on_harv_list_6fam <- pct_on_harv_list %>%
   subset(FAMILLE %in% most_harv)
 
 # Get the total percentage of harvested species
@@ -111,26 +111,26 @@ ALL_list <- data.frame(FAMILLE="ALL",
                            sum(pct_on_harv_list$total_sp),1))
 
 
-pct_on_harv_list_10fam <- rbind(pct_on_harv_list_10fam, ALL_list)
-pct_on_harv_list_10fam$percentage_harvested <- round(pct_on_harv_list_10fam$percentage_harvested, 1)
+pct_on_harv_list_6fam <- rbind(pct_on_harv_list_6fam, ALL_list)
+pct_on_harv_list_6fam$percentage_harvested <- round(pct_on_harv_list_6fam$percentage_harvested, 1)
 
-pct_on_harv_list_10fam$FAMILLE <- factor(pct_on_harv_list_10fam$FAMILLE, c("ALL", "Lamiaceae", "Rosaceae", "Ranunculaceae", "Boraginaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Crassulaceae","Pinaceae", "Polygonaceae"))
+pct_on_harv_list_6fam$FAMILLE <- factor(pct_on_harv_list_6fam$FAMILLE, c("ALL", "Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Pinaceae"))
 
 
 
 # Plot :
-plot1 <- ggplot(pct_on_harv_list_10fam[pct_on_harv_list_10fam$FAMILLE!="ALL",], aes(x=FAMILLE,
+plot1 <- ggplot(pct_on_harv_list_6fam[pct_on_harv_list_6fam$FAMILLE!="ALL",], aes(x=FAMILLE,
                                                                                       y=percentage_harvested, width=0.7)) +
   geom_col(fill="grey60") +
   
   scale_y_continuous(breaks = seq(0,40,10), limits = c(0, 48),
                      labels= seq(0,40,10)) +
   
-  geom_hline(yintercept=pct_on_harv_list_10fam$percentage_harvested[pct_on_harv_list_10fam$FAMILLE=="ALL"],
+  geom_hline(yintercept=pct_on_harv_list_6fam$percentage_harvested[pct_on_harv_list_6fam$FAMILLE=="ALL"],
              colour="black") +
   
   annotate("text", x = 0.5,
-                y = 2 + pct_on_harv_list_10fam$percentage_harvested[pct_on_harv_list_10fam$FAMILLE=="ALL"],
+                y = 2 + pct_on_harv_list_6fam$percentage_harvested[pct_on_harv_list_6fam$FAMILLE=="ALL"],
            label =  "Average %",  size = 6, hjust=0) +
   
   theme_bw() +
@@ -161,7 +161,7 @@ uses_per_fam <- rbind(uses_per_fam, ALL)
 #
 
 uses_per_fam$percentage <- round(uses_per_fam$percentage,1)
-uses_per_fam$FAMILLE <- factor(uses_per_fam$FAMILLE, levels= c("ALL", "Lamiaceae", "Rosaceae", "Ranunculaceae", "Boraginaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Crassulaceae","Pinaceae", "Polygonaceae"))
+uses_per_fam$FAMILLE <- factor(uses_per_fam$FAMILLE, levels= c("ALL", "Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Pinaceae"))
 
 uses_per_fam$USE <- as.character(uses_per_fam$USE)
 uses_per_fam$USE <- gsub("\\.", " ", uses_per_fam$USE)
@@ -204,7 +204,7 @@ uses_per_fam_simpl$jitter[uses_per_fam_simpl$USE=="Crafts"] <- -0.12
 # Add a column with total number of harvested species / family
 for (fam in levels(uses_per_fam_simpl$FAMILLE)) {
   uses_per_fam_simpl$total_sp[uses_per_fam_simpl$FAMILLE==fam] <- 
-    pct_on_harv_list_10fam$number_harvested[pct_on_harv_list_10fam$FAMILLE==fam]
+    pct_on_harv_list_6fam$number_harvested[pct_on_harv_list_6fam$FAMILLE==fam]
 }
 
 # Reorder for plotting :
@@ -250,7 +250,7 @@ plot2 <- ggplot(uses_per_fam_simpl[uses_per_fam_simpl$FAMILLE != "ALL",], aes(x=
   scale_y_continuous(breaks = seq(0,50,10), limits=c(0,56),
                      labels= seq(0,50,10)) +
   
-  scale_x_continuous(breaks=seq(1,10,1),
+  scale_x_continuous(breaks=seq(1,6,1),
                      labels=paste0(most_harv,
                                    " (n=",
                                    uses_per_fam_simpl$total_sp[uses_per_fam_simpl$FAMILLE != "ALL" &
@@ -265,16 +265,16 @@ plot2 <- ggplot(uses_per_fam_simpl[uses_per_fam_simpl$FAMILLE != "ALL",], aes(x=
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
         plot.margin = margin(0,1,0,2, "cm")) + #top, right, bottom, left
-  coord_cartesian( xlim = c(0.9, 10.1))
+  coord_cartesian( xlim = c(0.9, 6.1))
 plot2
 
 
 
 #### Assemble figure 2 ####
 # Export :
-pdf(file = "plots/Fig_2_uses_10fam.pdf",
-    width = 10,
-    height = 15)
+pdf(file = "plots/Fig_2_uses_6fam.pdf",
+    width = 7,
+    height = 12)
 
 ggpubr::ggarrange(print(plot1), print(plot2), align="v",
                   nrow=2, labels=c("a", "b"), heights=c(0.5,1),
@@ -296,49 +296,81 @@ uses_refs$SELECTED_TYPOLOGY_ENG <- factor(uses_refs$SELECTED_TYPOLOGY_ENG,
 uses_refs$SOURCE <- factor(uses_refs$SOURCE, 
                            levels = c("CBN", "Chabert", "PFAF", "KEW"))
 
-# Custom color palette
-custom_colors <- c(
-  "CBN" = "#D82632", 
-  "Chabert" = "#85B22C", 
-  "PFAF" = "#51A3CC", 
-  "KEW" = "#6551CC"
-)
 
-# Base plot (to ensure consistent themes)
-base_plot <- ggplot(uses_refs, aes(x = SELECTED_TYPOLOGY_ENG, fill = SOURCE)) +
+# Identify single-source vs multi-source for each species and use category
+species_use_counts <- uses_refs %>%
+  group_by(NOM_VALIDE, SELECTED_TYPOLOGY_ENG) %>%
+  summarise(database_count = n_distinct(SOURCE), .groups = "drop") %>%
+  mutate(category = ifelse(database_count == 1, "Single Source", "Multiple Sources"))
+
+# Count occurrences for each category
+category_counts <- species_use_counts %>%
+  count(SELECTED_TYPOLOGY_ENG, category)
+
+# Filter only single-source records
+single_source_data <- uses_refs %>%
+  group_by(NOM_VALIDE, SELECTED_TYPOLOGY_ENG) %>%
+  filter(n_distinct(SOURCE) == 1) %>%
+  ungroup()
+
+# Count occurrences of each database in single-source cases, per use category
+single_source_db_counts <- single_source_data %>%
+  count(SELECTED_TYPOLOGY_ENG, SOURCE) %>%
+  group_by(SELECTED_TYPOLOGY_ENG) %>%
+  mutate(percentage = n / sum(n) * 100)
+
+# Define order for x-axis
+category_counts$SELECTED_TYPOLOGY_ENG <- factor(category_counts$SELECTED_TYPOLOGY_ENG, 
+                                                levels = c("Medical/Therapeutic", "Food and Beverages", 
+                                                           "Crafts", "Ornamental Plants", 
+                                                           "Cosmetics", "Other"))
+
+single_source_db_counts$SELECTED_TYPOLOGY_ENG <- factor(single_source_db_counts$SELECTED_TYPOLOGY_ENG, 
+                                                        levels = c("Medical/Therapeutic", "Food and Beverages", 
+                                                                   "Crafts", "Ornamental Plants", 
+                                                                   "Cosmetics", "Other"))
+
+# Custom colors
+use_colors <- c("Single Source" = "#D82632", "Multiple Sources" = "grey70")
+db_colors <- c("CBN" = "gold", "Chabert" = "#85B22C", "PFAF" = "#51A3CC", "KEW" = "#6551CC")
+
+# Plot 1: Number of uses in single vs. multiple sources
+p1 <- ggplot(category_counts, aes(x = SELECTED_TYPOLOGY_ENG, y = n, fill = category)) +
+  geom_bar(stat = "identity", position = "stack") +  
+  scale_fill_manual(values = use_colors) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title.x = element_blank(),  # Remove x-axis title
-        legend.position = "right",  # Places legend on the side
-        legend.direction = "vertical") +  # Make legend vertical
-  scale_fill_manual(values = custom_colors)  # Apply custom colors
+        axis.title.x = element_blank(),
+        legend.position = "right") +
+  labs(y = "Number of uses", 
+       fill = NULL,
+       title = "a) Number of uses documented in 1 
+       vs. multiple databases")
 
-# Create the first plot (species count)
-p1 <- base_plot +
-  geom_bar(position = "stack") +
-  labs(y = "Count of species")
+# Plot 2: Percentage of each database for single-source uses (per use category)
+p2 <- ggplot(single_source_db_counts, aes(x = SELECTED_TYPOLOGY_ENG, y = percentage, fill = SOURCE)) +
+  geom_bar(stat = "identity", position = "stack") +
+  scale_y_continuous(labels = percent_format(scale = 1)) +  # Show as percentage
+  scale_fill_manual(values = db_colors) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.title.x = element_blank(),
+        legend.position = "right") +
+  labs(y = "Percentage of single-source uses",
+       fill = "Database",
+       title = "b) Database contribution to single-source uses")
 
-# Create the second plot (percentage)
-p2 <- base_plot +
-  geom_bar(position = "fill") +
-  scale_y_continuous(labels = percent_format()) +  # Convert y-axis to percentages
-  labs(y = "Proportion")
+# Combine the two plots
+combined_plot <- p1 / p2 +  # Stack them vertically
+  plot_annotation()
 
-# Combine plots with shared legend and title
-combined_plot <- (p1 + p2) +
-  plot_layout(guides = "collect") +  # Collects the legend into one
-  plot_annotation(title = "Contribution of each dataset for each use")  # Center main title
-
-# Display the final combined plot
+# Display the plot
 print(combined_plot)
 
-# Export :  
-pdf(file = "plots/Appx_G_data_contribution.pdf", 
-    width = 10, 
-    height = 5)
+# Export to PDF
+pdf(file = "plots/Appx_G_single_vs_multiple_sources_combined.pdf", width = 5, height = 8)
 print(combined_plot)
 dev.off()
-
 
 
 

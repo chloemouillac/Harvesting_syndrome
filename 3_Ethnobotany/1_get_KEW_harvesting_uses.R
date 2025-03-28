@@ -34,4 +34,4 @@ filter <- filter[, c((ncol(filter)-1):ncol(filter), 1:(ncol(filter)-2))]
 
 
 #### Export ####
-write.csv(filter, "processed_data/uses_Kew.csv", row.names=F) #note: 59 species of Lescure list are not specified here
+write.csv(filter, "raw_data/uses_Kew.csv", row.names=F) #note: 59 species of Lescure list are not specified here

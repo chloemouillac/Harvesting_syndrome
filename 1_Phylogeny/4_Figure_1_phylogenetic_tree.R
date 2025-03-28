@@ -49,9 +49,9 @@ for (i in(1:length(tree_data$tip.label))) {
 
 #### Plot tree with ggtree #####
 
-# the 10 most harvested families :
-# most_harv <-  c("Lamiaceae", "Ranunculaceae", "Boraginaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Pinaceae", "Polygonaceae", "Asparagaceae", "Crassulaceae")
-most_harv <-  c("Lami.", "Ranuncul.", "Boragin.", "Caprifoli.", "Eric.", "Viol.", "Pin.", "Polygon.", "Asparag.", "Crassul.")
+# the 6 "most harvested" families :
+# most_harv <-  c("Lamiaceae", "Ranunculaceae","Caprifoliaceae", "Ericaceae", "Violaceae", "Pinaceae",)
+most_harv <-  c("Lami.", "Ranuncul.", "Caprifoli.", "Eric.", "Viol.", "Pin.")
 
 # A few adjustments before plotting :
 tip_data$number_harvested[tip_data$number_harvested==0]<-NA # convert zeros to NA for better plotting
@@ -65,7 +65,7 @@ cladeda <- data.frame(nodeid = c(214, 205, 237, 244, 262, 289, 307, 316, 353, 34
                       o=c(21,4,8,6,3,3,3,5,3,4,35))
 
 # Set the breaks in the colour scale (% of WHP species) :
-cuts <- c(0, 5, 10, 20, 50, 100) 
+cuts <- c(0, 5, 12, 20, 50, 100) 
 
 
 # Plot :
@@ -96,9 +96,25 @@ plot_tree <- ggtree(tree_data, layout="fan",
       nbreak=4)
   ) +
   
-  scale_fill_manual(name="% of WHP species", 
-                    values=c('#e0ecf4', '#a6bddb', '#8c6bb1','#810f7c','#2d004b'),
-                    labels=c("1-5", "5-10", "10-20", "20-50", "50-100"), na.translate=FALSE) +
+  # scale_fill_manual(name="% of WHP species", 
+  #                   values=c('#e0ecf4', '#a6bddb', '#8c6bb1','#810f7c','#2d004b'),
+  #                   labels=c("1-5", "5-10", "10-20", "20-50", "50-100"), na.translate=FALSE) +
+  
+  # **Modified scale_fill_manual() with diverging colors**
+  scale_fill_manual(
+    name="% of WHP species", 
+    values=c( 
+      #"#529985", "#9EB258",  
+      # "#5AAE61FF", 
+      # "#ACD39EFF",
+      "#CC5800FF",
+      "#FFAD65FF",
+      "#C2A5CFFF",  
+      "#762a83",
+      "#45113FFF"
+    ),
+    labels=c("1-5", "5-12", "12-20", "20-50", "50-100"), 
+    na.translate=FALSE) + 
   
   new_scale_fill() +
   
@@ -109,8 +125,20 @@ plot_tree <- ggtree(tree_data, layout="fan",
     align = T, fontsize = 22,
     barsize = 10, show.legend=F) +
   
-  scale_color_manual(values=c("Lamiids"='#a6cee3',"Campanulids"='#1f78b4',"Ericales"='#b2df8a',"Caryophyllales"='#33a02c',"Fabids"='#fb9a99',"Malvids"='#e31a1c',"Saxifragales"='#fdbf6f',"Monocots"='#ff7f00', "Gymnosperms"='#cab2d6', "Magnoliids"='#b15928',"Monilophytes"='#6a3d9a'))  +
-  
+  # scale_color_manual(values=c("Lamiids"='#a6cee3',"Campanulids"='#1f78b4',"Ericales"='#b2df8a',"Caryophyllales"='#33a02c',"Fabids"='#fb9a99',"Malvids"='#e31a1c',"Saxifragales"='#fdbf6f',"Monocots"='#ff7f00', "Gymnosperms"='#cab2d6', "Magnoliids"='#b15928',"Monilophytes"='#6a3d9a'))  +
+  scale_color_manual(values=c(
+    "Lamiids"='#0E3F5C', 
+    "Campanulids"='#0F71AF', 
+    "Ericales"='#7898C9', 
+    "Caryophyllales"='#A2B3D6FF', 
+    "Fabids"='#7898C9', 
+    "Malvids"='#0E3F5C', 
+    "Saxifragales"='#0F71AF', 
+    "Monocots"='#7898C9',
+    "Magnoliids"='#A2B3D6FF', 
+    "Gymnosperms"='#7898C9', 
+    "Monilophytes"='#0F71AF'
+  ))+
   # geom_label2(aes(subset=!isTip, label=node), size=5, color="darkred", alpha=0.5) +
   
   new_scale_fill() +
@@ -119,7 +147,22 @@ plot_tree <- ggtree(tree_data, layout="fan",
                mapping=aes(node=nodeid, fill=labs), color="white",
                alpha = .3, show.legend=F) +
   
-  scale_fill_manual(values=c("Lamiids"='#a6cee3',"Campanulids"='#1f78b4',"Ericales"='#b2df8a',"Caryophyllales"='#33a02c',"Fabids"='#fb9a99',"Malvids"='#e31a1c',"Saxifragales"='#fdbf6f',"Monocots"='#ff7f00', "Gymnosperms"='#cab2d6', "Magnoliids"='#b15928',"Monilophytes"='#6a3d9a')) +
+  # scale_fill_manual(values=c("Lamiids"='#a6cee3',"Campanulids"='#1f78b4',"Ericales"='#b2df8a',"Caryophyllales"='#33a02c',"Fabids"='#fb9a99',"Malvids"='#e31a1c',"Saxifragales"='#fdbf6f',"Monocots"='#ff7f00', "Gymnosperms"='#cab2d6', "Magnoliids"='#b15928',"Monilophytes"='#6a3d9a')) +
+  
+  scale_fill_manual(values=c(
+    "Lamiids"='#0E3F5C', 
+    "Campanulids"='#0F71AF', 
+    "Ericales"='#7898C9', 
+    "Caryophyllales"='#A2B3D6FF', 
+    "Fabids"='#7898C9', 
+    "Malvids"='#0E3F5C', 
+    "Saxifragales"='#0F71AF', 
+    "Monocots"='#7898C9',
+    "Magnoliids"='#A2B3D6FF', 
+    "Gymnosperms"='#7898C9', 
+    "Monilophytes"='#0F71AF'
+  ))+
+  
   guides(fill = guide_legend(override.aes = list(size = 20))) +
   
   theme(legend.text = element_text(size=45), legend.title = element_text(size=50, face="bold"),
@@ -136,8 +179,8 @@ plot_tree
 
 
 #### Export ####
-
 pdf(file = "plots/Fig_1_phylo.pdf", width = 50, height = 48)
 plot_tree
 dev.off()
+
 

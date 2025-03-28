@@ -14,7 +14,7 @@ library(tidyr)
 
 #### Import data ####
 # Import all databases for plant uses :
-KEW_db <- read.csv("processed_data/uses_Kew.csv") %>%
+KEW_db <- read.csv("raw_data/uses_Kew.csv") %>%
   select(-binomial_acc_name)
 CBNPMP <- read.csv("raw_data/Harvesting_lists/CBNPMP/parties_cueillies_usages_CBNPMP.csv") %>%
   select(c("CD_REF", "NOM_VALIDE", "USAGES"))
@@ -25,7 +25,7 @@ Chabert <- read.csv("raw_data/Harvesting_lists/Laurence_Chabert_1999_CBNmed/expo
 
 # Import the table with correspondences for each use to my personal typology :
 corresp <- read.csv("raw_data/uses_correspondences.csv") %>%
-  select(c(USE, SELECTED_TYPOLOGY_ENG))
+  select(-c(SELECTED_TYPOLOGY_FR, DETAIL_SELECTED_TYPOLOGY_FR, DETAIL_SELECTED_TYPOLOGY_ENG, ORIGIN_TYPOLOGY))
 
 # Import species list :
 list_species <- read.csv(here::here("WHP_correpondence_table_v17.csv")) %>%
@@ -63,7 +63,7 @@ CBNPMP <- separate_rows(CBNPMP, USAGES, sep = " / ") %>%
 
 CBNPMP <- CBNPMP[CBNPMP$USAGES != "",]
 
-CBNPMP$SOURCE <- "CBNPMP"
+CBNPMP$SOURCE <- "CBN"
 
 
 #### Chabert database ####
@@ -98,7 +98,7 @@ PFAF$SOURCE <- "PFAF"
 
 #### Bind all of the databases together ####
 TOTAL <- rbind(KEW_db, CBNPMP, Chabert, PFAF) %>% #667 species covered
-  left_join(corresp, join_by(USAGES==USE)) %>%
+  left_join(corresp, join_by(USAGES==ORIGIN_USE)) %>%
   inner_join(list_species) %>%
   select(-c(USAGES)) %>%
   na.omit() %>%
