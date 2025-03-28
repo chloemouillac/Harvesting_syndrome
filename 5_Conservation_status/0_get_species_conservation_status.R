@@ -19,6 +19,12 @@ BDC_STATUTS_17 <- read_csv(here::here("BDC-Statuts-v17", "BDC_STATUTS_17.csv"))
 # Import the list of species for which the data needs to be extracted :
 list_species <- read.csv(here::here("list_vascular_v17.csv"))
 
+# Import the list of harvested species for which the data needs to be extracted :
+list_harv_species <- read.csv(here::here("WHP_correspondence_table_v17.csv")) %>%
+  subset(select=CD_REF) %>%
+  unique()
+
+list_harv_species$harvested <- "harvested" #add this to identify the harvested plants
 
 
 #### Filter the database ####
@@ -63,7 +69,10 @@ BDC_LR_monde_et_FR <- left_join(list_species, BDC_LR_monde_et_FR, by="CD_REF") %
 
 #### Extract protection data ####
 BDC_PR <- as.data.frame(BDC_filtered[BDC_filtered$REGROUPEMENT_TYPE=="Protection",])%>%
-  na.omit()
+  na.omit() %>%
+  left_join(list_harv_species)
+
+BDC_PR$harvested[is.na(BDC_PR$harvested)] <- "not harvested" 
 
 protection <- as.data.frame(table(BDC_PR$CD_REF))
 colnames(protection) <- c("CD_REF","nombre_protections")
@@ -76,7 +85,11 @@ protection$nombre_protections[is.na(protection$nombre_protections)] <- 0 # chang
 
 #### Extract regulation data ####
 BDC_REGL <- as.data.frame(BDC_filtered[BDC_filtered$CD_TYPE_STATUT=="REGL" | BDC_filtered$CD_TYPE_STATUT=="REGLSO",]) %>%
-  na.omit() # Réglementation et réglementation sans objet
+  na.omit()  %>% # Réglementation et réglementation sans objet
+  left_join(list_harv_species)
+
+BDC_REGL$harvested[is.na(BDC_REGL$harvested)] <- "not harvested" 
+
 
 reglementation <- as.data.frame(table(BDC_REGL$CD_REF))
 colnames(reglementation) <- c("CD_REF","nombre_reglementations")
@@ -89,7 +102,11 @@ reglementation$nombre_reglementations[is.na(reglementation$nombre_reglementation
 
 #### Export the data ####
 synthese_statuts <- full_join(protection, reglementation, relationship = "many-to-many") %>%
-  full_join(BDC_LR_monde_et_FR, relationship = "many-to-many")
+  full_join(BDC_LR_monde_et_FR, relationship = "many-to-many") %>%
+  left_join(list_harv_species)
+
+synthese_statuts$harvested[is.na(synthese_statuts$harvested)] <- "not harvested"
+
 
 
 write.csv(synthese_statuts,"processed_data/species_conservation_status.csv", row.names=F)

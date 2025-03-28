@@ -1,15 +1,15 @@
 "NIVEAU_ADMIN","CODE_STATUT","harvested","n","percentage"
-"Département","CR","not harvested",7,2.42
+"Département","CR","not harvested",7,2.41
 "Département","EN","harvested",2,2.94
-"Département","EN","not harvested",9,3.11
-"Département","VU","not harvested",15,5.19
+"Département","EN","not harvested",9,3.1
+"Département","VU","not harvested",15,5.17
 "Département","NT","harvested",1,1.47
-"Département","NT","not harvested",21,7.27
+"Département","NT","not harvested",21,7.24
 "Département","LC","harvested",64,94.12
-"Département","LC","not harvested",218,75.43
-"Département","DD","not harvested",10,3.46
+"Département","LC","not harvested",218,75.17
+"Département","DD","not harvested",10,3.45
 "Département","NE","harvested",1,1.47
-"Département","NE","not harvested",9,3.11
+"Département","NE","not harvested",10,3.45
 "Région","RE","not harvested",3,0.25
 "Région","CR","harvested",1,0.63
 "Région","CR","not harvested",18,1.48
@@ -42,12 +42,12 @@
 "no protection or regulation","CR","not harvested",17,0.47
 "no protection or regulation","EN","not harvested",56,1.55
 "no protection or regulation","VU","harvested",2,0.41
-"no protection or regulation","VU","not harvested",90,2.5
+"no protection or regulation","VU","not harvested",93,2.58
 "no protection or regulation","NT","harvested",2,0.41
 "no protection or regulation","NT","not harvested",106,2.94
 "no protection or regulation","LC","harvested",441,90.55
-"no protection or regulation","LC","not harvested",2014,55.9
+"no protection or regulation","LC","not harvested",2016,55.84
 "no protection or regulation","DD","harvested",5,1.03
-"no protection or regulation","DD","not harvested",309,8.58
+"no protection or regulation","DD","not harvested",310,8.59
 "no protection or regulation","NE","harvested",37,7.6
-"no protection or regulation","NE","not harvested",998,27.7
+"no protection or regulation","NE","not harvested",999,27.67

@@ -174,3 +174,34 @@ ggpubr::ggarrange(final1, final2, align="v",
                   nrow=2, common.legend = T, legend="right", labels=c("a", "b"),
                   font.label = list(size = 16))
 dev.off()
+
+
+
+#### Chi2 test on vulnerability ####
+
+data <- read.csv("processed_data/species_conservation_status.csv") %>%
+  subset(select=c(CD_REF,LRN,harvested)) %>%
+  group_by(LRN,harvested) %>%
+  summarise(n=n())
+
+data$LRN <- as.character(data$LRN) #remove factor
+data$LRN[data$LRN %in% c("VU", "EN", "CR", "CR*", "RE", "EX")] <- "Threatened"
+data$LRN[data$LRN %in% c("LC", "NT")] <- "Not threatened"
+data$LRN[data$LRN %in% c("DD", "NE", NA)] <- "Not assessed"
+
+data <- data %>%
+  group_by(LRN,harvested) %>%
+  summarise(n=sum(n))
+
+# Create contingency table
+contingency_table <- xtabs(n ~ CODE_STATUT + harvested, data = data)
+
+# Print table to check
+print(contingency_table)
+
+# Run the chi-square test
+chi_test <- chisq.test(contingency_table)
+
+# Print test results
+print(chi_test)
+
