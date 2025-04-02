@@ -194,7 +194,7 @@ data <- data %>%
   summarise(n=sum(n))
 
 # Create contingency table
-contingency_table <- xtabs(n ~ CODE_STATUT + harvested, data = data)
+contingency_table <- xtabs(n ~ LRN + harvested, data = data)
 
 # Print table to check
 print(contingency_table)
@@ -205,3 +205,8 @@ chi_test <- chisq.test(contingency_table)
 # Print test results
 print(chi_test)
 
+# Extract standardized residuals
+residuals <- chi_test$residuals
+
+# Print residuals
+print(residuals)
