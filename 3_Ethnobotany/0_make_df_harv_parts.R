@@ -31,17 +31,6 @@ harvested_parts_sep_cast <- dcast(harvested_parts_sep, formula =
                                    CD_REF_v17 + NOM_VALIDE ~ Partie_cueillie)
 
 
-# Function to transform presence of text into 1 and no text into 0 :
-presence_to_numeric <- function(column) {
-  return(ifelse(is.na(trimws(column)), 0, 1))
-}
-
-
-# Apply the function to convert text presence into 1 and no text into 0 :
-for (i in 3:13) { # on the harvested parts columns
-  harvested_parts_sep_cast[,i] <- presence_to_numeric(harvested_parts_sep_cast[,i])
-}
-
 names(harvested_parts_sep_cast) <- c("CD_REF", "NOM_VALIDE", "buds", "bark", # transalate
                                      "leaves", "flowers", "fruit", "seed", 
                                      "seedling", "aboveground_part", 
