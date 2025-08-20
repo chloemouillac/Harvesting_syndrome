@@ -18,6 +18,10 @@ BDC_STATUTS_17 <- read_csv(here::here("BDC-Statuts-v17", "BDC_STATUTS_17.csv")) 
   subset(REGNE=="Plantae", select=c(CD_REF, CD_TYPE_STATUT, LB_TYPE_STATUT, REGROUPEMENT_TYPE, CODE_STATUT, LABEL_STATUT, NIVEAU_ADMIN)) %>%
   unique()
 
+# BDC_STATUTS_17 <- read_csv("/home/mouillac/Documents/1-Bilan_cueillette/R/Paper_WHP/BDC-Statuts-v17/BDC_STATUTS_17.csv")%>%
+#   subset(REGNE=="Plantae", select=c(CD_REF, CD_TYPE_STATUT, LB_TYPE_STATUT, REGROUPEMENT_TYPE, CODE_STATUT, LABEL_STATUT, NIVEAU_ADMIN)) %>%
+#   unique()
+
 # Import list of vascular flora :
 list_species <- read.csv(here::here("list_vascular_v17.csv"))
 
@@ -28,7 +32,6 @@ list_harv_species <- read.csv(here::here("WHP_correspondence_table_v17.csv")) %>
   unique()
 
 list_harv_species$harvested <- "harvested" #add this to identify the harvested plants
-
 
 #### Get the number of species for each red list status and protection/regulation ####
 # Join the status database with TAXREF :

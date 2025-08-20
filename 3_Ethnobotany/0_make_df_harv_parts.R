@@ -28,7 +28,7 @@ harvested_parts$Partie_cueillie <- gsub("\\s+", " ", harvested_parts$Partie_cuei
 harvested_parts_sep <- separate_rows(harvested_parts, Partie_cueillie, sep = ", ")
 
 harvested_parts_sep_cast <- dcast(harvested_parts_sep, formula = 
-                                   CD_REF_v17 + NOM_VALIDE ~ Partie_cueillie)
+                                   CD_REF_v17 + NOM_VALIDE ~ Partie_cueillie) # converts presence of text to 1 and absence to 0
 
 
 names(harvested_parts_sep_cast) <- c("CD_REF", "NOM_VALIDE", "buds", "bark", # transalate

@@ -12,16 +12,19 @@ library(readr)
 library(reshape2)
 
 
+
 #### Import data ####
 # Import the status database :
 BDC_STATUTS_17 <- read_csv(here::here("BDC-Statuts-v17", "BDC_STATUTS_17.csv"))
 
 # Import the list of species for which the data needs to be extracted :
-list_species <- read.csv(here::here("list_vascular_v17.csv"))
+list_species <- read.csv(here::here("list_vascular_v17.csv")) %>%
+  subset(FR %in% c("P","S","C","D"),select=-FR)
+
 
 # Import the list of harvested species for which the data needs to be extracted :
 list_harv_species <- read.csv(here::here("WHP_correspondence_table_v17.csv")) %>%
-  subset(select=CD_REF) %>%
+  subset(FR %in% c("P","S","C","D"),select=CD_REF) %>%
   unique()
 
 list_harv_species$harvested <- "harvested" #add this to identify the harvested plants

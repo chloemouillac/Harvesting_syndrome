@@ -140,6 +140,7 @@ plot_dens_WHP <- ggtern(data=bio_data_WHP_born,
                     aes(alpha=..level..), fill="grey4", bdl=0, show.legend=T, bins=50, expand=c(0.5,0.5)) +
   geom_point(size=1, alpha=0.5) +
   ggtitle("a") +
+  labs(alpha = "Point density") +
   theme_bw(base_size=25) + # For clarity
   theme_hidegrid() + # Turn off both major and minor
   theme_showarrows() +
@@ -161,6 +162,7 @@ plot_dens_tot <- ggtern(data=CSR_data_ALL_born,
                     aes(alpha=..level..), fill="grey4", bdl=0, show.legend=T, bins=50, expand=c(0.5,0.5)) +
   geom_point(size=1, alpha=0.5) +
   ggtitle("b") +
+  labs(alpha = "Point density") +
   theme_bw(base_size=25) + # For clarity
   theme_hidegrid() + # Turn off both major and minor
   theme_showarrows() +
@@ -172,6 +174,8 @@ plot_dens_tot
 
 #### Assemble Figure 4 ####
 # Export :
+legend <- cowplot::get_legend(plot_dens_WHP + theme(legend.position = "bottom"))
+
 pdf(file = "plots/Fig_4_BW_grime_triangle_dual.pdf", width=12, height=7)
 grid.arrange(plot_dens_WHP+theme(legend.position="hidden"), 
              plot_dens_tot+theme(legend.position="hidden"),
@@ -180,3 +184,4 @@ grid.arrange(plot_dens_WHP+theme(legend.position="hidden"),
              ncol=2, nrow=2,
              heights=c(6,1))
 dev.off()
+

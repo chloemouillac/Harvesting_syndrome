@@ -15,22 +15,17 @@ library(sf)
 
 #### Import data ####
 # Import grid raster for calculations :
-grid10 <- rast("raw_data/grid10KM.tif")
-grid20 <- aggregate(grid10, fact=2)
+grid20 <- rast("raw_data/grid20KM.tif")
 
 # Import presence data :
-pres_data10 <- read.csv("processed_data/OpenObs+GBIF_REDUCED_10km.csv")
 pres_data20 <- read.csv("processed_data/OpenObs+GBIF_REDUCED_20km.csv")
-pres_data10_oobs <- read.csv("processed_data/OpenObs_REDUCED_10km.csv")
-pres_data20_oobs <- read.csv("processed_data/OpenObs_REDUCED_20km.csv")
-
 
 # Read the delimitations of the French départements :
 departements <- read_sf("raw_data/departements_FR.shp") %>%
   st_sf() #convert to sf object
 
 # List of harvested species :
-list_species <- read.csv(here::here("WHP_correpondence_table_v17.csv")) %>%
+list_species <- read.csv(here::here("WHP_correspondence_table_v17.csv")) %>%
   subset(select=CD_REF)
 
 list_species$harvested <- "harvested"
@@ -39,12 +34,9 @@ list_species$harvested <- "harvested"
 
 
 ####### Initiate a loop ########
-list_pres_data <- list(pres_data10,
-                       pres_data20,
-                       pres_data10_oobs,
-                       pres_data20_oobs)
+list_pres_data <- list(pres_data20)
 
-names(list_pres_data) <- c("10", "20", "10_oobs", "20_oobs")
+names(list_pres_data) <- c("20")
 
 
 list_results_nb_dpts_ALL <- list()
@@ -127,64 +119,64 @@ for (i in 1:length(list_pres_data)) {
   # Export :
   write.csv(nb_clust, paste0("processed_data/nb_clust_per_species_", name, ".csv"), row.names=F)
   write.csv(nb_clust_HARV, paste0("processed_data/nb_nb_clust_per_species_HARV_", name, ".csv"), row.names=F)
-  
-# 
-#   #### Number of records per département :####
-#   data_summary_per_obs <- st_drop_geometry(data_summary) %>% #to write the data, with the "geometry" column it doesn't work...
-#     group_by(code, dpt, region) %>%
-#     summarise(nb_obs = n())
-# 
-#   data_summary_per_obs <- data_summary_per_obs[!is.na(data_summary_per_obs$dpt),]
-# 
-#   # Append to list :
-#   list_results_nb_records_ALL <- c(list_results_nb_records_ALL, data_summary_per_obs)
-#   # Export :
-#   write.csv(data_summary_per_obs, paste0("processed_data/nb_records_per_dpt_ALL_", name, ".csv"), row.names=F)
-# 
-# 
-# 
-#   #### Number of records of HARVESTED species per département : ####
-#   data_summary_harv <- left_join(data_summary, list_species) %>%
-#     subset(harvested=="harvested")
-# 
-#   data_summary_per_obs_harv <- st_drop_geometry(data_summary_harv) %>% #to write the data, with the "geometry" column it doesn't work...
-#     group_by(code, dpt, region) %>%
-#     summarise(nb_obs = n())
-# 
-#   data_summary_per_obs_harv <- data_summary_per_obs_harv[!is.na(data_summary_per_obs_harv$dpt),]
-# 
-#   # Append to list :
-#   list_results_nb_records_HARV <- c(list_results_nb_records_HARV, data_summary_per_obs_harv)
-#   # Export :
-#   write.csv(data_summary_per_obs_harv, paste0("processed_data/nb_records_per_dpt_HARV_", name, ".csv"), row.names=F)
-# 
-# 
-# 
-#   #### Number of species per département : ####
-#   data_summary_per_sp <- st_drop_geometry(data_summary) %>% #to write the data, with the "geometry" column it doesn't work...
-#     group_by(code, dpt, region) %>%
-#     summarise(nb_sp = n_distinct(CD_REF))
-# 
-#   data_summary_per_sp <- data_summary_per_sp[!is.na(data_summary_per_sp$dpt),]
-# 
-#   # Append to list :
-#   list_results_nb_sp_ALL <- c(list_results_nb_sp_ALL, data_summary_per_sp)
-#   # Export :
-#   write.csv(data_summary_per_sp, paste0("processed_data/nb_sp_per_dpt_ALL_", name, ".csv"), row.names=F)
-# 
-# 
-# 
-#   #### Number of HARVESTED species per département : ####
-#   data_summary_per_sp_harv <- st_drop_geometry(data_summary_harv) %>% #to write the data, with the "geometry" column it doesn't work...
-#     group_by(code, dpt, region) %>%
-#     summarise(nb_sp = n_distinct(CD_REF))
-# 
-#   data_summary_per_sp_harv <- data_summary_per_sp_harv[!is.na(data_summary_per_sp_harv$dpt),]
-# 
-#   # Append to list :
-#   list_results_nb_sp_HARV <- c(list_results_nb_sp_HARV, data_summary_per_sp_harv)
-#   # Export :
-#   write.csv(data_summary_per_sp_harv, paste0("processed_data/nb_sp_per_dpt_HARV_", name, ".csv"), row.names=F)
+
+
+  #### Number of records per département :####
+  data_summary_per_obs <- st_drop_geometry(data_summary) %>% #to write the data, with the "geometry" column it doesn't work...
+    group_by(code, dpt, region) %>%
+    summarise(nb_obs = n())
+
+  data_summary_per_obs <- data_summary_per_obs[!is.na(data_summary_per_obs$dpt),]
+
+  # Append to list :
+  list_results_nb_records_ALL <- c(list_results_nb_records_ALL, data_summary_per_obs)
+  # Export :
+  write.csv(data_summary_per_obs, paste0("processed_data/nb_records_per_dpt_ALL_", name, ".csv"), row.names=F)
+
+
+
+  #### Number of records of HARVESTED species per département : ####
+  data_summary_harv <- left_join(data_summary, list_species) %>%
+    subset(harvested=="harvested")
+
+  data_summary_per_obs_harv <- st_drop_geometry(data_summary_harv) %>% #to write the data, with the "geometry" column it doesn't work...
+    group_by(code, dpt, region) %>%
+    summarise(nb_obs = n())
+
+  data_summary_per_obs_harv <- data_summary_per_obs_harv[!is.na(data_summary_per_obs_harv$dpt),]
+
+  # Append to list :
+  list_results_nb_records_HARV <- c(list_results_nb_records_HARV, data_summary_per_obs_harv)
+  # Export :
+  write.csv(data_summary_per_obs_harv, paste0("processed_data/nb_records_per_dpt_HARV_", name, ".csv"), row.names=F)
+
+
+
+  #### Number of species per département : ####
+  data_summary_per_sp <- st_drop_geometry(data_summary) %>% #to write the data, with the "geometry" column it doesn't work...
+    group_by(code, dpt, region) %>%
+    summarise(nb_sp = n_distinct(CD_REF))
+
+  data_summary_per_sp <- data_summary_per_sp[!is.na(data_summary_per_sp$dpt),]
+
+  # Append to list :
+  list_results_nb_sp_ALL <- c(list_results_nb_sp_ALL, data_summary_per_sp)
+  # Export :
+  write.csv(data_summary_per_sp, paste0("processed_data/nb_sp_per_dpt_ALL_", name, ".csv"), row.names=F)
+
+
+
+  #### Number of HARVESTED species per département : ####
+  data_summary_per_sp_harv <- st_drop_geometry(data_summary_harv) %>% #to write the data, with the "geometry" column it doesn't work...
+    group_by(code, dpt, region) %>%
+    summarise(nb_sp = n_distinct(CD_REF))
+
+  data_summary_per_sp_harv <- data_summary_per_sp_harv[!is.na(data_summary_per_sp_harv$dpt),]
+
+  # Append to list :
+  list_results_nb_sp_HARV <- c(list_results_nb_sp_HARV, data_summary_per_sp_harv)
+  # Export :
+  write.csv(data_summary_per_sp_harv, paste0("processed_data/nb_sp_per_dpt_HARV_", name, ".csv"), row.names=F)
 
 }
 
@@ -196,5 +188,3 @@ ggplot(nb_dpts, aes(x=dpts, y=percent)) +
   geom_col() +
   xlab("Number of départements") +
   ylab("Percentage of species")
-
-###### And GBIF ?? #####

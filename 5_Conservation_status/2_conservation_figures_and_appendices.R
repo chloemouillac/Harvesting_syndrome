@@ -121,8 +121,8 @@ final1 <- ggplot(status_all_sp, aes(x = NIVEAU_ADMIN, y = n,
                 label = paste0("n=",tot)),  inherit.aes=F,
             show.legend = F, size = 3.5)+
   
-  scale_y_continuous(breaks=c(0,500,1000,1500,2000,2500,3000,3500,4000),
-                     limits=c(0,4300))+
+  scale_y_continuous(breaks=c(0,500,1000,1500,2000,2500,3000),
+                     limits=c(0,3200))+
   theme_minimal() +
   facet_grid(.~harvested) +
   theme(axis.text.x = element_blank(),

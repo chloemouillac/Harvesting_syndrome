@@ -74,20 +74,120 @@ plot_sp
 
 #### Appendix I : number of records / département ####
 
-data_summary_per_obs <- read.csv("processed_data/nb_records_per_dpt_ALL_20.csv")
-# data_summary_per_obs <- read.csv("processed_data/nb_records_per_dpt_GBIF.csv")
+# All species map :
+data_summary_per_obs_ALL <- read.csv("processed_data/nb_records_per_dpt_ALL_20.csv")
 
-data_summary_per_obs_map <- full_join(departements,data_summary_per_obs, by=c("code", "dpt", "region"))
+data_summary_per_obs_ALL_map <- full_join(departements,data_summary_per_obs_ALL, by=c("code", "dpt", "region"))
 
-data_summary_per_obs_map$nb_obs <- as.numeric(data_summary_per_obs_map$nb_obs)
+data_summary_per_obs_ALL_map$nb_obs <- as.numeric(data_summary_per_obs_ALL_map$nb_obs)
 
 
 plot_obs_tot <- ggplot() +
-          geom_sf(data = data_summary_per_obs_map$geometry, 
-                  aes(fill=data_summary_per_obs_map$nb_obs),
+          geom_sf(data = data_summary_per_obs_ALL_map$geometry, 
+                  aes(fill=data_summary_per_obs_ALL_map$nb_obs),
           colour="white")+
   scale_fill_distiller(type="seq", palette="Reds", direction=1) +
-  ggtitle(label="Number of records for all plants")+
+  ggtitle(label="Number of records per department for all plants after spatial thinning")+
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        panel.background = element_blank(),
+        legend.title = element_text(size=15),
+        legend.text = element_text(size=12),
+        legend.position = c(1.05, 0.450),
+        plot.margin = unit(c(0, 4, 0, 0), "cm"))+
+  labs(fill="Number of records")
+plot_obs_tot
+
+
+# Effect of spatial reduction on observation counts
+
+  # Number of records per department, after reduction
+data_summary_per_obs_ALL <- read.csv("processed_data/nb_records_per_dpt_ALL_20.csv")
+data_summary_per_obs_ALL_map <- full_join(departements,data_summary_per_obs_ALL, by=c("code", "dpt", "region")) %>%
+  st_drop_geometry()
+data_summary_per_obs_ALL_map$nb_obs <- as.numeric(data_summary_per_obs_ALL_map$nb_obs)
+
+
+  # Number of records per department, before reduction
+data_summary_per_obs_ALL_not_reduced <- read.csv("processed_data/OpenObs+GBIF_20km_NOT_REDUCED.csv") %>%
+  st_as_sf(coords = c("decimalLongitude", "decimalLatitude")) #convert to sf object
+
+st_crs(data_summary_per_obs_ALL_not_reduced) = st_crs(departements)
+
+data_summary_per_obs_ALL_not_reduced <- st_join(data_summary_per_obs_ALL_not_reduced, departements, join = st_within) %>%
+  st_drop_geometry() %>%
+  na.omit() # might take a few minutes to run
+
+departements_nogeom <- st_drop_geometry(departements)
+
+data_summary_per_obs_ALL_not_reduced_map <- full_join(
+  departements_nogeom,
+  data_summary_per_obs_ALL_not_reduced, 
+  by = c("code", "dpt", "region")
+) %>%
+  group_by(code, dpt, region) %>%
+  summarise(nb_obs_raw = n())
+
+data_summary_per_obs_ALL_not_reduced_map$nb_obs_raw <- as.numeric(data_summary_per_obs_ALL_not_reduced_map$nb_obs_raw)
+
+  # Join reduced and not reduced data
+join <- full_join(data_summary_per_obs_ALL_map, data_summary_per_obs_ALL_not_reduced_map)
+
+ggplot(join, aes(x = nb_obs_raw, y = nb_obs)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE, color = "blue")
+
+
+  # Fit the linear model
+model <- lm(nb_obs ~ nb_obs_raw, data = join)
+
+  # Extract R²
+r2 <- summary(model)$r.squared
+
+  # Build the plot
+scatter <- ggplot(join, aes(x = nb_obs_raw, y = nb_obs)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE, colour = "blue") +
+  annotate("text", 
+           x = 2e+06,  
+           y = 40000,  
+           label = paste("R² =", round(r2, 3))) +
+  labs(
+    x = "Number of records per department (raw, before thinning)",
+    y = "Number of records per departement (after thinning)",
+    title = "Effect of spatial thinning on record counts"
+  ) +
+  theme_minimal()
+
+scatter
+
+
+library(patchwork)
+
+# Combine plots side by side, label them A and B
+combined <- plot_obs_tot + scatter + plot_annotation(tag_levels = "a")
+
+# Export to PDF
+pdf(file = "plots/nb_records_tot_and_reduction.pdf", width = 15, height = 7)
+print(combined)
+dev.off()
+
+
+# Harvested species map :
+data_summary_per_obs_HARV <- read.csv("processed_data/nb_records_per_dpt_HARV_20.csv")
+
+data_summary_per_obs_HARV_map <- full_join(departements,data_summary_per_obs_HARV, by=c("code", "dpt", "region"))
+
+data_summary_per_obs_HARV_map$nb_obs <- as.numeric(data_summary_per_obs_HARV_map$nb_obs)
+
+plot_obs_harv <- ggplot() +
+  geom_sf(data = data_summary_per_obs_HARV_map$geometry, 
+          aes(fill=data_summary_per_obs_HARV_map$nb_obs),
+          colour="white")+
+  scale_fill_distiller(type="seq", palette="Reds", direction=1) +
+  ggtitle(label="Number of records for WHP plants")+
   theme(axis.text.x=element_blank(),
         axis.ticks.x=element_blank(),
         axis.text.y=element_blank(),
@@ -96,13 +196,53 @@ plot_obs_tot <- ggplot() +
         legend.title = element_text(size=22),
         legend.text = element_text(size=20)) +
   labs(fill="Number of records")
-plot_obs_tot
+plot_obs_harv
 
 # Export :
-pdf(file = "plots/nb_records_tot.pdf", width=10, height=7)
-plot_obs_tot
+pdf(file = "plots/nb_records_harv.pdf", width=10, height=7)
+plot_obs_harv
 dev.off()
 
+
+# All species scatter plot :
+raw_all <- read.csv("processed_data/nb_records_per_dpt_ALL_20.csv")
+std_all <- read.csv("processed_data/nb_sp_per_dpt_ALL_20.csv")
+richness_all <- full_join(raw_all, std_all) %>%
+  select(-dpt, -region)
+
+colnames(richness_all) <- c("dpt", "raw_species", "std_species")
+
+plot_scatter_all <- ggplot(richness_all, aes(x=raw_species, y=std_species)) +
+  geom_point(color="#1b9e77", size=3) +
+  geom_smooth(method="lm", se=FALSE, color="black", linetype="dashed") +
+  labs(title="Number of records VS number of species per department (All plants)",
+       x="Total number of records per department",
+       y="Number of species per department") +
+  theme_minimal(base_size = 16)
+plot_scatter_all
+
+# Export
+
+
+# WHP species scatter plot :
+raw_harv <- read.csv("processed_data/nb_records_per_dpt_HARV_20.csv")
+std_harv <- read.csv("processed_data/nb_sp_per_dpt_HARV_20.csv")
+richness_harv <- full_join(raw_harv, std_harv) %>%
+  select(-dpt, -region)
+
+colnames(richness_harv) <- c("dpt", "raw_species", "std_species")
+
+
+plot_scatter_harv <- ggplot(richness_harv, aes(x=raw_species, y=std_species)) +
+  geom_point(color="#d95f02", size=3) +
+  geom_smooth(method="lm", se=FALSE, color="black", linetype="dashed") +
+  labs(title="Number of records VS number of species per department (WHP)",
+       x="Total number of records per department",
+       y="Number of species per department") +
+  theme_minimal(base_size = 16)
+plot_scatter_harv
+
+# Export
 
 
 
@@ -157,7 +297,7 @@ plot_freq_dpt <- ggplot(graph_data) +
   labs(
     # title = "Reverse cumulative distribution curve",
     # subtitle="y% of species covering at least x% of the départements",
-    x = "% of départements",
+    x = "% of departments",
     y = "% of species"
   ) +
   guides(color = guide_legend(override.aes = list(size = 8))) +
@@ -187,16 +327,16 @@ departements$clus_ward_cut <- factor(departements$clus_ward_cut, levels=c("1","2
 
 plot_clus <- ggplot() +
   geom_sf(data = departements, aes(fill=clus_ward_cut), colour="white", lwd=0.7)+
-  scale_fill_manual(name="Cluster", values=c('#882255', '#44AA99', '#CC6677', '#117733','#DDCC77','#88CCEE','#332288')) +
+  scale_fill_manual(name="Clusters", values=c('#882255', '#44AA99', '#CC6677', '#117733','#DDCC77','#88CCEE','#332288')) +
   guides(fill = guide_legend(override.aes = list(size = 8))) +
   theme(axis.text.x=element_blank(),
         axis.ticks.x=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank(),
         panel.background = element_blank(),
-        legend.title=element_blank(),
+        legend.title=element_text(size=25),
         legend.text = element_text(size=25),
-        legend.position = c(0.88,0.48))
+        legend.position = c(0.91,0.47))
 plot_clus
 
 
@@ -207,4 +347,9 @@ ggarrange(plot_sp, plot_sp_tot, plot_freq_dpt, plot_clus,
           labels=c("a", "b", "c", "d"), ncol=2, nrow=2,
           font.label = list(size = 30))
 dev.off()
+
+
+
+#### 
+
 

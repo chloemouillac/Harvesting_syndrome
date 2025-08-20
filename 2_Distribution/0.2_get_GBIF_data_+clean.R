@@ -25,11 +25,6 @@ list_species <- read.csv(here::here("all_sp_corresp_codes.csv")) %>%
          select=c(CD_REF, GBIF, LB_NOM)) %>% unique()
 
 
-# Import grid raster : 
-grid_raster <- rast("raw_data/grid10KM.tif") #raster to be used as grid template
-#here France with 10KM grid cell (based on bioclim raster)
-
-
 
 #### Get GBIF data ####
 # #last done on 25 jul. 14:40
@@ -92,4 +87,4 @@ GBIF_data_clean <- GBIF_data_clean %>%
 
 
 #### Export data ####
-fwrite(GBIF_data_clean, "processed_data/GBIF_clean_10km.csv") #691 species (harvested ones)
+fwrite(GBIF_data_clean, "processed_data/GBIF_clean_20km.csv") #691 species (harvested ones)
