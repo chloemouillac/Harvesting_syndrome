@@ -210,3 +210,4 @@ residuals <- chi_test$residuals
 
 # Print residuals
 print(residuals)
+

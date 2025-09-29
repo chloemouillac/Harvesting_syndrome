@@ -1,46 +1,53 @@
 "NIVEAU_ADMIN","CODE_STATUT","harvested","n","percentage"
-"Département","CR","not harvested",5,1.95
-"Département","EN","harvested",2,2.99
-"Département","EN","not harvested",3,1.17
-"Département","VU","not harvested",9,3.5
-"Département","NT","harvested",1,1.49
-"Département","NT","not harvested",15,5.84
-"Département","LC","harvested",64,95.52
-"Département","LC","not harvested",213,82.88
-"Département","DD","not harvested",7,2.72
-"Département","NE","not harvested",5,1.95
+"Département","CR","not harvested",7,2.41
+"Département","EN","harvested",2,2.94
+"Département","EN","not harvested",9,3.1
+"Département","VU","not harvested",15,5.17
+"Département","NT","harvested",1,1.47
+"Département","NT","not harvested",21,7.24
+"Département","LC","harvested",64,94.12
+"Département","LC","not harvested",218,75.17
+"Département","DD","not harvested",10,3.45
+"Département","NE","harvested",1,1.47
+"Département","NE","not harvested",10,3.45
+"Région","RE","not harvested",3,0.25
 "Région","CR","harvested",1,0.63
-"Région","CR","not harvested",16,1.4
+"Région","CR","not harvested",18,1.48
 "Région","EN","harvested",3,1.89
-"Région","EN","not harvested",30,2.62
+"Région","EN","not harvested",34,2.79
 "Région","VU","harvested",3,1.89
-"Région","VU","not harvested",60,5.25
+"Région","VU","not harvested",69,5.66
 "Région","NT","harvested",4,2.52
-"Région","NT","not harvested",103,9.01
+"Région","NT","not harvested",115,9.43
 "Région","LC","harvested",147,92.45
-"Région","LC","not harvested",904,79.09
-"Région","DD","not harvested",19,1.66
+"Région","LC","not harvested",927,76.05
+"Région","DD","not harvested",20,1.64
 "Région","NE","harvested",1,0.63
-"Région","NE","not harvested",11,0.96
-"État","CR","not harvested",13,3.92
-"État","EN","not harvested",38,11.45
-"État","VU","harvested",2,20
-"État","VU","not harvested",62,18.67
-"État","NT","harvested",2,20
-"État","NT","not harvested",77,23.19
-"État","LC","harvested",5,50
-"État","LC","not harvested",130,39.16
-"État","DD","not harvested",6,1.81
-"État","NE","harvested",1,10
-"État","NE","not harvested",6,1.81
-"no protection or regulation","CR","not harvested",11,0.44
-"no protection or regulation","EN","not harvested",41,1.64
-"no protection or regulation","VU","harvested",2,0.47
-"no protection or regulation","VU","not harvested",75,3.01
-"no protection or regulation","NT","harvested",2,0.47
-"no protection or regulation","NT","not harvested",84,3.37
-"no protection or regulation","LC","harvested",422,98.14
-"no protection or regulation","LC","not harvested",1939,77.78
-"no protection or regulation","DD","harvested",4,0.93
-"no protection or regulation","DD","not harvested",280,11.23
-"no protection or regulation","NE","not harvested",63,2.53
+"Région","NE","not harvested",33,2.71
+"État","EX","not harvested",1,0.26
+"État","RE","not harvested",7,1.8
+"État","CR","not harvested",17,4.38
+"État","EN","not harvested",43,11.08
+"État","VU","harvested",2,18.18
+"État","VU","not harvested",68,17.53
+"État","NT","harvested",2,18.18
+"État","NT","not harvested",84,21.65
+"État","LC","harvested",6,54.55
+"État","LC","not harvested",143,36.86
+"État","DD","not harvested",6,1.55
+"État","NE","harvested",1,9.09
+"État","NE","not harvested",19,4.9
+"no protection or regulation","EX","not harvested",1,0.03
+"no protection or regulation","RE","not harvested",12,0.33
+"no protection or regulation","CR","not harvested",17,0.47
+"no protection or regulation","EN","not harvested",56,1.55
+"no protection or regulation","VU","harvested",2,0.41
+"no protection or regulation","VU","not harvested",93,2.58
+"no protection or regulation","NT","harvested",2,0.41
+"no protection or regulation","NT","not harvested",106,2.94
+"no protection or regulation","LC","harvested",441,90.55
+"no protection or regulation","LC","not harvested",2016,55.84
+"no protection or regulation","DD","harvested",5,1.03
+"no protection or regulation","DD","not harvested",310,8.59
+"no protection or regulation","NE","harvested",37,7.6
+"no protection or regulation","NE","not harvested",999,27.67

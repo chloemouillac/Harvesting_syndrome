@@ -87,7 +87,7 @@ protection$nombre_protections[is.na(protection$nombre_protections)] <- 0 # chang
 
 
 #### Extract regulation data ####
-BDC_REGL <- as.data.frame(BDC_filtered[BDC_filtered$CD_TYPE_STATUT=="REGL" | BDC_filtered$CD_TYPE_STATUT=="REGLSO",]) %>%
+BDC_REGL <- as.data.frame(BDC_filtered[BDC_filtered$CD_TYPE_STATUT=="REGL",]) %>%
   na.omit()  %>% # Réglementation et réglementation sans objet
   left_join(list_harv_species)
 

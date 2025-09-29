@@ -14,7 +14,9 @@ library(readr)
 
 #### Import data ####
 # Import the status database :
-BDC_STATUTS_17 <- read_csv(here::here("BDC-Statuts-v17", "BDC_STATUTS_17.csv")) %>%
+# BDC_STATUTS_17 <- read_csv(here::here("BDC-Statuts-v17", "BDC_STATUTS_17.csv")) %>%
+  BDC_STATUTS_17 <- read_csv("/home/mouillac/Documents/3-Enquete/R/National_survey_WHP/raw_data/BDC-Statuts-v17/BDC_STATUTS_17.csv") %>%
+  
   subset(REGNE=="Plantae", select=c(CD_REF, CD_TYPE_STATUT, LB_TYPE_STATUT, REGROUPEMENT_TYPE, CODE_STATUT, LABEL_STATUT, NIVEAU_ADMIN)) %>%
   unique()
 
