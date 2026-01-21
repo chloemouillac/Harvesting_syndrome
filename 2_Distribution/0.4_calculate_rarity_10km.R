@@ -93,43 +93,42 @@ writeRaster(nb_obs_20km, "processed_data/obs_20km.tif", overwrite=T)
 
 
 #### Calculate species relative coverage per département ####
-calc.sp.cover <- function(raster,departements){
-  
-  #Calculate the area of each department (in km²) :
-  # list_dpts_area <- st_area(departements)/1000000
-  grid <- raster
-  grid[grid==0] <- 1
-  list_dpts_area <- exact_extract (grid,
-                                   departements, 
-                                   "sum", 
-                                   coverage_area = TRUE)/1000000
-  
-  #Calculate the area covered by the species for each department (in km²) :
-  list_sp_area <- exact_extract (raster,
-                                 departements, 
-                                 "sum", #the sum of non-NA raster cell values
-                                 coverage_area = TRUE)/1000000 
-  
-  #Create a dataframe which will contain all the information about total area and species coverage for each departement
-  df <- as.data.frame(cbind(dpt_code = departements$code,
-                            dpt_name = departements$dpt,
-                            dpt_area = list_dpts_area, 
-                            sp_area = list_sp_area))
-  
-  df$sp_area <- as.numeric(df$sp_area)
-  df$dpt_area <- as.numeric(df$dpt_area)
-  
-  
-  #Calculate the species coverage (percentage) for each departement and integrate it in the df
-  df$sp_relative_area <- (df$sp_area / df$dpt_area) * 100
+# Use a raster of 1s to calculate total department areas in km²
+full_raster <- sp_raster20[[1]] * 0 + 1
 
-
+# Precompute department areas once
+dpt_area_df <- exact_extract(full_raster, departements, "sum", coverage_area = TRUE)/1e6
+dpt_area_df <- data.frame(
+  dpt_code = departements$code,
+  dpt_name = departements$dpt,
+  dpt_area = unlist(dpt_area_df))
+calc.sp.cover <- function(raster, departements, dpt_area_df){
+  
+  # Replace NAs in species raster with 0
+  raster[is.na(raster)] <- 0
+  
+  # Calculate species area per department (in km²)
+  sp_area_list <- exact_extract(raster, departements, "sum", coverage_area = TRUE)/1e6
+  
+  # Combine into dataframe
+  df <- data.frame(
+    dpt_code = departements$code,
+    dpt_name = departements$dpt,
+    sp_area = unlist(sp_area_list)
+  )
+  
+  # Merge with precomputed department area
+  df <- merge(df, dpt_area_df, by = c("dpt_code", "dpt_name"))
+  
+  # Calculate species relative coverage (%)
+  df$sp_relative_area <- ifelse(df$dpt_area > 0,
+                                (df$sp_area / df$dpt_area) * 100, 0)
+  
   df[df==0] <- NA
   df[is.na(df)] <- 0
   
   df
 }
-
 
 
 # calculate cover for each species using a loop
@@ -138,10 +137,13 @@ names(cov_df20) <- c("dpt_code", "dpt_name", "dpt_area", "sp_area", "sp_relative
 
 for (l in 1:length(names(sp_raster20))) {
   raster <- sp_raster20[[l]]
-  rel_cov <- calc.sp.cover(raster, departements)
+  rel_cov <- calc.sp.cover(raster, departements, dpt_area_df)
   rel_cov$CD_REF <- names(raster)
   cov_df20 <- rbind(cov_df20, rel_cov)
 }
+
+cov_df20 <- cov_df20 %>%
+  mutate(sp_relative_area=ifelse(sp_relative_area>100, 100, sp_relative_area))
 
 #Export :
 fwrite(cov_df20, "processed_data/OpenObs+GBIF_RARITY_20km.csv")
