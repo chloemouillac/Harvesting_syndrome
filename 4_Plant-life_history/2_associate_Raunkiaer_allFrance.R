@@ -12,7 +12,7 @@ library(stringr)
 
 #### Import data ####
 # Import species list and associated codes :
-list_species <- read.csv("raw_data/selected_species.csv") #list of selected species only
+list_species <- read.csv("raw_data/selected_species.csv") # list of selected species only
 # list_species <- read.csv(here::here("list_vascular_v17.csv")) #all vascular flora
 
 # Import Baseflor :
@@ -20,11 +20,11 @@ baseflor <- read.csv("raw_data/BaseFlor/baseflor.csv") %>%
   select(c(NOM_SCIENTIFIQUE, TYPE_BIOLOGIQUE, FORMATION_VEGETALE)) %>%
   na.omit()
 
-baseflor <- baseflor[!grepl(" x ", baseflor$NOM_SCIENTIFIQUE),]
-baseflor <- baseflor[!grepl("subsp.", baseflor$NOM_SCIENTIFIQUE),]
-baseflor <- baseflor[!grepl("var.", baseflor$NOM_SCIENTIFIQUE),]
+baseflor <- baseflor[!grepl(" x ", baseflor$NOM_SCIENTIFIQUE), ]
+baseflor <- baseflor[!grepl("subsp.", baseflor$NOM_SCIENTIFIQUE), ]
+baseflor <- baseflor[!grepl("var.", baseflor$NOM_SCIENTIFIQUE), ]
 
-baseflor$LB_NOM <- word(baseflor$NOM_SCIENTIFIQUE, 1,2, sep = " ")
+baseflor$LB_NOM <- word(baseflor$NOM_SCIENTIFIQUE, 1, 2, sep = " ")
 
 
 # Import CBNmed data :
@@ -35,18 +35,18 @@ cbnmed <- read.table("raw_data/CBNmed/export_trait_12122023_142247.txt", header 
 
 
 #### Join Baseflor to the species list ####
-join_baseflor <- left_join(list_species, baseflor, by = "LB_NOM", 
-                           relationship = "many-to-many") %>% 
+join_baseflor <- left_join(list_species, baseflor,
+  by = "LB_NOM",
+  relationship = "many-to-many"
+) %>%
   select(c(CD_REF, LB_NOM, TYPE_BIOLOGIQUE, FORMATION_VEGETALE))
-
-
-
 
 
 #### Join with the Raunkiaer group given by CBNmed ####
 join_baseflor_and_CBNmed <- left_join(join_baseflor,
-                                      cbnmed, 
-                                      by = join_by(CD_REF == cd_ref)) %>%
+  cbnmed,
+  by = join_by(CD_REF == cd_ref)
+) %>%
   unique()
 
 

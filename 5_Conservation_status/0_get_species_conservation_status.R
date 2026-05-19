@@ -1,5 +1,5 @@
 # This script is to extract the conservation statuts, lists of protections and regulations for each species.
-# This is done using the "Status database" from the INPN https://inpn.mnhn.fr/telechargement/referentielEspece/bdc-statuts-especes 
+# This is done using the "Status database" from the INPN https://inpn.mnhn.fr/telechargement/referentielEspece/bdc-statuts-especes
 
 
 # Set working directory :
@@ -19,15 +19,15 @@ BDC_STATUTS_17 <- read_csv(here::here("BDC-Statuts-v17", "BDC_STATUTS_17.csv"))
 
 # Import the list of species for which the data needs to be extracted :
 list_species <- read.csv(here::here("list_vascular_v17.csv")) %>%
-  subset(FR %in% c("P","S","C","D"),select = -FR)
+  subset(FR %in% c("P", "S", "C", "D"), select = -FR)
 
 
 # Import the list of harvested species for which the data needs to be extracted :
 list_harv_species <- read.csv(here::here("WHP_correspondence_table_v17.csv")) %>%
-  subset(FR %in% c("P","S","C","D"),select = CD_REF) %>%
+  subset(FR %in% c("P", "S", "C", "D"), select = CD_REF) %>%
   unique()
 
-list_harv_species$harvested <- "harvested" #add this to identify the harvested plants
+list_harv_species$harvested <- "harvested" # add this to identify the harvested plants
 
 
 #### Filter the database ####
@@ -39,28 +39,29 @@ BDC_filtered <- left_join(list_species, BDC_STATUTS_17, by = c("CD_REF", "LB_NOM
 
 #### Extract data from the red lists ####
 # Extract from the database the lines concerning the red lists :
-BDC_LR <- as.data.frame(BDC_filtered[BDC_filtered$REGROUPEMENT_TYPE == "Liste rouge",])
+BDC_LR <- as.data.frame(BDC_filtered[BDC_filtered$REGROUPEMENT_TYPE == "Liste rouge", ])
 
 # Clean the data : choose one status when there are more than one for a same region :
 BDC_LR$CODE_STATUT <- as.factor(BDC_LR$CODE_STATUT) %>%
-  ordered(levels = c("EX","EW","RE","CR","CR*","EN","VU","NT","LC","DD","NE","NA")) #this ordering will allow to keep the higher statuses when eliminating duplicates
-BDC_LR <- arrange(BDC_LR,BDC_LR$CODE_STATUT)
-BDC_LR <- BDC_LR[!duplicated(BDC_LR[,c("CD_REF","REGROUPEMENT_TYPE","LB_ADM_TR")]),]
+  ordered(levels = c("EX", "EW", "RE", "CR", "CR*", "EN", "VU", "NT", "LC", "DD", "NE", "NA")) # this ordering will allow to keep the higher statuses when eliminating duplicates
+BDC_LR <- arrange(BDC_LR, BDC_LR$CODE_STATUT)
+BDC_LR <- BDC_LR[!duplicated(BDC_LR[, c("CD_REF", "REGROUPEMENT_TYPE", "LB_ADM_TR")]), ]
 
 
 # Regional red lists :
-BDC_LRR <- subset(BDC_LR, CD_TYPE_STATUT == "LRR", select = c(CD_REF,CODE_STATUT,LB_ADM_TR)) %>%
-  reshape(idvar = "CD_REF", timevar = "LB_ADM_TR", direction = "wide") #make the dataframe wide
-names(BDC_LRR)[2:ncol(BDC_LRR)] <- substr(names(BDC_LRR)[2:ncol(BDC_LRR)], 13,100) #change column names
+BDC_LRR <- subset(BDC_LR, CD_TYPE_STATUT == "LRR", select = c(CD_REF, CODE_STATUT, LB_ADM_TR)) %>%
+  reshape(idvar = "CD_REF", timevar = "LB_ADM_TR", direction = "wide") # make the dataframe wide
+names(BDC_LRR)[2:ncol(BDC_LRR)] <- substr(names(BDC_LRR)[2:ncol(BDC_LRR)], 13, 100) # change column names
 
 
 # World, and French red lists :
-BDC_LR_monde_et_FR <- full_join(subset(BDC_LR, CD_TYPE_STATUT == "LRM", select = c(CD_REF,CODE_STATUT)),
-                                subset(BDC_LR, CD_TYPE_STATUT == "LRN", select = c(CD_REF,CODE_STATUT)),
-                                relationship = "many-to-many", by = "CD_REF") %>%
-  distinct(CD_REF, .keep_all =  TRUE) #remove duplicates
+BDC_LR_monde_et_FR <- full_join(subset(BDC_LR, CD_TYPE_STATUT == "LRM", select = c(CD_REF, CODE_STATUT)),
+  subset(BDC_LR, CD_TYPE_STATUT == "LRN", select = c(CD_REF, CODE_STATUT)),
+  relationship = "many-to-many", by = "CD_REF"
+) %>%
+  distinct(CD_REF, .keep_all = TRUE) # remove duplicates
 
-colnames(BDC_LR_monde_et_FR)<-c("CD_REF","LRM","LRN") #rename the columns according to the list
+colnames(BDC_LR_monde_et_FR) <- c("CD_REF", "LRM", "LRN") # rename the columns according to the list
 
 
 # Join world and french red lists with the regional ones
@@ -71,36 +72,34 @@ BDC_LR_monde_et_FR <- left_join(list_species, BDC_LR_monde_et_FR, by = "CD_REF")
 
 
 #### Extract protection data ####
-BDC_PR <- as.data.frame(BDC_filtered[BDC_filtered$REGROUPEMENT_TYPE == "Protection",])%>%
+BDC_PR <- as.data.frame(BDC_filtered[BDC_filtered$REGROUPEMENT_TYPE == "Protection", ]) %>%
   na.omit() %>%
   left_join(list_harv_species)
 
-BDC_PR$harvested[is.na(BDC_PR$harvested)] <- "not harvested" 
+BDC_PR$harvested[is.na(BDC_PR$harvested)] <- "not harvested"
 
 protection <- as.data.frame(table(BDC_PR$CD_REF))
-colnames(protection) <- c("CD_REF","nombre_protections")
+colnames(protection) <- c("CD_REF", "nombre_protections")
 
 protection$CD_REF <- as.numeric(as.character(protection$CD_REF)) # to convert from factor to numeric, for the join
 protection <- full_join(list_species, protection, by = "CD_REF")
 protection$nombre_protections[is.na(protection$nombre_protections)] <- 0 # change NAs into 0s for the number of protections
 
 
-
 #### Extract regulation data ####
-BDC_REGL <- as.data.frame(BDC_filtered[BDC_filtered$CD_TYPE_STATUT == "REGL",]) %>%
-  na.omit()  %>% # Réglementation et réglementation sans objet
+BDC_REGL <- as.data.frame(BDC_filtered[BDC_filtered$CD_TYPE_STATUT == "REGL", ]) %>%
+  na.omit() %>% # Réglementation et réglementation sans objet
   left_join(list_harv_species)
 
-BDC_REGL$harvested[is.na(BDC_REGL$harvested)] <- "not harvested" 
+BDC_REGL$harvested[is.na(BDC_REGL$harvested)] <- "not harvested"
 
 
 reglementation <- as.data.frame(table(BDC_REGL$CD_REF))
-colnames(reglementation) <- c("CD_REF","nombre_reglementations")
+colnames(reglementation) <- c("CD_REF", "nombre_reglementations")
 
-reglementation$CD_REF <- as.numeric(as.character(reglementation$CD_REF)) #to convert from factor to numeric, for the join
+reglementation$CD_REF <- as.numeric(as.character(reglementation$CD_REF)) # to convert from factor to numeric, for the join
 reglementation <- full_join(list_species, reglementation, by = "CD_REF")
-reglementation$nombre_reglementations[is.na(reglementation$nombre_reglementations)] <- 0 #change NAs into 0s for the number of reglementations
-
+reglementation$nombre_reglementations[is.na(reglementation$nombre_reglementations)] <- 0 # change NAs into 0s for the number of reglementations
 
 
 #### Export the data ####
@@ -112,7 +111,6 @@ synthese_statuts$harvested[is.na(synthese_statuts$harvested)] <- "not harvested"
 
 
 
-write.csv(synthese_statuts,"processed_data/species_conservation_status.csv", row.names = F)
-write.csv(BDC_REGL,"processed_data/detail_reglementation.csv", row.names = F)
-write.csv(BDC_PR,"processed_data/detail_protection.csv", row.names = F)
-
+write.csv(synthese_statuts, "processed_data/species_conservation_status.csv", row.names = F)
+write.csv(BDC_REGL, "processed_data/detail_reglementation.csv", row.names = F)
+write.csv(BDC_PR, "processed_data/detail_protection.csv", row.names = F)

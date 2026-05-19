@@ -12,7 +12,7 @@ library(dplyr)
 
 #### Import data ####
 # List with ALL of the species in the vascular flora, formated for phylomaker
-list_ALL <- read.csv("processed_data/list_for_phylomaker.csv") 
+list_ALL <- read.csv("processed_data/list_for_phylomaker.csv")
 
 
 #### Reduced list to 1 species / family ####
@@ -20,7 +20,7 @@ list_ALL <- read.csv("processed_data/list_for_phylomaker.csv")
 list <- list_ALL %>%
   group_by(family) %>%
   summarise(family = first(family), species = first(species), genus = first(genus)) # keep only 1 species per family (189 families)
-list <- list[,c(2,3,1)]
+list <- list[, c(2, 3, 1)]
 
 
 ##### Create tree #####

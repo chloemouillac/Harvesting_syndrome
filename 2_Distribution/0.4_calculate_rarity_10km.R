@@ -20,9 +20,9 @@ sp_data20 <- fread("processed_data/OpenObs+GBIF_REDUCED_20km.csv")
 
 
 # Import the delimitations of the départements
-departements <- st_read("raw_data/departements_FR.shp") %>%  #upload the shapefile containing the boundaries of the departements
-  #From : https://www.data.gouv.fr/fr/data/10msets/carte-des-departements-2-1/
-  st_transform(4326) #to be sure of the projection system (here WGS84)
+departements <- st_read("raw_data/departements_FR.shp") %>% # upload the shapefile containing the boundaries of the departements
+  # From : https://www.data.gouv.fr/fr/data/10msets/carte-des-departements-2-1/
+  st_transform(4326) # to be sure of the projection system (here WGS84)
 
 
 # Import grid raster for creating a presence raster of the species
@@ -32,17 +32,18 @@ grid20 <- rast("raw_data/grid20KM.tif")
 
 #### Create a presence raster based on the presence data of the species ####
 create.pres.raster <- function(grid_raster, data) {
-  grid_raster[!is.na(grid_raster)] <- 0 #set background cells to 0
-  
-  if (length(data$decimalLongitude)>0) {
-    xy <- cbind(decimalLongitude = data$decimalLongitude, 
-                decimalLatitude = data$decimalLatitude)
-    
-    sp_raster <- terra::rasterize(xy, grid_raster) #create the presence raster
+  grid_raster[!is.na(grid_raster)] <- 0 # set background cells to 0
+
+  if (length(data$decimalLongitude) > 0) {
+    xy <- cbind(
+      decimalLongitude = data$decimalLongitude,
+      decimalLatitude = data$decimalLatitude
+    )
+
+    sp_raster <- terra::rasterize(xy, grid_raster) # create the presence raster
     sp_raster <- merge(sp_raster, grid_raster)
     sp_raster
-    
-  } else{
+  } else {
     sp_raster <- grid_raster
   }
 }
@@ -53,11 +54,12 @@ raster_layers20 <- list()
 
 # create a presence raster for each species
 for (s in unique(sp_data20$CD_REF)) {
-  data20 <- sp_data20[CD_REF == s,]
- 
-  raster_layers20 <-  c(raster_layers20,  # 1 layer / species
-                        create.pres.raster(grid20, data20))
-  
+  data20 <- sp_data20[CD_REF == s, ]
+
+  raster_layers20 <- c(
+    raster_layers20, # 1 layer / species
+    create.pres.raster(grid20, data20)
+  )
 }
 
 # combine all the raster layers into a single raster stack
@@ -82,11 +84,11 @@ obs_20km <- background_20km
 obs_20km[] <- 0
 obs_20km[as.numeric(names(counts_obs_20km))] <- matrix(counts_obs_20km)
 
-nb_obs_20km <- obs_20km + background_20km #to get the NA values of the background
+nb_obs_20km <- obs_20km + background_20km # to get the NA values of the background
 
 plot(nb_obs_20km)
 
-#Export :
+# Export :
 writeRaster(nb_obs_20km, "processed_data/obs_20km.tif", overwrite = T)
 
 
@@ -97,36 +99,37 @@ writeRaster(nb_obs_20km, "processed_data/obs_20km.tif", overwrite = T)
 full_raster <- sp_raster20[[1]] * 0 + 1
 
 # Precompute department areas once
-dpt_area_df <- exact_extract(full_raster, departements, "sum", coverage_area = TRUE)/1e6
+dpt_area_df <- exact_extract(full_raster, departements, "sum", coverage_area = TRUE) / 1e6
 dpt_area_df <- data.frame(
   dpt_code = departements$code,
   dpt_name = departements$dpt,
-  dpt_area = unlist(dpt_area_df))
-calc.sp.cover <- function(raster, departements, dpt_area_df){
-  
+  dpt_area = unlist(dpt_area_df)
+)
+calc.sp.cover <- function(raster, departements, dpt_area_df) {
   # Replace NAs in species raster with 0
   raster[is.na(raster)] <- 0
-  
+
   # Calculate species area per department (in km²)
-  sp_area_list <- exact_extract(raster, departements, "sum", coverage_area = TRUE)/1e6
-  
+  sp_area_list <- exact_extract(raster, departements, "sum", coverage_area = TRUE) / 1e6
+
   # Combine into dataframe
   df <- data.frame(
     dpt_code = departements$code,
     dpt_name = departements$dpt,
     sp_area = unlist(sp_area_list)
   )
-  
+
   # Merge with precomputed department area
   df <- merge(df, dpt_area_df, by = c("dpt_code", "dpt_name"))
-  
+
   # Calculate species relative coverage (%)
   df$sp_relative_area <- ifelse(df$dpt_area > 0,
-                                (df$sp_area / df$dpt_area) * 100, 0)
-  
+    (df$sp_area / df$dpt_area) * 100, 0
+  )
+
   df[df == 0] <- NA
   df[is.na(df)] <- 0
-  
+
   df
 }
 
@@ -143,10 +146,7 @@ for (l in 1:length(names(sp_raster20))) {
 }
 
 cov_df20 <- cov_df20 %>%
-  mutate(sp_relative_area = ifelse(sp_relative_area>100, 100, sp_relative_area))
+  mutate(sp_relative_area = ifelse(sp_relative_area > 100, 100, sp_relative_area))
 
-#Export :
+# Export :
 fwrite(cov_df20, "processed_data/OpenObs+GBIF_RARITY_20km.csv")
-
-
-

@@ -11,12 +11,13 @@ library(reshape2)
 
 #### Import data ####
 # Import list of french vascular flora:
-vascular_list <- read.csv(here::here("list_vascular_v17.csv") )
+vascular_list <- read.csv(here::here("list_vascular_v17.csv"))
 
 # Import list of wild harvested species :
 harvested_list <- read.csv(here::here("WHP_correpondence_table_v17.csv")) %>%
-  subset(Regroupement %in% c("Angiospermes", "Fougères", "Gymnospermes"), 
-         select = CD_REF) %>%
+  subset(Regroupement %in% c("Angiospermes", "Fougères", "Gymnospermes"),
+    select = CD_REF
+  ) %>%
   unique()
 harvested_list$harvested <- "harvested"
 
@@ -49,7 +50,6 @@ summar_join$total_sp <- summar_join$harvested + summar_join$not_harvested
 
 summar_join <- subset(summar_join, select = -not_harvested) # remove the not_harvested column
 names(summar_join)[2] <- "number_harvested" # change the name of column 2
-
 
 
 #### Export ####

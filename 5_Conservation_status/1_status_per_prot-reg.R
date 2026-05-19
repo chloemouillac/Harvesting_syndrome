@@ -15,8 +15,7 @@ library(readr)
 #### Import data ####
 # Import the status database :
 # BDC_STATUTS_17 <- read_csv(here::here("BDC-Statuts-v17", "BDC_STATUTS_17.csv")) %>%
-  BDC_STATUTS_17 <- read_csv("/home/mouillac/Documents/3-Enquete/R/National_survey_WHP/raw_data/BDC-Statuts-v17/BDC_STATUTS_17.csv") %>%
-  
+BDC_STATUTS_17 <- read_csv("/home/mouillac/Documents/3-Enquete/R/National_survey_WHP/raw_data/BDC-Statuts-v17/BDC_STATUTS_17.csv") %>%
   subset(REGNE == "Plantae", select = c(CD_REF, CD_TYPE_STATUT, LB_TYPE_STATUT, REGROUPEMENT_TYPE, CODE_STATUT, LABEL_STATUT, NIVEAU_ADMIN)) %>%
   unique()
 
@@ -33,38 +32,39 @@ list_harv_species <- read.csv(here::here("WHP_correspondence_table_v17.csv")) %>
   subset(select = CD_REF) %>%
   unique()
 
-list_harv_species$harvested <- "harvested" #add this to identify the harvested plants
+list_harv_species$harvested <- "harvested" # add this to identify the harvested plants
 
 #### Get the number of species for each red list status and protection/regulation ####
 # Join the status database with TAXREF :
 join <- left_join(list_species, BDC_STATUTS_17)
 
 # Filter to get the protections and regulations :
-prot_reg <- join[join$CD_TYPE_STATUT %in% 
-                   c("REGL", "PR", "PD", "PN"), ] %>%
-  subset(NIVEAU_ADMIN !=  "Subdivision administrative", 
-         select = c(CD_REF, LB_NOM, CD_TYPE_STATUT, NIVEAU_ADMIN)) %>% 
-  #we keep only the regional and département protections/regulations
+prot_reg <- join[join$CD_TYPE_STATUT %in%
+  c("REGL", "PR", "PD", "PN"), ] %>%
+  subset(NIVEAU_ADMIN != "Subdivision administrative",
+    select = c(CD_REF, LB_NOM, CD_TYPE_STATUT, NIVEAU_ADMIN)
+  ) %>%
+  # we keep only the regional and département protections/regulations
   unique()
 
-prot_reg$NIVEAU_ADMIN[prot_reg$NIVEAU_ADMIN == "Ancienne région"] <-"Région"
-prot_reg$NIVEAU_ADMIN[prot_reg$CD_TYPE_STATUT == "PN"] <-"État"
+prot_reg$NIVEAU_ADMIN[prot_reg$NIVEAU_ADMIN == "Ancienne région"] <- "Région"
+prot_reg$NIVEAU_ADMIN[prot_reg$CD_TYPE_STATUT == "PN"] <- "État"
 
 prot_reg$CD_TYPE_STATUT[prot_reg$CD_TYPE_STATUT == "REGL" & prot_reg$NIVEAU_ADMIN == "Département"] <- "PD"
-prot_reg <- prot_reg[! (prot_reg$CD_TYPE_STATUT == "REGL" & prot_reg$NIVEAU_ADMIN!= "Département"),] %>% 
+prot_reg <- prot_reg[!(prot_reg$CD_TYPE_STATUT == "REGL" & prot_reg$NIVEAU_ADMIN != "Département"), ] %>%
   unique()
 
 # Filter to get the red list national statuses :
-LRN <- join[join$CD_TYPE_STATUT  ==  "LRN", ] %>%
+LRN <- join[join$CD_TYPE_STATUT == "LRN", ] %>%
   # select(c(CD_REF, CODE_STATUT)) %>%
-  select(c(CD_REF, LB_NOM, CODE_STATUT)) %>% 
+  select(c(CD_REF, LB_NOM, CODE_STATUT)) %>%
   unique()
 
 # Clean the red list data : choose one status when there are more than one :
 LRN$CODE_STATUT <- as.factor(LRN$CODE_STATUT) %>%
-  ordered(levels = c("EX","EW","RE","CR","CR*","EN","VU","NT","LC","DD","NE","NA")) #this ordering will allow to keep the higher statuses when eliminating duplicates
-LRN <- arrange(LRN,LRN$CODE_STATUT)
-LRN <- LRN[!duplicated(LRN$CD_REF),]
+  ordered(levels = c("EX", "EW", "RE", "CR", "CR*", "EN", "VU", "NT", "LC", "DD", "NE", "NA")) # this ordering will allow to keep the higher statuses when eliminating duplicates
+LRN <- arrange(LRN, LRN$CODE_STATUT)
+LRN <- LRN[!duplicated(LRN$CD_REF), ]
 
 
 # Join the protections/regulations with the red list statuses
@@ -94,25 +94,24 @@ summary$harvested[is.na(summary$harvested)] <- "not harvested"
 
 #### Get the proportion of species for each red list status and protection/regulation ####
 
-# Get proportions, instead of numbers : 
+# Get proportions, instead of numbers :
 summary$percentage <- NA
 
 
 for (i in unique(summary$NIVEAU_ADMIN)) {
-  
-  #harvested :
-  select_harv <- summary$NIVEAU_ADMIN == i & 
+  # harvested :
+  select_harv <- summary$NIVEAU_ADMIN == i &
     summary$harvested == "harvested"
-  
-  summary$percentage[select_harv] <- 100*
-    summary$n[select_harv]/sum(summary$n[select_harv])
-  
-  #not harvested :
-  select_not_harv <- summary$NIVEAU_ADMIN == i & 
+
+  summary$percentage[select_harv] <- 100 *
+    summary$n[select_harv] / sum(summary$n[select_harv])
+
+  # not harvested :
+  select_not_harv <- summary$NIVEAU_ADMIN == i &
     summary$harvested == "not harvested"
-  
-  summary$percentage[select_not_harv] <- 100*
-    summary$n[select_not_harv]/sum(summary$n[select_not_harv])
+
+  summary$percentage[select_not_harv] <- 100 *
+    summary$n[select_not_harv] / sum(summary$n[select_not_harv])
 }
 
 
@@ -120,14 +119,14 @@ summary$percentage <- round(summary$percentage, digits = 2)
 
 
 # Get the proportion of species assessed by the IUCN (harvested species and entire vascular flora)
-prop_IUCN_ALL <- 100* nrow(unique(subset(join_prot_reg_LRN, !CODE_STATUT %in% c("NE", "DD"), select = c(CD_REF)))) /
+prop_IUCN_ALL <- 100 * nrow(unique(subset(join_prot_reg_LRN, !CODE_STATUT %in% c("NE", "DD"), select = c(CD_REF)))) /
   length(unique(join_prot_reg_LRN$CD_REF))
-  # 75% of all the flora is assessed
+# 75% of all the flora is assessed
 
-prop_IUCN_HARV <- 100* nrow(unique(subset(join_prot_reg_LRN, !CODE_STATUT %in% c("NE", "DD")
-                                   & harvested  ==  "harvested", select = CD_REF))) /
-  nrow(unique(subset(join_prot_reg_LRN, harvested  ==  "harvested", select = CD_REF))) 
-  # 93.4% of all the flora is assessed
+prop_IUCN_HARV <- 100 * nrow(unique(subset(join_prot_reg_LRN, !CODE_STATUT %in% c("NE", "DD") &
+  harvested == "harvested", select = CD_REF))) /
+  nrow(unique(subset(join_prot_reg_LRN, harvested == "harvested", select = CD_REF)))
+# 93.4% of all the flora is assessed
 
 
 # Proportion of each IUCN status :
@@ -137,7 +136,7 @@ summar_IUCN_ALL <- join_prot_reg_LRN %>%
   group_by(CODE_STATUT) %>%
   summarise(n = n())
 
-summar_IUCN_ALL$prop <- 100* summar_IUCN_ALL$n / sum(summar_IUCN_ALL$n)
+summar_IUCN_ALL$prop <- 100 * summar_IUCN_ALL$n / sum(summar_IUCN_ALL$n)
 
 
 summar_IUCN_HARV <- join_prot_reg_LRN %>%
@@ -146,8 +145,7 @@ summar_IUCN_HARV <- join_prot_reg_LRN %>%
   group_by(CODE_STATUT) %>%
   summarise(n = n())
 
-summar_IUCN_HARV$prop <- 100* summar_IUCN_HARV$n / sum(summar_IUCN_HARV$n)
-
+summar_IUCN_HARV$prop <- 100 * summar_IUCN_HARV$n / sum(summar_IUCN_HARV$n)
 
 
 # Proportion of species that are protected or regulated :
@@ -162,7 +160,7 @@ summar_protreg_ALL <- join_prot_reg_LRN %>%
   group_by(protreg) %>%
   summarise(n = n())
 
-summar_protreg_ALL$prop <- 100* summar_protreg_ALL$n / sum(summar_protreg_ALL$n)
+summar_protreg_ALL$prop <- 100 * summar_protreg_ALL$n / sum(summar_protreg_ALL$n)
 
 
 summar_protreg_HARV <- join_prot_reg_LRN %>%
@@ -171,11 +169,8 @@ summar_protreg_HARV <- join_prot_reg_LRN %>%
   group_by(protreg) %>%
   summarise(n = n())
 
-summar_protreg_HARV$prop <- 100* summar_protreg_HARV$n / sum(summar_protreg_HARV$n)
-
-
+summar_protreg_HARV$prop <- 100 * summar_protreg_HARV$n / sum(summar_protreg_HARV$n)
 
 
 #### Export ####
 write.csv(summary, "processed_data/prop_status_prot-reg.csv", row.names = F)
-

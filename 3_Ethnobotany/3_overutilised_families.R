@@ -41,17 +41,17 @@ filtered_data <- filtered_data %>%
 
 # Identify the 10 most overutlised families
 over_harvested <- filtered_data %>%
-  arrange(desc(std_residuals)) %>%  # Sort by highest residuals
+  arrange(desc(std_residuals)) %>% # Sort by highest residuals
   filter(number_harvested > 10) %>%
-  slice_head(n = 10)  # Select top 10 families
+  slice_head(n = 10) # Select top 10 families
 
 
 print(over_harvested)
 
-#Lamiaceae, Pinaceae, Ericaceae, Violaceae, Ranunculaceae, Caprifoliaceae, Crassulaceae, Polygonaceae, Rosaceae, Boraginaceae
-
+# Lamiaceae, Pinaceae, Ericaceae, Violaceae, Ranunculaceae, Caprifoliaceae, Crassulaceae, Polygonaceae, Rosaceae, Boraginaceae
 
 
 ### Export data ###
 write.csv(filtered_data, "processed_data/overutilised_families.csv",
-          row.names = F)
+  row.names = F
+)

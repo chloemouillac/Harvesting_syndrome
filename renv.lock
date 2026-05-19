@@ -5,6 +5,26 @@
       {
         "Name": "CRAN",
         "URL": "https://cloud.r-project.org"
+      },
+      {
+        "Name": "BioCsoft",
+        "URL": "https://bioconductor.org/packages/3.23/bioc"
+      },
+      {
+        "Name": "BioCann",
+        "URL": "https://bioconductor.org/packages/3.23/data/annotation"
+      },
+      {
+        "Name": "BioCexp",
+        "URL": "https://bioconductor.org/packages/3.23/data/experiment"
+      },
+      {
+        "Name": "BioCworkflows",
+        "URL": "https://bioconductor.org/packages/3.23/workflows"
+      },
+      {
+        "Name": "BioCbooks",
+        "URL": "https://bioconductor.org/packages/3.23/books"
       }
     ]
   },
@@ -42,29 +62,6 @@
       "Author": "Martin Morgan [aut] (ORCID: <https://orcid.org/0000-0002-5874-8148>), Marcel Ramos [aut, cre] (ORCID: <https://orcid.org/0000-0002-3242-0582>)",
       "Maintainer": "Marcel Ramos <marcel.ramos@sph.cuny.edu>",
       "Repository": "CRAN"
-    },
-    "BiocVersion": {
-      "Package": "BiocVersion",
-      "Version": "3.23.1",
-      "Source": "Bioconductor",
-      "Title": "Set the appropriate version of Bioconductor packages",
-      "Description": "This package provides repository information for the appropriate version of Bioconductor.",
-      "Authors@R": "c( person(\"Martin\", \"Morgan\", email = \"martin.morgan@roswellpark.org\", role = \"aut\"), person(\"Marcel\", \"Ramos\", email = \"marcel.ramos@sph.cuny.edu\", role = \"ctb\"), person(\"Bioconductor\", \"Package Maintainer\", email  = \"maintainer@bioconductor.org\", role = c(\"ctb\", \"cre\")))",
-      "biocViews": "Infrastructure",
-      "Depends": [
-        "R (>= 4.6.0)"
-      ],
-      "License": "Artistic-2.0",
-      "Encoding": "UTF-8",
-      "RoxygenNote": "6.0.1",
-      "git_url": "https://git.bioconductor.org/packages/BiocVersion",
-      "git_branch": "devel",
-      "git_last_commit": "252d7c8",
-      "git_last_commit_date": "2025-10-30",
-      "Repository": "Bioconductor 3.23",
-      "NeedsCompilation": "no",
-      "Author": "Martin Morgan [aut], Marcel Ramos [ctb], Bioconductor Package Maintainer [ctb, cre]",
-      "Maintainer": "Bioconductor Package Maintainer <maintainer@bioconductor.org>"
     },
     "CoordinateCleaner": {
       "Package": "CoordinateCleaner",
@@ -838,6 +835,7 @@
       "RemoteHost": "api.github.com",
       "RemoteRepo": "V.PhyloMaker2",
       "RemoteUsername": "jinyizju",
+      "RemotePkgRef": "jinyizju/V.PhyloMaker2",
       "RemoteRef": "HEAD",
       "RemoteSha": "7af3fb5152f691af2e4ec9d5e2e467d1b50505e9",
       "NeedsCompilation": "no"
@@ -1076,7 +1074,7 @@
     },
     "bit64": {
       "Package": "bit64",
-      "Version": "4.8.0",
+      "Version": "4.8.2",
       "Source": "Repository",
       "Title": "A S3 Class for Vectors of 64bit Integers",
       "Authors@R": "c( person(\"Michael\", \"Chirico\", email=\"michaelchirico4@gmail.com\", role=c(\"aut\", \"cre\")), person(\"Jens\", \"Oehlschlägel\", role=\"aut\"), person(\"Leonardo\", \"Silvestri\", role=\"ctb\"), person(\"Ofek\", \"Shilon\", role=\"ctb\"), person(\"Christian\", \"Ullerich\", role=\"ctb\") )",
@@ -4121,6 +4119,7 @@
       "RemoteHost": "api.github.com",
       "RemoteRepo": "ggsankey",
       "RemoteUsername": "davidsjoberg",
+      "RemotePkgRef": "davidsjoberg/ggsankey",
       "RemoteRef": "HEAD",
       "RemoteSha": "b675d0d5144b1b5758d3b2b41e86ceee66a1e071",
       "NeedsCompilation": "no"
@@ -4270,8 +4269,8 @@
     },
     "ggtree": {
       "Package": "ggtree",
-      "Version": "4.3.0",
-      "Source": "GitHub",
+      "Version": "4.2.0",
+      "Source": "Bioconductor",
       "Type": "Package",
       "Title": "an R package for visualization of tree and annotation data",
       "Authors@R": "c( person(\"Guangchuang\", \"Yu\",     email = \"guangchuangyu@gmail.com\", role = c(\"aut\", \"cre\", \"cph\"),  comment = c(ORCID = \"0000-0002-6485-8781\")), person(\"Tommy Tsan-Yuk\", \"Lam\", email = \"tylam.tommy@gmail.com\",   role = c(\"aut\", \"ths\")), person(\"Shuangbin\", \"Xu\",       email = \"xshuangbin@163.com\",      role = \"aut\",  comment = c(ORCID=\"0000-0003-3513-5362\")), person(\"Lin\", \" Li\",            email = \"williamlee2220@qq.com\",   role = \"ctb\"), person(\"Bradley\", \"Jones\",      email = \"bjones@cfenet.ubc.ca\",    role = \"ctb\"), person(\"Justin\", \"Silverman\",   email = \"jsilve24@gmail.com\",      role = \"ctb\"), person(\"Watal M.\", \"Iwasaki\",   email = \"heavy.watal@gmail.com\",   role = \"ctb\"), person(\"Yonghe\", \"Xia\",         email = \"xiayh17@gmail.com\",       role = \"ctb\"), person(\"Ruizhu\", \"Huang\",       email = \"ruizhuRH@gmail.com\",      role = \"ctb\") )",
@@ -4325,20 +4324,18 @@
       "biocViews": "Alignment, Annotation, Clustering, DataImport, MultipleSequenceAlignment, Phylogenetics, ReproducibleResearch, Software, Visualization",
       "RoxygenNote": "7.3.3",
       "Roxygen": "list(markdown = TRUE)",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "ggtree",
-      "RemoteUsername": "YuLab-SMU",
-      "RemotePkgRef": "YuLab-SMU/ggtree",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "9f645a2b89e4150d9748547b3ea1b03906275c27",
+      "git_url": "https://git.bioconductor.org/packages/ggtree",
+      "git_branch": "RELEASE_3_23",
+      "git_last_commit": "c23145e",
+      "git_last_commit_date": "2026-04-28",
+      "Repository": "Bioconductor 3.23",
       "NeedsCompilation": "no",
       "Author": "Guangchuang Yu [aut, cre, cph] (ORCID: <https://orcid.org/0000-0002-6485-8781>), Tommy Tsan-Yuk Lam [aut, ths], Shuangbin Xu [aut] (ORCID: <https://orcid.org/0000-0003-3513-5362>), Lin Li [ctb], Bradley Jones [ctb], Justin Silverman [ctb], Watal M. Iwasaki [ctb], Yonghe Xia [ctb], Ruizhu Huang [ctb]"
     },
     "ggtreeExtra": {
       "Package": "ggtreeExtra",
-      "Version": "1.21.0",
-      "Source": "GitHub",
+      "Version": "1.22.0",
+      "Source": "Bioconductor",
       "Type": "Package",
       "Title": "An R Package To Add Geometric Layers On Circular Or Other Layout Tree Of \"ggtree\"",
       "Authors@R": "c( person(given = \"Shuangbin\", family = \"Xu\", role = c(\"aut\", \"cre\"), email = \"xshuangbin@163.com\", comment = c(ORCID = \"0000-0003-3513-5362\")), person(\"Guangchuang\", \"Yu\", email = \"guangchuangyu@gmail.com\", role = c(\"aut\", \"ctb\"), comment = c(ORCID = \"0000-0002-6485-8781\")) )",
@@ -4376,13 +4373,11 @@
       "RoxygenNote": "7.3.3",
       "VignetteBuilder": "knitr",
       "Config/testthat/edition": "3",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "ggtreeExtra",
-      "RemoteUsername": "YuLab-SMU",
-      "RemotePkgRef": "YuLab-SMU/ggtreeExtra",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "9e6045c6733356e5c362aebe95ece8e33b84e3f0",
+      "git_url": "https://git.bioconductor.org/packages/ggtreeExtra",
+      "git_branch": "RELEASE_3_23",
+      "git_last_commit": "0e8ea5f",
+      "git_last_commit_date": "2026-04-28",
+      "Repository": "Bioconductor 3.23",
       "NeedsCompilation": "no",
       "Author": "Shuangbin Xu [aut, cre] (ORCID: <https://orcid.org/0000-0003-3513-5362>), Guangchuang Yu [aut, ctb] (ORCID: <https://orcid.org/0000-0002-6485-8781>)",
       "Maintainer": "Shuangbin Xu <xshuangbin@163.com>"

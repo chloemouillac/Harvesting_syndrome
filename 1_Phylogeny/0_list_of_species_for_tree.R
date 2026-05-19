@@ -21,9 +21,10 @@ vascular_list <- read.csv(here::here("list_vascular_v17.csv"))
 # this must be a dataframe with 3 columns, in this order : species, genus, family
 list <- vascular_list
 list$genus <- str_extract(list$LB_NOM, "\\b[A-Z][a-z]+\\b") # extracts the first word starting with a capital (here the genus)
-list$species <- ifelse(grepl(" x ", list$LB_NOM), 
-                       word(list$LB_NOM, 1,3), # extracts the first 3 words (here the full species name in the case of a hybrid)
-                       word(list$LB_NOM, 1,2)) # extracts the first 2 words
+list$species <- ifelse(grepl(" x ", list$LB_NOM),
+  word(list$LB_NOM, 1, 3), # extracts the first 3 words (here the full species name in the case of a hybrid)
+  word(list$LB_NOM, 1, 2)
+) # extracts the first 2 words
 
 list <- list %>%
   select(species, genus, FAMILLE)
@@ -48,7 +49,7 @@ tree <- phylo.maker(sp.list = list, tree = GBOTB.extended.TPL, nodes = nodes.inf
 # 1125       Viscum         Viscaceae      Santalaceae
 # 1131     Wigandia          Namaceae     Boraginaceae
 # [1] "Note: 7 taxa fail to be binded to the tree,"
-# [1] "Thesium_alpinum"     "Thesium_corsalpinum" "Thesium_humifusum"   "Thesium_humile"      "Thesium_kyrnosum"   
+# [1] "Thesium_alpinum"     "Thesium_corsalpinum" "Thesium_humifusum"   "Thesium_humile"      "Thesium_kyrnosum"
 # [6] "Thesium_linophyllon" "Thesium_pyrenaicum"
 
 # No big correspondence issue here, no changes needed.

@@ -10,7 +10,7 @@ library(dplyr)
 library(tidyr)
 
 
-#reprendre jointures ci-dessous avec les CD_REF
+# reprendre jointures ci-dessous avec les CD_REF
 
 #### Import data ####
 # Import all databases for plant uses :
@@ -29,16 +29,16 @@ corresp <- read.csv("raw_data/uses_correspondences.csv") %>%
 
 # Import species list :
 list_species <- read.csv(here::here("WHP_correpondence_table_v17.csv")) %>%
-  subset(Regroupement %in% c("Angiospermes", "Fougères", "Gymnospermes"), 
-         select = c(CD_REF, NOM_VALIDE)) %>%
+  subset(Regroupement %in% c("Angiospermes", "Fougères", "Gymnospermes"),
+    select = c(CD_REF, NOM_VALIDE)
+  ) %>%
   unique()
-
 
 
 #### KEW database ####
 # Format to long dataframe :
 numeric_to_presence <- function(column) {
-  return(ifelse(column  ==  0, NA, colname))
+  return(ifelse(column == 0, NA, colname))
 }
 
 # Apply the function to convert numeric values back into text :
@@ -47,7 +47,7 @@ for (i in 3:12) {
   KEW_db[, i] <- numeric_to_presence(KEW_db[, i])
 }
 
-KEW_db <- melt(KEW_db, id.vars = c("NOM_VALIDE", "CD_REF")) %>% 
+KEW_db <- melt(KEW_db, id.vars = c("NOM_VALIDE", "CD_REF")) %>%
   select(-variable) %>%
   na.omit()
 
@@ -61,13 +61,13 @@ KEW_db$SOURCE <- "KEW"
 CBNPMP <- separate_rows(CBNPMP, USAGES, sep = " / ") %>%
   separate_rows(USAGES, sep = "/")
 
-CBNPMP <- CBNPMP[CBNPMP$USAGES !=  "",]
+CBNPMP <- CBNPMP[CBNPMP$USAGES != "", ]
 
 CBNPMP$SOURCE <- "CBN"
 
 
 #### Chabert database ####
-Chabert <- melt(Chabert, id.vars = c("NOM_VALIDE", "CD_REF")) %>% 
+Chabert <- melt(Chabert, id.vars = c("NOM_VALIDE", "CD_REF")) %>%
   subset(value == "X", select = -value) %>%
   na.omit()
 
@@ -81,14 +81,14 @@ Chabert$SOURCE <- "Chabert"
 PFAF <- separate_rows(PFAF, Edible_uses, sep = ", ") %>%
   separate_rows(Medicinal_uses, sep = ", ") %>%
   separate_rows(Other_uses, sep = ", ") %>%
-  separate_rows(Special_uses, sep = ", ") 
+  separate_rows(Special_uses, sep = ", ")
 
-PFAF <- melt(PFAF, id.vars = c("NOM_VALIDE", "CD_REF")) %>% 
+PFAF <- melt(PFAF, id.vars = c("NOM_VALIDE", "CD_REF")) %>%
   select(-variable) %>%
   na.omit() %>%
   unique()
 
-PFAF <- PFAF[PFAF$value !=  "",]
+PFAF <- PFAF[PFAF$value != "", ]
 
 names(PFAF) <- c("NOM_VALIDE", "CD_REF", "USAGES")
 
@@ -97,7 +97,7 @@ PFAF$SOURCE <- "PFAF"
 
 
 #### Bind all of the databases together ####
-TOTAL <- rbind(KEW_db, CBNPMP, Chabert, PFAF) %>% #667 species covered
+TOTAL <- rbind(KEW_db, CBNPMP, Chabert, PFAF) %>% # 667 species covered
   left_join(corresp, join_by(USAGES == ORIGIN_USE)) %>%
   inner_join(list_species) %>%
   select(-c(USAGES)) %>%
@@ -115,8 +115,9 @@ write.csv(TOTAL_ct, "processed_data/uses_detail_count.csv", row.names = F)
 
 
 #### Species missing a use ####
-missing <- full_join(TOTAL, list_species, join_by(CD_REF,NOM_VALIDE)) %>%
-  subset(is.na(SELECTED_TYPOLOGY_ENG), 
-         select = c(CD_REF,NOM_VALIDE))
+missing <- full_join(TOTAL, list_species, join_by(CD_REF, NOM_VALIDE)) %>%
+  subset(is.na(SELECTED_TYPOLOGY_ENG),
+    select = c(CD_REF, NOM_VALIDE)
+  )
 
 write.csv(missing, "processed_data/species_missing_uses.csv")

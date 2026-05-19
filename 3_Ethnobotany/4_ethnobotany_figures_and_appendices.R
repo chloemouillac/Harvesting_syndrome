@@ -18,8 +18,8 @@ library(RColorBrewer)
 library(ggplot2)
 library(dplyr)
 library(gridExtra)
-library(scales)  # For percent formatting
-library(patchwork)  # For combining plots with a shared legend
+library(scales) # For percent formatting
+library(patchwork) # For combining plots with a shared legend
 
 
 #### Import data ####
@@ -28,7 +28,7 @@ uses <- read.csv("processed_data/uses_detail_count.csv") %>%
   melt(id.vars = c("NOM_VALIDE", "CD_REF"))
 
 uses <- uses %>%
-  filter(value>0)
+  filter(value > 0)
 names(uses) <- c("NOM_VALIDE", "CD_REF", "USE", "value")
 
 uses$USE <- as.character(uses$USE)
@@ -39,14 +39,14 @@ uses$USE[uses$USE == "Ornamental.Plants"] <- "Ornamental Plants"
 
 # Import harvested parts :
 parts <- read.csv("processed_data/harvested_detail.csv") %>%
-  melt(c("CD_REF","NOM_VALIDE")) %>%
-  subset(value>0 & variable !=  "champignons.et.lichens.ou.autres", select = -value) %>%
-  unique() 
-names(parts) <- c("CD_REF","NOM_VALIDE", "PART")
+  melt(c("CD_REF", "NOM_VALIDE")) %>%
+  subset(value > 0 & variable != "champignons.et.lichens.ou.autres", select = -value) %>%
+  unique()
+names(parts) <- c("CD_REF", "NOM_VALIDE", "PART")
 
 
 # Import list of french vascular flora :
-vascular_list <- read.csv(here::here("list_vascular_v17.csv") )%>%
+vascular_list <- read.csv(here::here("list_vascular_v17.csv")) %>%
   subset(select = c("CD_REF", "FAMILLE", "LB_NOM"))
 
 
@@ -70,19 +70,19 @@ join_uses_vascular_summar <- join_uses_vascular %>% # Calculate the number of sp
 #### Get the percentage of each use, and percentage of species not used ####
 for (fam in unique(join_uses_vascular_summar$FAMILLE)) {
   for (use in unique(join_uses_vascular_summar$USE)) {
-    if (use  ==  "No recorded use") {
-      join_uses_vascular_summar$percentage[join_uses_vascular_summar$FAMILLE == fam & join_uses_vascular_summar$USE == use] <- 
+    if (use == "No recorded use") {
+      join_uses_vascular_summar$percentage[join_uses_vascular_summar$FAMILLE == fam & join_uses_vascular_summar$USE == use] <-
         join_uses_vascular_summar$nb_species[join_uses_vascular_summar$FAMILLE == fam & join_uses_vascular_summar$USE == use] /
-        sum(join_uses_vascular_summar$nb_species[join_uses_vascular_summar$FAMILLE == fam], na.rm = T)
+          sum(join_uses_vascular_summar$nb_species[join_uses_vascular_summar$FAMILLE == fam], na.rm = T)
     } else {
-      join_uses_vascular_summar$percentage[join_uses_vascular_summar$FAMILLE == fam & join_uses_vascular_summar$USE == use] <- 
+      join_uses_vascular_summar$percentage[join_uses_vascular_summar$FAMILLE == fam & join_uses_vascular_summar$USE == use] <-
         join_uses_vascular_summar$nb_species[join_uses_vascular_summar$FAMILLE == fam & join_uses_vascular_summar$USE == use] /
-        sum(join_uses_vascular_summar$nb_species[join_uses_vascular_summar$FAMILLE == fam & join_uses_vascular_summar$USE
-                                               !=  "No recorded use"], na.rm = T)
+          sum(join_uses_vascular_summar$nb_species[join_uses_vascular_summar$FAMILLE == fam & join_uses_vascular_summar$USE
+          != "No recorded use"], na.rm = T)
     }
   }
 }
-join_uses_vascular_summar$percentage <- 100*round(join_uses_vascular_summar$percentage, 2)
+join_uses_vascular_summar$percentage <- 100 * round(join_uses_vascular_summar$percentage, 2)
 
 # Export :
 write.csv(join_uses_vascular_summar, "processed_data/uses_percentages.csv", row.names = F)
@@ -91,24 +91,26 @@ write.csv(join_uses_vascular_summar, "processed_data/uses_percentages.csv", row.
 
 #### 6 families - End-uses of the most harvested plant families plot #####
 # 6 most harvested plant families :
-most_harv <-  c("Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Ericaceae", "Violaceae","Pinaceae")
-most_harv <- factor(most_harv, levels =  c("Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Ericaceae", "Violaceae","Pinaceae"))
+most_harv <- c("Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Pinaceae")
+most_harv <- factor(most_harv, levels = c("Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Pinaceae"))
 # Ordered by highest number of WHP species to lowest, and when equal number, the highest percentage of WHP goes first
 
 
 #### Figure 2a : % of harvesetd species in the 10 selected families ####
-# Get the percentage of harvested species : 
+# Get the percentage of harvested species :
 pct_on_harv_list <- read.csv(here::here("1_Phylogeny", "processed_data", "tip_data_for_tree.csv"))
 pct_on_harv_list_6fam <- pct_on_harv_list %>%
   subset(FAMILLE %in% most_harv)
 
 # Get the total percentage of harvested species
-ALL_list <- data.frame(FAMILLE = "ALL",
-                         number_harvested = sum(pct_on_harv_list$number_harvested),
-                         total_sp =  sum(pct_on_harv_list$total_sp),
-                         percentage_harvested =  round(100*
-                           sum(pct_on_harv_list$number_harvested)/
-                           sum(pct_on_harv_list$total_sp),1))
+ALL_list <- data.frame(
+  FAMILLE = "ALL",
+  number_harvested = sum(pct_on_harv_list$number_harvested),
+  total_sp = sum(pct_on_harv_list$total_sp),
+  percentage_harvested = round(100 *
+    sum(pct_on_harv_list$number_harvested) /
+    sum(pct_on_harv_list$total_sp), 1)
+)
 
 
 pct_on_harv_list_6fam <- rbind(pct_on_harv_list_6fam, ALL_list)
@@ -119,61 +121,67 @@ pct_on_harv_list_6fam$FAMILLE <- factor(pct_on_harv_list_6fam$FAMILLE, c("ALL", 
 
 
 # Plot :
-plot1 <- ggplot(pct_on_harv_list_6fam[pct_on_harv_list_6fam$FAMILLE!= "ALL",], aes(x = FAMILLE,
-                                                                                      y = percentage_harvested, width = 0.7)) +
+plot1 <- ggplot(pct_on_harv_list_6fam[pct_on_harv_list_6fam$FAMILLE != "ALL", ], aes(
+  x = FAMILLE,
+  y = percentage_harvested, width = 0.7
+)) +
   geom_col(fill = "grey60") +
-  
-  scale_y_continuous(breaks = seq(0,40,10), limits = c(0, 48),
-                     labels =  seq(0,40,10)) +
-  
-  geom_hline(yintercept = pct_on_harv_list_6fam$percentage_harvested[pct_on_harv_list_6fam$FAMILLE == "ALL"],
-             colour = "black") +
-  
-  annotate("text", x = 0.5,
-                y = 2 + pct_on_harv_list_6fam$percentage_harvested[pct_on_harv_list_6fam$FAMILLE == "ALL"],
-           label =  "Average %",  size = 6, hjust = 0) +
-  
+  scale_y_continuous(
+    breaks = seq(0, 40, 10), limits = c(0, 48),
+    labels = seq(0, 40, 10)
+  ) +
+  geom_hline(
+    yintercept = pct_on_harv_list_6fam$percentage_harvested[pct_on_harv_list_6fam$FAMILLE == "ALL"],
+    colour = "black"
+  ) +
+  annotate("text",
+    x = 0.5,
+    y = 2 + pct_on_harv_list_6fam$percentage_harvested[pct_on_harv_list_6fam$FAMILLE == "ALL"],
+    label = "Average %", size = 6, hjust = 0
+  ) +
   theme_bw() +
   labs(y = "% of commercial WHP species") +
-  theme(legend.title = element_blank(),
-        axis.text.x = element_blank(), axis.title.x = element_blank(),
-        axis.text.y = element_text(size = 20), axis.title.y = element_text(size = 18),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        plot.margin = margin(1,1,0,2, "cm")) #top, right, bottom, left)
+  theme(
+    legend.title = element_blank(),
+    axis.text.x = element_blank(), axis.title.x = element_blank(),
+    axis.text.y = element_text(size = 20), axis.title.y = element_text(size = 18),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    plot.margin = margin(1, 1, 0, 2, "cm")
+  ) # top, right, bottom, left)
 plot1
 
 
 
 #### Figure 2b : % of each use in the 10 families ####
-uses_per_fam <- join_uses_vascular_summar[join_uses_vascular_summar$FAMILLE %in% most_harv,]
+uses_per_fam <- join_uses_vascular_summar[join_uses_vascular_summar$FAMILLE %in% most_harv, ]
 
 # Calculate the mean % of each use over all families and add the data to uses_per_fam
 ALL <- join_uses_vascular_summar %>%
   group_by(USE) %>%
-  summarise(weight = sum(weight),
-            nb_species = sum(nb_species))
-ALL$percentage[ALL$USE!= "No recorded use"] <- ALL$nb_species[ALL$USE!= "No recorded use"]/
-  sum(ALL$nb_species[ALL$USE!= "No recorded use"])*100
-ALL$percentage[ALL$USE == "No recorded use"] <- ALL$nb_species[ALL$USE == "No recorded use"]/sum(ALL$nb_species)
-ALL$FAMILLE<- "ALL"
+  summarise(
+    weight = sum(weight),
+    nb_species = sum(nb_species)
+  )
+ALL$percentage[ALL$USE != "No recorded use"] <- ALL$nb_species[ALL$USE != "No recorded use"] /
+  sum(ALL$nb_species[ALL$USE != "No recorded use"]) * 100
+ALL$percentage[ALL$USE == "No recorded use"] <- ALL$nb_species[ALL$USE == "No recorded use"] / sum(ALL$nb_species)
+ALL$FAMILLE <- "ALL"
 uses_per_fam <- rbind(uses_per_fam, ALL)
 #
 
-uses_per_fam$percentage <- round(uses_per_fam$percentage,1)
-uses_per_fam$FAMILLE <- factor(uses_per_fam$FAMILLE, levels =  c("ALL", "Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Pinaceae"))
+uses_per_fam$percentage <- round(uses_per_fam$percentage, 1)
+uses_per_fam$FAMILLE <- factor(uses_per_fam$FAMILLE, levels = c("ALL", "Lamiaceae", "Ranunculaceae", "Caprifoliaceae", "Ericaceae", "Violaceae", "Pinaceae"))
 
 uses_per_fam$USE <- as.character(uses_per_fam$USE)
 uses_per_fam$USE <- gsub("\\.", " ", uses_per_fam$USE)
 
-uses_per_fam$USE <- factor(uses_per_fam$USE, levels = c("No recorded use", "Other", "Ornamental Plants","Cosmetics", "Food and Beverages", "Crafts", "Medical Therapeutic"))
-
-
+uses_per_fam$USE <- factor(uses_per_fam$USE, levels = c("No recorded use", "Other", "Ornamental Plants", "Cosmetics", "Food and Beverages", "Crafts", "Medical Therapeutic"))
 
 
 # calculate a column with the difference of each use-weight compared to the mean use-weight :
 for (fam in unique(uses_per_fam$FAMILLE)) {
-  for(use in unique(uses_per_fam$USE)) {
+  for (use in unique(uses_per_fam$USE)) {
     uses_per_fam$diff[uses_per_fam$FAMILLE == fam & uses_per_fam$USE == use] <-
       uses_per_fam$percentage[uses_per_fam$FAMILLE == fam & uses_per_fam$USE == use] -
       uses_per_fam$percentage[uses_per_fam$FAMILLE == "ALL" & uses_per_fam$USE == use]
@@ -183,17 +191,17 @@ for (fam in unique(uses_per_fam$FAMILLE)) {
 }
 
 
-uses_per_fam$positive <- ifelse(uses_per_fam$diff>= 0,"yes","no")
-uses_per_fam_simpl <- uses_per_fam[uses_per_fam$USE %in% c("Crafts", "Food and Beverages", "Medical Therapeutic"),]
+uses_per_fam$positive <- ifelse(uses_per_fam$diff >= 0, "yes", "no")
+uses_per_fam_simpl <- uses_per_fam[uses_per_fam$USE %in% c("Crafts", "Food and Beverages", "Medical Therapeutic"), ]
 
 
 # Add a column that will be used for column numbers
-k = 0
+k <- 0
 for (fam in levels(uses_per_fam_simpl$FAMILLE)) {
   uses_per_fam_simpl$fam_n[uses_per_fam_simpl$FAMILLE == fam] <- k
-  k = k+1
+  k <- k + 1
 }
-  
+
 
 # Add a column that will be used to jitter the vertical lines
 uses_per_fam_simpl$jitter[uses_per_fam_simpl$USE == "Medical Therapeutic"] <- +0.12
@@ -203,7 +211,7 @@ uses_per_fam_simpl$jitter[uses_per_fam_simpl$USE == "Crafts"] <- -0.12
 
 # Add a column with total number of harvested species / family
 for (fam in levels(uses_per_fam_simpl$FAMILLE)) {
-  uses_per_fam_simpl$total_sp[uses_per_fam_simpl$FAMILLE == fam] <- 
+  uses_per_fam_simpl$total_sp[uses_per_fam_simpl$FAMILLE == fam] <-
     pct_on_harv_list_6fam$number_harvested[pct_on_harv_list_6fam$FAMILLE == fam]
 }
 
@@ -213,72 +221,90 @@ uses_per_fam_simpl <- arrange(uses_per_fam_simpl, desc(total_sp))
 
 # Add a stripe variable for alternate background grid filling :
 uses_per_fam_simpl <- mutate(uses_per_fam_simpl,
-                             stripe = factor(ifelse(fam_n %% 2  ==  0, 1, 0)))
+  stripe = factor(ifelse(fam_n %% 2 == 0, 1, 0))
+)
 
 # Plot :
-plot2 <- ggplot(uses_per_fam_simpl[uses_per_fam_simpl$FAMILLE !=  "ALL",], aes(x = fam_n,
-                                                                              y = percentage)) +
-  geom_rect(aes(xmax = fam_n + 0.5, 
-                xmin = fam_n-0.5, 
-                ymin = -Inf, 
-                ymax = Inf, 
-                fill = stripe), alpha = 0.2, show.legend = F) + 
-  
-  scale_fill_manual(values = c("transparent", "grey90")) + 
-  
-  geom_hline(data = uses_per_fam_simpl[uses_per_fam_simpl$FAMILLE  ==  "ALL",],
-             aes(yintercept = percentage, color = USE), show.legend = F) +
-  
-  geom_segment(data = uses_per_fam_simpl[uses_per_fam_simpl$FAMILLE !=  "ALL",],
-               aes(x = fam_n+jitter, y = mean_percentage, yend = mean_percentage+diff, color = USE),
-               linewidth = 7, show.legend = F) +
-  
-  scale_color_manual(name = "Use categories",
-                    values = c('orange','#66B2B2','mediumpurple3')) +
-  
+plot2 <- ggplot(uses_per_fam_simpl[uses_per_fam_simpl$FAMILLE != "ALL", ], aes(
+  x = fam_n,
+  y = percentage
+)) +
+  geom_rect(aes(
+    xmax = fam_n + 0.5,
+    xmin = fam_n - 0.5,
+    ymin = -Inf,
+    ymax = Inf,
+    fill = stripe
+  ), alpha = 0.2, show.legend = F) +
+  scale_fill_manual(values = c("transparent", "grey90")) +
+  geom_hline(
+    data = uses_per_fam_simpl[uses_per_fam_simpl$FAMILLE == "ALL", ],
+    aes(yintercept = percentage, color = USE), show.legend = F
+  ) +
+  geom_segment(
+    data = uses_per_fam_simpl[uses_per_fam_simpl$FAMILLE != "ALL", ],
+    aes(x = fam_n + jitter, y = mean_percentage, yend = mean_percentage + diff, color = USE),
+    linewidth = 7, show.legend = F
+  ) +
+  scale_color_manual(
+    name = "Use categories",
+    values = c("orange", "#66B2B2", "mediumpurple3")
+  ) +
   new_scale_color() +
-  
-  geom_point(aes(x = fam_n+jitter,
-                 y = percentage,
-                 group = USE, color = USE), size = 6) +
-  
+  geom_point(aes(
+    x = fam_n + jitter,
+    y = percentage,
+    group = USE, color = USE
+  ), size = 6) +
+
   # geom_vline(xintercept = seq(1.5,9.5,1), alpha = 0.5, colour = "grey60", size = 0.2) +
-  
-  scale_color_manual(name = "Use categories",
-                     values = c('darkorange', '#008080', 'mediumpurple4')) +
-  
-  scale_y_continuous(breaks = seq(0,50,10), limits = c(0,56),
-                     labels =  seq(0,50,10)) +
-  
-  scale_x_continuous(breaks = seq(1,6,1),
-                     labels = paste0(most_harv,
-                                   " (n = ",
-                                   uses_per_fam_simpl$total_sp[uses_per_fam_simpl$FAMILLE !=  "ALL" &
-                                                                 uses_per_fam_simpl$USE == "Medical Therapeutic"],
-                                   ")")) +
-  
+
+  scale_color_manual(
+    name = "Use categories",
+    values = c("darkorange", "#008080", "mediumpurple4")
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 50, 10), limits = c(0, 56),
+    labels = seq(0, 50, 10)
+  ) +
+  scale_x_continuous(
+    breaks = seq(1, 6, 1),
+    labels = paste0(
+      most_harv,
+      " (n = ",
+      uses_per_fam_simpl$total_sp[uses_per_fam_simpl$FAMILLE != "ALL" &
+        uses_per_fam_simpl$USE == "Medical Therapeutic"],
+      ")"
+    )
+  ) +
   labs(y = "% of WHP species by use category") +
   theme_bw() +
-  theme(axis.text.x = element_text(size = 18, angle = 45, hjust = 1), axis.title.x = element_blank(),
-        axis.text.y = element_text(size = 20), axis.title.y = element_text(size = 18),
-        legend.position = "bottom", legend.title = element_blank(), legend.text = element_text(size = 15),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        plot.margin = margin(0,1,0,2, "cm")) + #top, right, bottom, left
-  coord_cartesian( xlim = c(0.9, 6.1))
+  theme(
+    axis.text.x = element_text(size = 18, angle = 45, hjust = 1), axis.title.x = element_blank(),
+    axis.text.y = element_text(size = 20), axis.title.y = element_text(size = 18),
+    legend.position = "bottom", legend.title = element_blank(), legend.text = element_text(size = 15),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    plot.margin = margin(0, 1, 0, 2, "cm")
+  ) + # top, right, bottom, left
+  coord_cartesian(xlim = c(0.9, 6.1))
 plot2
 
 
 
 #### Assemble figure 2 ####
 # Export :
-pdf(file = "plots/Fig_2_uses_6fam.pdf",
-    width = 7,
-    height = 12)
+pdf(
+  file = "plots/Fig_2_uses_6fam.pdf",
+  width = 7,
+  height = 12
+)
 
-ggpubr::ggarrange(print(plot1), print(plot2), align = "v",
-                  nrow = 2, labels = c("a", "b"), heights = c(0.5,1),
-                  font.label = list(size = 25))
+ggpubr::ggarrange(print(plot1), print(plot2),
+  align = "v",
+  nrow = 2, labels = c("a", "b"), heights = c(0.5, 1),
+  font.label = list(size = 25)
+)
 dev.off()
 
 
@@ -287,21 +313,25 @@ dev.off()
 uses_refs <- read.csv("processed_data/uses_detail_with_sources.csv")
 
 # Define the order of categories (x-axis)
-uses_refs$SELECTED_TYPOLOGY_ENG <- factor(uses_refs$SELECTED_TYPOLOGY_ENG, 
-                                          levels = c("Medical/Therapeutic", "Food and Beverages", 
-                                                     "Crafts", "Ornamental Plants", 
-                                                     "Cosmetics", "Other"))
+uses_refs$SELECTED_TYPOLOGY_ENG <- factor(uses_refs$SELECTED_TYPOLOGY_ENG,
+  levels = c(
+    "Medical/Therapeutic", "Food and Beverages",
+    "Crafts", "Ornamental Plants",
+    "Cosmetics", "Other"
+  )
+)
 
 # Define the order of databases (legend & stack order)
-uses_refs$SOURCE <- factor(uses_refs$SOURCE, 
-                           levels = c("CBN", "Chabert", "PFAF", "KEW"))
+uses_refs$SOURCE <- factor(uses_refs$SOURCE,
+  levels = c("CBN", "Chabert", "PFAF", "KEW")
+)
 
 
 # Identify single-source vs multi-source for each species and use category
 species_use_counts <- uses_refs %>%
   group_by(NOM_VALIDE, SELECTED_TYPOLOGY_ENG) %>%
   summarise(database_count = n_distinct(SOURCE), .groups = "drop") %>%
-  mutate(category = ifelse(database_count  ==  1, "Single Source", "Multiple Sources"))
+  mutate(category = ifelse(database_count == 1, "Single Source", "Multiple Sources"))
 
 # Count occurrences for each category
 category_counts <- species_use_counts %>%
@@ -310,7 +340,7 @@ category_counts <- species_use_counts %>%
 # Filter only single-source records
 single_source_data <- uses_refs %>%
   group_by(NOM_VALIDE, SELECTED_TYPOLOGY_ENG) %>%
-  filter(n_distinct(SOURCE)  ==  1) %>%
+  filter(n_distinct(SOURCE) == 1) %>%
   ungroup()
 
 # Count occurrences of each database in single-source cases, per use category
@@ -320,15 +350,21 @@ single_source_db_counts <- single_source_data %>%
   mutate(percentage = n / sum(n) * 100)
 
 # Define order for x-axis
-category_counts$SELECTED_TYPOLOGY_ENG <- factor(category_counts$SELECTED_TYPOLOGY_ENG, 
-                                                levels = c("Medical/Therapeutic", "Food and Beverages", 
-                                                           "Crafts", "Ornamental Plants", 
-                                                           "Cosmetics", "Other"))
+category_counts$SELECTED_TYPOLOGY_ENG <- factor(category_counts$SELECTED_TYPOLOGY_ENG,
+  levels = c(
+    "Medical/Therapeutic", "Food and Beverages",
+    "Crafts", "Ornamental Plants",
+    "Cosmetics", "Other"
+  )
+)
 
-single_source_db_counts$SELECTED_TYPOLOGY_ENG <- factor(single_source_db_counts$SELECTED_TYPOLOGY_ENG, 
-                                                        levels = c("Medical/Therapeutic", "Food and Beverages", 
-                                                                   "Crafts", "Ornamental Plants", 
-                                                                   "Cosmetics", "Other"))
+single_source_db_counts$SELECTED_TYPOLOGY_ENG <- factor(single_source_db_counts$SELECTED_TYPOLOGY_ENG,
+  levels = c(
+    "Medical/Therapeutic", "Food and Beverages",
+    "Crafts", "Ornamental Plants",
+    "Cosmetics", "Other"
+  )
+)
 
 # Custom colors
 use_colors <- c("Single Source" = "#D82632", "Multiple Sources" = "grey70")
@@ -336,32 +372,40 @@ db_colors <- c("CBN" = "gold", "Chabert" = "#85B22C", "PFAF" = "#51A3CC", "KEW" 
 
 # Plot 1: Number of uses in single vs. multiple sources
 p1 <- ggplot(category_counts, aes(x = SELECTED_TYPOLOGY_ENG, y = n, fill = category)) +
-  geom_bar(stat = "identity", position = "stack") +  
+  geom_bar(stat = "identity", position = "stack") +
   scale_fill_manual(values = use_colors) +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title.x = element_blank(),
-        legend.position = "right") +
-  labs(y = "Number of uses", 
-       fill = NULL,
-       title = "a) Number of uses documented in 1 
-       vs. multiple databases")
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.title.x = element_blank(),
+    legend.position = "right"
+  ) +
+  labs(
+    y = "Number of uses",
+    fill = NULL,
+    title = "a) Number of uses documented in 1
+       vs. multiple databases"
+  )
 
 # Plot 2: Percentage of each database for single-source uses (per use category)
 p2 <- ggplot(single_source_db_counts, aes(x = SELECTED_TYPOLOGY_ENG, y = percentage, fill = SOURCE)) +
   geom_bar(stat = "identity", position = "stack") +
-  scale_y_continuous(labels = percent_format(scale = 1)) +  # Show as percentage
+  scale_y_continuous(labels = percent_format(scale = 1)) + # Show as percentage
   scale_fill_manual(values = db_colors) +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title.x = element_blank(),
-        legend.position = "right") +
-  labs(y = "Percentage of single-source uses",
-       fill = "Database",
-       title = "b) Database contribution to single-source uses")
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.title.x = element_blank(),
+    legend.position = "right"
+  ) +
+  labs(
+    y = "Percentage of single-source uses",
+    fill = "Database",
+    title = "b) Database contribution to single-source uses"
+  )
 
 # Combine the two plots
-combined_plot <- p1 / p2 +  # Stack them vertically
+combined_plot <- p1 / p2 + # Stack them vertically
   plot_annotation()
 
 # Display the plot
@@ -378,45 +422,49 @@ dev.off()
 #### Appendix O : Graph with the % of each part used ####
 df <- read.csv("processed_data/harvested_detail.csv", header = TRUE, stringsAsFactors = FALSE) %>%
   # Identify destructively harvested species
-  mutate(Destructive_harvest = ifelse(underground_part  ==  1 | whole_plant  ==  1, 1, 0))
+  mutate(Destructive_harvest = ifelse(underground_part == 1 | whole_plant == 1, 1, 0))
 
 # Convert data to long format
 df_long <- df %>%
   pivot_longer(cols = 3:14, names_to = "Harvested_part", values_to = "Present") %>%
-  filter(Present  ==  1)  # Keep only harvested parts
+  filter(Present == 1) # Keep only harvested parts
 
 # Format harvested part names (capitalize and replace underscores with spaces)
 df_long$Harvested_part <- df_long$Harvested_part %>%
-  str_replace_all("_", " ") %>%   # Replace underscores with spaces
-  str_to_title()  # Capitalize each word
+  str_replace_all("_", " ") %>% # Replace underscores with spaces
+  str_to_title() # Capitalize each word
 
 # Calculate percentage of species per harvested part
 part_counts <- df_long %>%
   group_by(Harvested_part) %>%
   summarise(Count = n()) %>%
-  mutate(Percentage = (Count / n_distinct(df$CD_REF)) * 100)  # % of species
+  mutate(Percentage = (Count / n_distinct(df$CD_REF)) * 100) # % of species
 
 # Identify parts associated with destructive harvest
 destructive_parts <- c("Destructive Harvest", "Underground Part", "Whole Plant")
 
 # Plot percentage of species for each harvested part
 parts <- ggplot(part_counts, aes(x = reorder(Harvested_part, Percentage), y = Percentage, fill = Harvested_part %in% destructive_parts)) +
-  geom_bar(stat = "identity") +  
-  geom_text(aes(label = sprintf("%.1f%%", Percentage)), hjust = -0.2, size = 3) +  # Add percentage labels
-  scale_fill_manual(values = c("FALSE" = "#1c9099", "TRUE" = "#d73027")) +  # Non-destructive in blue, destructive in red
-  coord_flip() +  # Flip to horizontal
-  scale_y_continuous(breaks = seq(0, 100, by = 10), limits = c(0,70)) +  # Steps for y-axis
-  labs(x = NULL,  # Remove x-axis title
-       y = "
-       Percentage of species") +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = sprintf("%.1f%%", Percentage)), hjust = -0.2, size = 3) + # Add percentage labels
+  scale_fill_manual(values = c("FALSE" = "#1c9099", "TRUE" = "#d73027")) + # Non-destructive in blue, destructive in red
+  coord_flip() + # Flip to horizontal
+  scale_y_continuous(breaks = seq(0, 100, by = 10), limits = c(0, 70)) + # Steps for y-axis
+  labs(
+    x = NULL, # Remove x-axis title
+    y = "
+       Percentage of species"
+  ) +
   theme_minimal() +
-  theme(legend.position = "none")  # Remove legend
+  theme(legend.position = "none") # Remove legend
 
 
-# Export :  
-pdf(file = "plots/Appx_O_percentage_harvested_parts.pdf", 
-    width = 5, 
-    height = 5)
+# Export :
+pdf(
+  file = "plots/Appx_O_percentage_harvested_parts.pdf",
+  width = 5,
+  height = 5
+)
 print(parts)
 dev.off()
 
@@ -425,7 +473,7 @@ dev.off()
 #### Appendix P : tripartite network ####
 # Import Raunkiaer data :
 raunkiear <- read.csv(here::here("4_Plant-life_history", "processed_data", "Raunkieaer_data_REVIEWED_WHP.csv")) %>%
-  subset(select = c(CD_REF, NOM_VALIDE, choix_type_bio))%>%
+  subset(select = c(CD_REF, NOM_VALIDE, choix_type_bio)) %>%
   unique()
 
 # A few formatting details :
@@ -441,23 +489,25 @@ join_raunk$USE <- tolower(join_raunk$USE)
 
 names(join_raunk) <- c("CD_REF", "NOM_VALIDE", "Raunkiear_type", "Part", "Use", "Value")
 
-# Format data for Sankey plot : 
+# Format data for Sankey plot :
 df_raunk <- join_raunk %>%
-  make_long(Use, Part, Raunkiear_type, value = Value) #here the order is important, it dictates the plotting
+  make_long(Use, Part, Raunkiear_type, value = Value) # here the order is important, it dictates the plotting
 
 # Plot :
 width <- 0.4
 
-p <- ggplot(df_raunk, aes(x = x,
-                          next_x = next_x,
-                          node = node,
-                          next_node = next_node, 
-                          fill = node,
-                          colour = node,
-                          label = node,
-                          show.legend = FALSE,
-                          width = width,
-                          value = value)) +
+p <- ggplot(df_raunk, aes(
+  x = x,
+  next_x = next_x,
+  node = node,
+  next_node = next_node,
+  fill = node,
+  colour = node,
+  label = node,
+  show.legend = FALSE,
+  width = width,
+  value = value
+)) +
   geom_sankey(flow.alpha = .6, node.colour = "gray40") +
   scale_fill_viridis_d() +
   scale_colour_viridis_d() +
@@ -465,18 +515,19 @@ p <- ggplot(df_raunk, aes(x = x,
   labs(x = NULL) +
   geom_sankey_label(size = 5, color = "grey20", fill = "white") +
   guides(fill = "none") +
-  theme(legend.position = "none",
-        plot.title = element_text(hjust = .5))
+  theme(
+    legend.position = "none",
+    plot.title = element_text(hjust = .5)
+  )
 
 p
 
 
-# Export :  
-pdf(file = "plots/Appx_P_tripartite.pdf", 
-    width = 10, 
-    height = 7)
+# Export :
+pdf(
+  file = "plots/Appx_P_tripartite.pdf",
+  width = 10,
+  height = 7
+)
 print(p)
 dev.off()
-
-
-

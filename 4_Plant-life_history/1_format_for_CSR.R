@@ -31,33 +31,33 @@ list_TRY_ID <- read.csv("raw_data/list_species_TRY_French_Flora.csv")
 # Import the TRY trait data and filter it :
 TRY_data <- readr::read_delim("raw_data/TRY/36998_01112024024943/36998.txt", delim = "\t", escape_double = FALSE, trim_ws = TRUE) %>%
   subset(!is.na(TraitID),
-         select = c("AccSpeciesID", "AccSpeciesName", "TraitID", "StdValue", "UnitName"))
+    select = c("AccSpeciesID", "AccSpeciesName", "TraitID", "StdValue", "UnitName")
+  )
 
-TRY_data <- TRY_data[TRY_data$AccSpeciesID %in% list_TRY_ID$AccSpeciesID,] # subset the TRY data to vascular flora
-TRY_data <- left_join(TRY_data, list_TRY_ID, by = c("AccSpeciesID", "AccSpeciesName")) %>% #to get CD_REF and family
+TRY_data <- TRY_data[TRY_data$AccSpeciesID %in% list_TRY_ID$AccSpeciesID, ] # subset the TRY data to vascular flora
+TRY_data <- left_join(TRY_data, list_TRY_ID, by = c("AccSpeciesID", "AccSpeciesName")) %>% # to get CD_REF and family
   left_join(vascular_list) %>% # to get LB_NOM
   na.omit()
-  
+
 # Import DivGrass trait data and filter it :
 divgrass <- import("raw_data/DivGrass/20200602_Divgrass.rds") %>%
   subset(!is.na(TAXREF_SHORT))
 
 vascular_list$LB_NOM_upper <- toupper(vascular_list$LB_NOM) # format names to match
 
-divgrass_sub <- divgrass[divgrass$TAXREF_SHORT %in% vascular_list$LB_NOM_upper,] %>% # keep only species from the list
-select(c(TAXREF_SHORT, LA, SLA, LDMC)) # keep only selected traits for CSR calculation
+divgrass_sub <- divgrass[divgrass$TAXREF_SHORT %in% vascular_list$LB_NOM_upper, ] %>% # keep only species from the list
+  select(c(TAXREF_SHORT, LA, SLA, LDMC)) # keep only selected traits for CSR calculation
 
 divgrass_sub <- right_join(vascular_list, divgrass_sub, join_by(LB_NOM_upper == TAXREF_SHORT)) %>%
   subset(select = -LB_NOM_upper) %>%
   unique() # remove any duplicates
 
 DivGrass_data <- divgrass_sub
-DivGrass_data$LDMC <- DivGrass_data$LDMC /1000 # original unit was wrong
-
+DivGrass_data$LDMC <- DivGrass_data$LDMC / 1000 # original unit was wrong
 
 
 #### Join TRY and DivGrass data ####
-DivGrass_data <- melt(DivGrass_data, id = c("LB_NOM","CD_REF", "FAMILLE"), na.rm = T)
+DivGrass_data <- melt(DivGrass_data, id = c("LB_NOM", "CD_REF", "FAMILLE"), na.rm = T)
 names(DivGrass_data) <- c("LB_NOM", "CD_REF", "FAMILLE", "TraitName", "StdValue")
 
 DivGrass_data$TraitID[DivGrass_data$TraitName == "LDMC"] <- 47
@@ -79,25 +79,26 @@ colnames(rawdata_no_outlier) <- c("LB_NOM", "CD_REF", "FAMILLE", "TraitID", "Std
 # Calculate interquartile range and remove outliers
 for (i in unique(rawdata$CD_REF)) {
   for (j in unique(rawdata$TraitID)) {
-    data <- rawdata[rawdata$CD_REF == i
-                    & rawdata$TraitID == j,]
-    
-    if (length(data$StdValue)>2) { # remove outliers ONLY when 3 values or more are available
-      quartiles <- quantile(data$StdValue, 
-                            probs = c(.25, .75), na.rm = T)
+    data <- rawdata[rawdata$CD_REF == i &
+      rawdata$TraitID == j, ]
+
+    if (length(data$StdValue) > 2) { # remove outliers ONLY when 3 values or more are available
+      quartiles <- quantile(data$StdValue,
+        probs = c(.25, .75), na.rm = T
+      )
       IQR <- IQR(data$StdValue, na.rm = T)
-      
-      Lower <- quartiles[1] - 1.5*IQR
-      Upper <- quartiles[2] + 1.5*IQR 
-      
+
+      Lower <- quartiles[1] - 1.5 * IQR
+      Upper <- quartiles[2] + 1.5 * IQR
+
       data_no_outlier <- subset(data, data$StdValue > Lower & data$StdValue < Upper)
-      
     } else {
       data_no_outlier <- data
     }
-    
+
     rawdata_no_outlier <- rbind(rawdata_no_outlier, data_no_outlier)
-  }}
+  }
+}
 
 
 write.csv(rawdata_no_outlier, "raw_data/raw_CSR_trait_data_all_France.csv", row.names = F)
@@ -106,11 +107,11 @@ write.csv(rawdata_no_outlier, "raw_data/raw_CSR_trait_data_all_France.csv", row.
 #### Mean data for each trait and species ####
 
 ## LDMC : Leaf Dry Mass per Leaf Fresh Mass
-data_LDMC <- subset(rawdata_no_outlier, TraitID == 47, 
-                    select = -TraitID) %>%
+data_LDMC <- subset(rawdata_no_outlier, TraitID == 47,
+  select = -TraitID
+) %>%
   group_by(CD_REF, LB_NOM, FAMILLE) %>%
   summarise(mean_LDMC = mean(StdValue))
-
 
 
 ## SLA : Specific Leaf Area
@@ -121,11 +122,11 @@ data_LDMC <- subset(rawdata_no_outlier, TraitID == 47,
 # 3086 Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA) petiole, rhachis and midrib excluded.
 
 # Mean 3115, 3116 and 3117 (petiole probably not a big difference)
-data_SLA <- subset(rawdata_no_outlier, TraitID %in% c(3115, 3116, 3117), 
-                   select = -TraitID) %>%
+data_SLA <- subset(rawdata_no_outlier, TraitID %in% c(3115, 3116, 3117),
+  select = -TraitID
+) %>%
   group_by(CD_REF, LB_NOM, FAMILLE) %>%
   summarise(mean_SLA = mean(StdValue))
-
 
 
 ## LA : Leaf Area
@@ -143,16 +144,18 @@ data_SLA <- subset(rawdata_no_outlier, TraitID %in% c(3115, 3116, 3117),
 compoundness <- read.csv("raw_data/simple_or_compound_ALL_species.csv")
 
 data_LA_not_compound <- subset(rawdata_no_outlier,
-                               LB_NOM %in% compoundness$LB_NOM[compoundness$Leaf == "simple"] &
-                                 TraitID %in% c(3108, 3110, 3112, 3109, 3111, 3113, 3114),
-                               select = -TraitID) %>%
+  LB_NOM %in% compoundness$LB_NOM[compoundness$Leaf == "simple"] &
+    TraitID %in% c(3108, 3110, 3112, 3109, 3111, 3113, 3114),
+  select = -TraitID
+) %>%
   group_by(CD_REF, LB_NOM, FAMILLE) %>%
-  summarise(mean_LA = mean(StdValue)) 
+  summarise(mean_LA = mean(StdValue))
 
 data_LA_compound <- subset(rawdata_no_outlier,
-                           LB_NOM %in% compoundness$LB_NOM[compoundness$Leaf == "compound"] &
-                             TraitID %in% c(3108, 3110, 3112), 
-                           select = -TraitID) %>%
+  LB_NOM %in% compoundness$LB_NOM[compoundness$Leaf == "compound"] &
+    TraitID %in% c(3108, 3110, 3112),
+  select = -TraitID
+) %>%
   group_by(CD_REF, LB_NOM, FAMILLE) %>%
   summarise(mean_LA = mean(StdValue))
 
@@ -167,21 +170,20 @@ full_data <- full_join(data_LA, data_LDMC) %>%
   select(-LB_NOM_upper) %>%
   full_join(list_harv_species) %>%
   subset(!is.na(LB_NOM)) %>% # issue with Taraxacum dens-leonis CD_REF = 125568, but normal, just remove it
-  unique() 
+  unique()
 
 full_data$harvested[is.na(full_data$harvested)] <- 0
 
-full_data$mean_LDMC <- full_data$mean_LDMC *100 # necessary for calculations
-
+full_data$mean_LDMC <- full_data$mean_LDMC * 100 # necessary for calculations
 
 
 #### Select species to represent France's vascular plant CSR ####
 # Look at the number of species for which we can calculate CSR
 # and see which species have enough data for the CSR :
 for (i in 1:length(full_data$CD_REF)) {
-  if (is.na(full_data$mean_LA[i]) | 
-      is.na(full_data$mean_LDMC[i]) |
-      is.na(full_data$mean_SLA[i])) {
+  if (is.na(full_data$mean_LA[i]) |
+    is.na(full_data$mean_LDMC[i]) |
+    is.na(full_data$mean_SLA[i])) {
     full_data$CSR_possible[i] <- 0
   } else {
     full_data$CSR_possible[i] <- 1
@@ -190,23 +192,23 @@ for (i in 1:length(full_data$CD_REF)) {
 length(full_data$harvested[full_data$harvested == 1 & full_data$CSR_possible == 1])
 
 # Summarise :
-summar <- full_data %>% 
+summar <- full_data %>%
   group_by(FAMILLE) %>%
-  summarise(not_harvested = abs(n()-sum(harvested)), harvested = sum(harvested), 
-            CSR_not_possible = abs(n()-sum(CSR_possible)), CSR_possible = sum(CSR_possible),
-            )
+  summarise(
+    not_harvested = abs(n() - sum(harvested)), harvested = sum(harvested),
+    CSR_not_possible = abs(n() - sum(CSR_possible)), CSR_possible = sum(CSR_possible),
+  )
 
 
-summar$percentage_possible <- 100*summar$CSR_possible/(summar$CSR_possible + summar$CSR_not_possible)
-summar$percentage_species <- 100*(summar$harvested + summar$not_harvested)/sum(summar$harvested + summar$not_harvested)
+summar$percentage_possible <- 100 * summar$CSR_possible / (summar$CSR_possible + summar$CSR_not_possible)
+summar$percentage_species <- 100 * (summar$harvested + summar$not_harvested) / sum(summar$harvested + summar$not_harvested)
 
 # Number of species I want per family :
-summar$number_species <- ceiling(0.1*(summar$CSR_possible + summar$CSR_not_possible)) # we ideally want to have 10% of each family
-summar$diff <- summar$CSR_possible-summar$number_species # shows for which families I can't complete the 10% goal
+summar$number_species <- ceiling(0.1 * (summar$CSR_possible + summar$CSR_not_possible)) # we ideally want to have 10% of each family
+summar$diff <- summar$CSR_possible - summar$number_species # shows for which families I can't complete the 10% goal
 
 
-
-# Import the list of selected species : 
+# Import the list of selected species :
 # The goal was to randomly choose 10% of the species in each family
 # when there weren't enough species, we selected the maximum number available
 selected <- read.csv("raw_data/selected_species.csv")
@@ -234,4 +236,3 @@ write.csv(full_data_WHP, "processed_data/CSR_trait_data_WHP.csv", row.names = F)
 
 # this data must then be copy-pasted in the columns of the StrateFy.ods file, in order to get the CSR calculations
 # Note : the Stratefy file uses commas as decimal separators
-
