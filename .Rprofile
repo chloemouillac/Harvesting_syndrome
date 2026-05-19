@@ -5,3 +5,4 @@ if (interactive() && Sys.getenv("RSTUDIO") == "") {
   source(init_path)
   # Workaround .vsc.attach()
   .First.sys()
+}
