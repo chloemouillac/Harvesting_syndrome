@@ -30,7 +30,7 @@ def parse_uses(uses_text, part_marker, use_marker):
             uses_list_raw = uses_text
             
         if bool(re.search(r'[a-z][A-Z]', uses_list_raw)) :
-            split = re.split(r'(?< = [a-z])(? = [A-Z])', uses_list_raw)
+            split = re.split(r'(?<= [a-z])(? = [A-Z])', uses_list_raw)
             uses_list = split[0]
             description = split[1].strip()
             uses_list = ", ".join(uses_list.split("\xa0\xa0")).strip()

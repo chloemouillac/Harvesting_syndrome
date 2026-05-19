@@ -37,7 +37,7 @@ vascular_list <- read.csv(here::here("list_vascular_v17.csv")) %>%
 # to get species that are not in the uses dataframe
 uses_join <- full_join(uses_data,vascular_list, by = "LB_NOM")
 uses_join[is.na(uses_join)] <- 0
-uses_join$harvested <- apply(uses_join[,-7], 1, function(row) ifelse(any(row > =  1), 1, 0)) #uses_join[,-7] to remove the name column
+uses_join$harvested <- apply(uses_join[,-7], 1, function(row) ifelse(any(row >=  1), 1, 0)) #uses_join[,-7] to remove the name column
 
 
 #### Ensure species in the data and tree are matched ####

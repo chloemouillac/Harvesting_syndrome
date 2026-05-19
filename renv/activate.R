@@ -194,7 +194,7 @@ local({
   {
     label <- sprintf(label, ...)
     n <- max(n - nchar(label) - nchar(prefix) - 2L, 8L)
-    if (n < =  0)
+    if (n <= 0)
       return(paste(prefix, label))
   
     tail <- paste(rep.int(suffix, n), collapse = "")
@@ -285,13 +285,13 @@ local({
       parts <- strsplit(repos, ";", fixed = TRUE)[[1L]]
   
       # split into named repositories if present
-      idx <- regexpr(" = ", parts, fixed = TRUE)
+      idx <- regexpr("=", parts, fixed = TRUE)
       keys <- substring(parts, 1L, idx - 1L)
       vals <- substring(parts, idx + 1L)
       names(vals) <- keys
   
       # if we have a single unnamed repository, call it CRAN
-      if (length(vals)  ==  1L && identical(keys, ""))
+      if (length(vals) == 1L && identical(keys, ""))
         names(vals) <- "CRAN"
   
       return(vals)
@@ -307,7 +307,7 @@ local({
     repos <- getOption("repos")
   
     # ensure @CRAN@ entries are resolved
-    repos[repos  ==  "@CRAN@"] <- cran
+    repos[repos == "@CRAN@"] <- cran
   
     # add in renv.bootstrap.repos if set
     default <- c(FALLBACK = "https://cloud.r-project.org")
@@ -333,7 +333,7 @@ local({
     }
   
     repos <- lockfile$R$Repositories
-    if (length(repos)  ==  0)
+    if (length(repos) == 0)
       return(NULL)
   
     keys <- vapply(repos, `[[`, "Name", FUN.VALUE = character(1))
@@ -381,10 +381,10 @@ local({
   
     mode <- "wb"
   
-    # https://bugs.r-project.org/bugzilla/show_bug.cgi?id = 17715
+    # https://bugs.r-project.org/bugzilla/show_bug.cgi?id=17715
     fixup <-
-      Sys.info()[["sysname"]]  ==  "Windows" &&
-      substring(url, 1L, 5L)  ==  "file:"
+      Sys.info()[["sysname"]] == "Windows" &&
+      substring(url, 1L, 5L) == "file:"
   
     if (fixup)
       mode <- "w+b"
@@ -416,7 +416,7 @@ local({
       stopf("'renv.download.headers' is not a function")
   
     headers <- headers(url)
-    if (length(headers)  ==  0L)
+    if (length(headers) == 0L)
       return(character())
   
     if (is.list(headers))
@@ -443,7 +443,7 @@ local({
     baseurl <- utils::contrib.url(repos = repos, type = type)
     ext <- if (identical(type, "source"))
       ".tar.gz"
-    else if (Sys.info()[["sysname"]]  ==  "Windows")
+    else if (Sys.info()[["sysname"]] == "Windows")
       ".zip"
     else
       ".tgz"
@@ -504,7 +504,7 @@ local({
   
         # check for compatible entry
         entry <- db[db$Package %in% "renv" & db$Version %in% version, ]
-        if (nrow(entry)  ==  0)
+        if (nrow(entry) == 0)
           next
   
         # found it; return spec to caller
@@ -646,7 +646,7 @@ local({
       options(download.file.method = "curl", download.file.extra = extra)
       on.exit(do.call(base::options, saved), add = TRUE)
     } else if (nzchar(Sys.which("wget")) && nzchar(token)) {
-      fmt <- "--header = \"Authorization: token %s\""
+      fmt <- "--header=\"Authorization: token %s\""
       extra <- sprintf(fmt, token)
       saved <- options("download.file.method", "download.file.extra")
       options(download.file.method = "wget", download.file.extra = extra)
@@ -697,7 +697,7 @@ local({
       paste("RemoteRef: ", sha),
       paste("RemoteSha: ", sha)
     )
-    writeLines(c(desc_lines[desc_lines !=  ""], remotes_fields), con = desc_path)
+    writeLines(c(desc_lines[desc_lines != ""], remotes_fields), con = desc_path)
   
     # Re-tar
     local({
@@ -725,12 +725,12 @@ local({
   
     # The default pax header is 512 bytes long and the first pax extended header
     # with the comment should be 51 bytes long
-    # `52 comment = ` (11 chars) + 40 byte SHA1 hash
+    # `52 comment=` (11 chars) + 40 byte SHA1 hash
     len <- 0x200 + 0x33
     res <- rawToChar(readBin(conn, "raw", n = len)[0x201:len])
   
-    if (grepl("^52 comment = ", res)) {
-      sub("52 comment = ", "", res)
+    if (grepl("^52 comment=", res)) {
+      sub("52 comment=", "", res)
     } else {
       NULL
     }
@@ -749,7 +749,7 @@ local({
   
     # an error occurred; report it
     header <- "installation of renv failed"
-    lines <- paste(rep.int(" = ", nchar(header)), collapse = "")
+    lines <- paste(rep.int("=", nchar(header)), collapse = "")
     text <- paste(c(header, lines, output), collapse = "\n")
     stop(text)
   
@@ -759,7 +759,7 @@ local({
   
     # invoke using system2 so we can capture and report output
     bin <- R.home("bin")
-    exe <- if (Sys.info()[["sysname"]]  ==  "Windows") "R.exe" else "R"
+    exe <- if (Sys.info()[["sysname"]] == "Windows") "R.exe" else "R"
     R <- file.path(bin, exe)
   
     args <- c(
@@ -826,7 +826,7 @@ local({
   
     # if the user has requested an automatic prefix, generate it
     auto <- Sys.getenv("RENV_PATHS_PREFIX_AUTO", unset = NA)
-    if (is.na(auto) && getRversion() > =  "4.4.0")
+    if (is.na(auto) && getRversion() >= "4.4.0")
       auto <- "TRUE"
   
     if (auto %in% c("TRUE", "True", "true", "1"))
@@ -862,9 +862,9 @@ local({
     sysname <- sysinfo[["sysname"]]
   
     # handle Windows + macOS up front
-    if (sysname  ==  "Windows")
+    if (sysname == "Windows")
       return("windows")
-    else if (sysname  ==  "Darwin")
+    else if (sysname == "Darwin")
       return("macos")
   
     # check for os-release files
@@ -885,7 +885,7 @@ local({
     # read /etc/os-release
     release <- utils::read.table(
       file             = file,
-      sep              = " = ",
+      sep              = "=",
       quote            = c("\"", "'"),
       col.names        = c("Key", "Value"),
       comment.char     = "#",
@@ -1105,7 +1105,7 @@ local({
   
     # read the profile, and set it if it exists
     contents <- readLines(path, warn = FALSE)
-    if (length(contents)  ==  0L)
+    if (length(contents) == 0L)
       return(NULL)
   
     # set RENV_PROFILE
@@ -1214,9 +1214,9 @@ local({
     }
   
     # use platform-specific default fallbacks
-    if (Sys.info()[["sysname"]]  ==  "Windows")
+    if (Sys.info()[["sysname"]] == "Windows")
       file.path(Sys.getenv("LOCALAPPDATA"), "R/cache/R/renv")
-    else if (Sys.info()[["sysname"]]  ==  "Darwin")
+    else if (Sys.info()[["sysname"]] == "Darwin")
       "~/Library/Caches/org.R-project.R/R/renv"
     else
       "~/.cache/R/renv"
@@ -1331,7 +1331,7 @@ local({
       list("]", "\n\t\n)\n\t\n",      TRUE),
   
       # maps
-      list(":", "\t\n\t = \t\n\t", TRUE),
+      list(":", "\t\n\t=\t\n\t", TRUE),
   
       # newlines
       list("\\u000a", "\n", FALSE)

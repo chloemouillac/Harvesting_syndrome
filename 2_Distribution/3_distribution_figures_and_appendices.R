@@ -269,11 +269,11 @@ seq_x <- seq(0, 100, by = 1)
 
 # Calculer le pourcentage d'espèces couvrant au moins chaque pourcentage des départements
 y_values_tot <- sapply(seq_x, function(x) {
-  mean(nb_dpts_per_species_tot$perc_dpts > =  x) * 100
+  mean(nb_dpts_per_species_tot$perc_dpts >=  x) * 100
 })
 
 y_values_harv <- sapply(seq_x, function(x) {
-  mean(nb_dpts_per_species_harv$perc_dpts > =  x) * 100
+  mean(nb_dpts_per_species_harv$perc_dpts >=  x) * 100
 })
 
 # Créer un data frame pour le graphique

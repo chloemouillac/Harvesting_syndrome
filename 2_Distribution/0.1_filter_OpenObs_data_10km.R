@@ -77,8 +77,8 @@ while(!done) { #~70*10e5
 
 
 #### Filter date and precision ####
-res <- res[res$dateObservation > =  "2000-01-01",] #keep only obs after year 2000
-res <- res[res$precisionGeometrieMetres< = 10000,] #keep only obs with precision higher than 10km
+res <- res[res$dateObservation >=  "2000-01-01",] #keep only obs after year 2000
+res <- res[res$precisionGeometrieMetres<= 10000,] #keep only obs with precision higher than 10km
 
 # remove NAs :
 res <- res[!is.na(res$libelleJeuDonnees),]

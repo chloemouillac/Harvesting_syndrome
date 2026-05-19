@@ -183,7 +183,7 @@ for (fam in unique(uses_per_fam$FAMILLE)) {
 }
 
 
-uses_per_fam$positive <- ifelse(uses_per_fam$diff> = 0,"yes","no")
+uses_per_fam$positive <- ifelse(uses_per_fam$diff>= 0,"yes","no")
 uses_per_fam_simpl <- uses_per_fam[uses_per_fam$USE %in% c("Crafts", "Food and Beverages", "Medical Therapeutic"),]
 
 
