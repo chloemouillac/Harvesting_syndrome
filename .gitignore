@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+renv/library/
+renv/staging/
+
+2_Distribution/processed_data/OpenObs+GBIF_20km_NOT_REDUCED.csv
+
+**/plots/**
+!**/plots/.gitkeep
